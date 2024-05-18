@@ -4,27 +4,44 @@
         <h1 class="font-bold text-charcoalBlue text-2xl">{{captions.signIn}}</h1>
         <h2 class="font-normal text-slateBlue text-base">{{captions.enterCredentials}}</h2>
 
-        <form class="form flex flex-col w-full">
+        <form class="form flex flex-col w-full" [formGroup]="signInForm" (ngSubmit)="onClickSubmitButtonEventHandler()">
             <!-- Email Input -->
             <mat-form-field appearance="outline">
-                <input matInput type="email" placeholder="{{ captions.email }}">
+                <input matInput type="email" formControlName="emailCtrl" placeholder="{{ captions.email }}">
+
+                <mat-error *ngIf="signInForm.get('emailCtrl')?.hasError('required')">
+                    {{ captions.emailRequiredError }}
+                </mat-error>
+                <mat-error *ngIf="signInForm.get('emailCtrl')?.hasError('email')">
+                    {{ captions.emailInvalidError }}
+                </mat-error>
             </mat-form-field>
 
             <!-- Password Input -->
             <mat-form-field appearance="outline">
-                <input matInput type="password" placeholder="{{ captions.password }}">
+                <input matInput type="password" formControlName="passwordCtrl" placeholder="{{ captions.password }}">
+
+                <mat-error *ngIf="signInForm.get('passwordCtrl')?.hasError('required')">
+                    {{ captions.passwordRequiredError }}
+                </mat-error>
+                <mat-error *ngIf="signInForm.get('passwordCtrl')?.hasError('minlength')">
+                    {{ captions.passwordMinLengthError }}
+                </mat-error>
             </mat-form-field>
 
             <!-- Remember me checkbox -->
-            <mat-slide-toggle class="text-charcoalBlue text-base">{{ captions.rememberMe }}</mat-slide-toggle>
+            <mat-slide-toggle class="text-charcoalBlue text-base" formControlName="rememberCtrl">{{ captions.rememberMe
+                }}</mat-slide-toggle>
 
             <!-- Sign in button -->
-            <button class="mt-9" mat-raised-button>{{ captions.signIn | uppercase }}</button>
+            <button class="mt-9" type="submit" [disabled]="signInForm.invalid" mat-raised-button>{{ captions.signIn |
+                uppercase
+                }}</button>
         </form>
         <div class="sign-up justify-center flex gap-x-1 items-center font-normal text-sm">
             <h3 class="text-slateBlue">{{captions.noAccount}}</h3>
-            <h4 class="text-center">{{
-                captions.signUp }}</h4>
+            <a class="text-center cursor-pointer" (click)="onClickSignUpEventHandler()">{{
+                captions.signUp }}</a>
 
         </div>
     </div>

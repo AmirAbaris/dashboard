@@ -1,7 +1,8 @@
-import { Component, OnInit, inject, input } from '@angular/core';
+import { Component, OnInit, inject, input, output } from '@angular/core';
 import { SignInCaptionModel } from '../models/caption-models/sign-in.caption.model';
 import { TranslateService } from '@ngx-translate/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserLoginModel } from '../models/account/user-login.model';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,10 +15,18 @@ export class SignInComponent implements OnInit {
   private _fb = inject(FormBuilder);
   // public captions = input.required<SignInCaptionModel>();
 
+  public clickSubmitEvent = output<UserLoginModel>();
+  public clickSignUpEvent = output<void>();
+
   // TODO: remove after PR confirmation
   // note: we will reive captions from input not this!
   public captions: SignInCaptionModel | undefined;
-  private _signInForm: FormGroup | undefined;
+
+  public signInForm: FormGroup = this._fb.group({
+    emailCtrl: [null, [Validators.required, Validators.email]],
+    passwordCtrl: [null, [Validators.required, Validators.minLength(6)]],
+    rememberCtrl: [false]
+  });
   //#endregion
 
   //#region Lifecycle methods
@@ -26,12 +35,29 @@ export class SignInComponent implements OnInit {
     this._translateService.get('auth.sign-in').subscribe((receivedCaptions) => {
       this.captions = receivedCaptions;
     });
+  }
+  //#endregion
 
-    // TODO: move?
-    this._signInForm = this._fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    });
+  //#region Handler methods
+  public onClickSubmitButtonEventHandler(): void {
+    // create userInput object from form values
+    const userInput: UserLoginModel = {
+      email: this.signInForm.value.emailCtrl,
+      password: this.signInForm.value.passwordCtrl,
+      shouldRemember: this.signInForm.value.rememberCtrl
+    }
+
+    // emit the userInput to notify the parent component
+    this.clickSubmitEvent.emit(userInput);
+
+    // log the userInput for debugging or development purposes
+    console.log(userInput);
+  }
+
+  public onClickSignUpEventHandler(): void {
+    console.log('sign up clicked!');
+    
+    this.clickSignUpEvent.emit();
   }
   //#endregion
 }
