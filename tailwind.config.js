@@ -4,7 +4,13 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'open-sans': ['"Open Sans"', 'sans-serif'], // add the Open Sans font
+    },
+    colors: {
+      charcoalBlue: '#344767', // Custom color
+      slateBlue: '#67748E'
+    },
   },
   plugins: [],
 }
