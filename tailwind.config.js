@@ -10,7 +10,8 @@ module.exports = {
     colors: {
       charcoalBlue: '#344767',
       slateBlue: '#67748E',
-      magenta: '#CB0C9F'
+      magenta: '#CB0C9F',
+      white: '#FFFFFF'
     },
   },
   plugins: [],

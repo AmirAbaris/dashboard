@@ -6,7 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent }
@@ -23,7 +23,8 @@ const routes: Routes = [
     MatSlideToggleModule,
     MatButtonModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    NgOptimizedImage
   ],
   exports: [RouterModule]
 })
