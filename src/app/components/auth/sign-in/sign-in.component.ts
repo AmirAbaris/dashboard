@@ -3,6 +3,7 @@ import { SignInCaptionModel } from '../models/caption-models/sign-in.caption.mod
 import { TranslateService } from '@ngx-translate/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserLoginModel } from '../models/account/user-login.model';
+import { ErrorCaptionModel } from '../models/caption-models/error-caption/error.caption.model';
 
 @Component({
   selector: 'app-sign-in',
@@ -21,6 +22,7 @@ export class SignInComponent implements OnInit {
   // TODO: remove after PR confirmation
   // note: we will reive captions from input not this!
   public captions: SignInCaptionModel | undefined;
+  public errorCaption: ErrorCaptionModel | undefined;
 
   public signInForm: FormGroup = this._fb.group({
     emailCtrl: [null, [Validators.required, Validators.email]],
@@ -32,9 +34,12 @@ export class SignInComponent implements OnInit {
   //#region Lifecycle methods
   public ngOnInit(): void {
     // TODO: remove after PR confirmation
+    // note: because we'll remove this get method, i didn't used forkjoin for our gets!
     this._translateService.get('auth.sign-in').subscribe((receivedCaptions) => {
       this.captions = receivedCaptions;
     });
+
+    this._getErrorCaption();
   }
   //#endregion
 
@@ -56,8 +61,16 @@ export class SignInComponent implements OnInit {
 
   public onClickSignUpEventHandler(): void {
     console.log('sign up clicked!');
-    
+
     this.clickSignUpEvent.emit();
+  }
+  //#endregion
+
+  //#region Main logics methods
+  private _getErrorCaption(): void {
+    this._translateService.get('auth.error').subscribe((errors) => {
+      this.errorCaption = errors;
+    });
   }
   //#endregion
 }

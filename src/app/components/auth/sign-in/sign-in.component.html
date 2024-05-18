@@ -1,4 +1,4 @@
-@if (captions) {
+@if (captions && errorCaption) {
 <section class="lg:flex lg:flex-row lg:items-center lg:justify-between">
     <div class="flex flex-col min-h-screen gap-y-4 justify-center font-open-sans px-12 md:max-w-sm md:mx-auto md:px-0">
         <h1 class="font-bold text-charcoalBlue text-2xl">{{captions.signIn}}</h1>
@@ -10,10 +10,10 @@
                 <input matInput type="email" formControlName="emailCtrl" placeholder="{{ captions.email }}">
 
                 <mat-error *ngIf="signInForm.get('emailCtrl')?.hasError('required')">
-                    {{ captions.emailRequiredError }}
+                    {{ errorCaption.emailRequiredError }}
                 </mat-error>
                 <mat-error *ngIf="signInForm.get('emailCtrl')?.hasError('email')">
-                    {{ captions.emailInvalidError }}
+                    {{ errorCaption.emailInvalidError }}
                 </mat-error>
             </mat-form-field>
 
@@ -22,14 +22,14 @@
                 <input matInput type="password" formControlName="passwordCtrl" placeholder="{{ captions.password }}">
 
                 <mat-error *ngIf="signInForm.get('passwordCtrl')?.hasError('required')">
-                    {{ captions.passwordRequiredError }}
+                    {{ errorCaption.passwordRequiredError }}
                 </mat-error>
                 <mat-error *ngIf="signInForm.get('passwordCtrl')?.hasError('minlength')">
-                    {{ captions.passwordMinLengthError }}
+                    {{ errorCaption.passwordMinLengthError }}
                 </mat-error>
             </mat-form-field>
 
-            <!-- Remember me checkbox -->
+            <!-- Remember me slide toggle -->
             <mat-slide-toggle class="text-charcoalBlue text-base" formControlName="rememberCtrl">{{ captions.rememberMe
                 }}</mat-slide-toggle>
 
