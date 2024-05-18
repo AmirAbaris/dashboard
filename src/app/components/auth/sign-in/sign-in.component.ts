@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserLoginModel } from '../models/account/user-login.model';
 import { ErrorCaptionModel } from '../models/caption-models/error-caption/error.caption.model';
+import { SignInInputCaptionModel } from '../models/caption-models/sign-in-input.caption.model';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,13 +15,14 @@ export class SignInComponent implements OnInit {
   //#region Properties
   private _translateService = inject(TranslateService);
   private _fb = inject(FormBuilder);
-  // public captions = input.required<SignInCaptionModel>();
+
+  // public captions = input.required<SignInInputCaptionModel>();
 
   public clickSubmitEvent = output<UserLoginModel>();
   public clickSignUpEvent = output<void>();
 
   // TODO: remove after PR confirmation
-  // note: we will reive captions from input not this!
+  // note: we will receive captions from input not this!
   public captions: SignInCaptionModel | undefined;
   public errorCaption: ErrorCaptionModel | undefined;
 
@@ -67,6 +69,7 @@ export class SignInComponent implements OnInit {
   //#endregion
 
   //#region Main logics methods
+  // TODO: remove after PR confirmation
   private _getErrorCaption(): void {
     this._translateService.get('auth.error').subscribe((errors) => {
       this.errorCaption = errors;
