@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { SignInComponent } from '../components/auth/sign-in/sign-in.component';
 import { RouterModule, Routes } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent }
@@ -11,7 +16,15 @@ const routes: Routes = [
   declarations: [
     SignInComponent
   ],
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule, TranslateModule]
+  imports: [
+    RouterModule.forChild(routes),
+    MatInputModule,
+    MatFormFieldModule,
+    MatSlideToggleModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    CommonModule
+  ],
+  exports: [RouterModule]
 })
 export class AuthModule { }

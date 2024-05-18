@@ -1,0 +1,18 @@
+.form {
+    button {
+        background: linear-gradient(to right, #F10988, #9E24B6);
+        color: white;
+        height: 48px;
+        border-radius: 8px;
+        letter-spacing: -.025rem;
+    }
+}
+
+.sign-up {
+    h4 {
+        background: linear-gradient(to right, #F10988, #9E24B6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}

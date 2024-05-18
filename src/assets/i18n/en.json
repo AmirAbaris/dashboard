@@ -6,7 +6,8 @@
             "email": "Email",
             "password": "Password",
             "rememberMe": "Remember me",
-            "noAccount": "Don't have an account? Sign up",
+            "noAccount": "Don't have an account?",
+            "signUp": " Sign up",
             "attentionCurrency": "Attention is the new currency",
             "writingEffort": "The more effortless the writing looks, the more effort the writer actually put into the process."
         }
