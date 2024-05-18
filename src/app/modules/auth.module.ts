@@ -11,7 +11,7 @@ const routes: Routes = [
   declarations: [
     SignInComponent
   ],
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule, TranslateModule]
 })
 export class AuthModule { }

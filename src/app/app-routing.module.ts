@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'sign-in',
+    path: '',
     loadChildren: () => import('../app/modules/auth.module').then((module) => module.AuthModule)
-  }
+  },
+  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: '**', redirectTo: '/sign-in' }
 ];
 
 @NgModule({
