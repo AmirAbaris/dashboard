@@ -5,6 +5,11 @@
         height: 48px;
         border-radius: 8px;
         letter-spacing: -.025rem;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scaleX(1.02);
+        }
     }
 }
 
