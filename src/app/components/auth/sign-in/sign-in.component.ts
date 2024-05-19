@@ -1,10 +1,9 @@
-import { Component, OnInit, inject, input, output } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { SignInCaptionModel } from '../models/caption-models/sign-in.caption.model';
 import { TranslateService } from '@ngx-translate/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserLoginModel } from '../models/account/user-login.model';
 import { ErrorCaptionModel } from '../models/caption-models/error.caption.model';
-import { SignInInputCaptionModel } from '../models/caption-models/sign-in-input.caption.model';
 import { environment } from '../../../../environments/environment.development';
 import { forkJoin } from 'rxjs';
 
