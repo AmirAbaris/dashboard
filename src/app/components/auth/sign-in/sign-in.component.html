@@ -1,5 +1,5 @@
 @if (captions && errorCaption && signInForm) {
-<section class="lg:flex lg:flex-row lg:items-center lg:justify-between lg:max-h-dvh">
+<section class="lg:flex lg:flex-row lg:items-center lg:justify-between lg:h-screen">
     <div class="flex flex-col min-h-screen gap-y-4 justify-center font-open-sans px-12 md:max-w-sm md:mx-auto md:px-0">
         <h1 class="font-bold text-charcoalBlue text-2xl">{{captions.signIn}}</h1>
         <h2 class="font-normal text-slateBlue text-base">{{captions.enterCredentials}}</h2>
@@ -48,10 +48,12 @@
         </div>
     </div>
     <div class="relative h-full w-1/2 hidden lg:block">
-        <img class="p-3 rounded-[1.7rem] max-h-dvh" ngSrc="assets/images/bb.jpg" width="980" height="1920"
-            alt="background" priority>
+        <img class="p-3 rounded-[1.7rem] h-full object-cover" ngSrc="assets/images/bb.jpg" fill alt="background"
+            priority>
         <div class="absolute inset-0 flex flex-col items-center justify-center">
-            <img class="scale-50" ngSrc="assets/images/chat.png" width="4000" height="6000" alt="chat">
+            <div class="w-1/2 h-3/5">
+                <img class="scale-50 object-cover" ngSrc="assets/images/chat.png" fill alt="chat">
+            </div>
             <div class="flex flex-col items-center justify-center px-20 gap-y-4 text-white text-center">
                 <h5 class="font-extrabold text-2xl">"{{captions.attentionCurrency}}"</h5>
                 <p class="font-semibold text-base">{{captions.writingEffort}}</p>
