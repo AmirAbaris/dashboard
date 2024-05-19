@@ -16,14 +16,14 @@ export class SignInComponent implements OnInit {
   private readonly _translateService = inject(TranslateService);
   private readonly _fb = inject(FormBuilder);
 
-  public signInForm: FormGroup | undefined;
-  public captions: SignInCaptionModel | undefined;
-  public errorCaption: ErrorCaptionModel | undefined;
   public readonly formKeys = {
     emailCtrl: 'emailCtrl',
     passwordCtrl: 'passwordCtrl',
     rememberCtrl: 'rememberCtrl'
   }
+  public signInForm: FormGroup | undefined;
+  public captions: SignInCaptionModel | undefined;
+  public errorCaption: ErrorCaptionModel | undefined;
   private readonly _passwordMinLength = environment.passwordMinLength;
   //#endregion
 
