@@ -3,8 +3,10 @@ import { SignInCaptionModel } from '../models/caption-models/sign-in.caption.mod
 import { TranslateService } from '@ngx-translate/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserLoginModel } from '../models/account/user-login.model';
-import { ErrorCaptionModel } from '../models/caption-models/error-caption/error.caption.model';
+import { ErrorCaptionModel } from '../models/caption-models/error.caption.model';
 import { SignInInputCaptionModel } from '../models/caption-models/sign-in-input.caption.model';
+import { environment } from '../../../../environments/environment.development';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-sign-in',
@@ -13,49 +15,34 @@ import { SignInInputCaptionModel } from '../models/caption-models/sign-in-input.
 })
 export class SignInComponent implements OnInit {
   //#region Properties
-  private _translateService = inject(TranslateService);
-  private _fb = inject(FormBuilder);
+  private readonly _translateService = inject(TranslateService);
+  private readonly _fb = inject(FormBuilder);
 
-  // public captions = input.required<SignInInputCaptionModel>();
-
-  public clickSubmitEvent = output<UserLoginModel>();
-  public clickSignUpEvent = output<void>();
-
-  // TODO: remove after PR confirmation
-  // note: we will receive captions from input not this!
+  public signInForm: FormGroup | undefined;
   public captions: SignInCaptionModel | undefined;
   public errorCaption: ErrorCaptionModel | undefined;
-
-  public signInForm: FormGroup = this._fb.group({
-    emailCtrl: [null, [Validators.required, Validators.email]],
-    passwordCtrl: [null, [Validators.required, Validators.minLength(6)]],
-    rememberCtrl: [false]
-  });
+  public readonly formKeys = {
+    emailCtrl: 'emailCtrl',
+    passwordCtrl: 'passwordCtrl',
+    rememberCtrl: 'rememberCtrl'
+  }
+  private readonly _PasswordMinLength = environment.passwordMinLength;
   //#endregion
 
   //#region Lifecycle methods
   public ngOnInit(): void {
-    // TODO: remove after PR confirmation
-    // note: because we'll remove this get method, i didn't used forkjoin for our gets!
-    this._translateService.get('auth.sign-in').subscribe((receivedCaptions) => {
-      this.captions = receivedCaptions;
-    });
-
-    this._getErrorCaption();
+    this._initializeSignInForm();
+    this._getCaptions();
   }
   //#endregion
 
   //#region Handler methods
   public onClickSubmitButtonEventHandler(): void {
     // create userInput object from form values
-    const userInput: UserLoginModel = {
-      email: this.signInForm.value.emailCtrl,
-      password: this.signInForm.value.passwordCtrl,
-      shouldRemember: this.signInForm.value.rememberCtrl
-    }
+    const userInput = this._convertSignInFormValuesToUserLoginModel();
 
-    // emit the userInput to notify the parent component
-    this.clickSubmitEvent.emit(userInput);
+    // check if userInput is not undefined
+    if (!userInput) return;
 
     // log the userInput for debugging or development purposes
     console.log(userInput);
@@ -63,17 +50,44 @@ export class SignInComponent implements OnInit {
 
   public onClickSignUpEventHandler(): void {
     console.log('sign up clicked!');
-
-    this.clickSignUpEvent.emit();
   }
   //#endregion
 
   //#region Main logics methods
-  // TODO: remove after PR confirmation
-  private _getErrorCaption(): void {
-    this._translateService.get('auth.error').subscribe((errors) => {
-      this.errorCaption = errors;
+  private _initializeSignInForm(): void {
+    this.signInForm = this._fb.group({
+      [this.formKeys.emailCtrl]: [null, [Validators.required, Validators.email]],
+      [this.formKeys.passwordCtrl]: [null, [Validators.required, Validators.minLength(this._PasswordMinLength)]],
+      [this.formKeys.rememberCtrl]: [false]
     });
+  }
+
+  private _getCaptions(): void {
+    forkJoin({
+      errorsCaptions: this._translateService.get('auth.error'),
+      UserLoginCaptions: this._translateService.get('auth.sign-in')
+    }).subscribe({
+      next: ({ errorsCaptions, UserLoginCaptions }) => {
+        this.errorCaption = errorsCaptions;
+        this.captions = UserLoginCaptions;
+      },
+      error: (err) => {
+        console.error('Error fetching translations:', err);
+      }
+    });
+  }
+  //#endregion
+
+  //#region Helper methods
+  private _convertSignInFormValuesToUserLoginModel(): UserLoginModel | undefined {
+    // guard to make sure we have signInForm values
+    if (!this.signInForm) return;
+
+    return {
+      email: this.signInForm.value.emailCtrl,
+      password: this.signInForm.value.passwordCtrl,
+      shouldRemember: this.signInForm.value.rememberCtrl
+    }
   }
   //#endregion
 }

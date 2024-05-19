@@ -1,5 +1,5 @@
-@if (captions && errorCaption) {
-<section class="lg:flex lg:flex-row lg:items-center lg:justify-between">
+@if (captions && errorCaption && signInForm) {
+<section class="lg:flex lg:flex-row lg:items-center lg:justify-between lg:max-h-dvh">
     <div class="flex flex-col min-h-screen gap-y-4 justify-center font-open-sans px-12 md:max-w-sm md:mx-auto md:px-0">
         <h1 class="font-bold text-charcoalBlue text-2xl">{{captions.signIn}}</h1>
         <h2 class="font-normal text-slateBlue text-base">{{captions.enterCredentials}}</h2>
@@ -7,30 +7,32 @@
         <form class="form flex flex-col w-full" [formGroup]="signInForm" (ngSubmit)="onClickSubmitButtonEventHandler()">
             <!-- Email Input -->
             <mat-form-field appearance="outline">
-                <input matInput type="email" formControlName="emailCtrl" placeholder="{{ captions.email }}">
+                <input matInput type="email" [formControlName]="formKeys.emailCtrl" placeholder="{{ captions.email }}">
 
-                <mat-error *ngIf="signInForm.get('emailCtrl')?.hasError('required')">
+                <mat-error *ngIf="signInForm.get(formKeys.emailCtrl)?.hasError('required')">
                     {{ errorCaption.emailRequiredError }}
                 </mat-error>
-                <mat-error *ngIf="signInForm.get('emailCtrl')?.hasError('email')">
+                <mat-error *ngIf="signInForm.get(formKeys.emailCtrl)?.hasError('email')">
                     {{ errorCaption.emailInvalidError }}
                 </mat-error>
             </mat-form-field>
 
             <!-- Password Input -->
             <mat-form-field appearance="outline">
-                <input matInput type="password" formControlName="passwordCtrl" placeholder="{{ captions.password }}">
+                <input matInput type="password" [formControlName]="formKeys.passwordCtrl"
+                    placeholder="{{ captions.password }}">
 
-                <mat-error *ngIf="signInForm.get('passwordCtrl')?.hasError('required')">
+                <mat-error *ngIf="signInForm.get(formKeys.passwordCtrl)?.hasError('required')">
                     {{ errorCaption.passwordRequiredError }}
                 </mat-error>
-                <mat-error *ngIf="signInForm.get('passwordCtrl')?.hasError('minlength')">
+                <mat-error *ngIf="signInForm.get(formKeys.passwordCtrl)?.hasError('minlength')">
                     {{ errorCaption.passwordMinLengthError }}
                 </mat-error>
             </mat-form-field>
 
             <!-- Remember me slide toggle -->
-            <mat-slide-toggle class="text-charcoalBlue text-base" formControlName="rememberCtrl">{{ captions.rememberMe
+            <mat-slide-toggle class="text-charcoalBlue text-base" [formControlName]="formKeys.rememberCtrl">{{
+                captions.rememberMe
                 }}</mat-slide-toggle>
 
             <!-- Sign in button -->
@@ -46,13 +48,13 @@
         </div>
     </div>
     <div class="relative h-full w-1/2">
-        <img class="hidden lg:block lg:p-3 lg:rounded-[1.7rem]" ngSrc="../../../assets/images/bg1.jpg" width="980"
-            height="1920" alt="background">
+        <img class="hidden lg:block lg:p-3 lg:rounded-[1.7rem] max-h-dvh" ngSrc="../../../assets/images/bb.jpg"
+            width="980" height="1920" alt="background" priority>
         <div class="hidden lg:absolute lg:inset-0 lg:flex lg:flex-col lg:items-center lg:justify-center">
-            <img class="scale-50" ngSrc="../../../assets/images/chat.png" width="1200" height="1596" alt="chat">
+            <img class="scale-50" ngSrc="../../../assets/images/chat.png" width="4000" height="6000" alt="chat">
             <div class="flex flex-col items-center justify-center px-20 gap-y-4 text-white text-center">
                 <h5 class="font-extrabold text-2xl">"{{captions.attentionCurrency}}"</h5>
-                <p class="font-semibold text-base line-clamp-3">{{captions.writingEffort}}</p>
+                <p class="font-semibold text-base">{{captions.writingEffort}}</p>
             </div>
         </div>
     </div>

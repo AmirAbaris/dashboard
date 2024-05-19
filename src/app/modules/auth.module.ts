@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent }
 ];
 
@@ -25,7 +26,6 @@ const routes: Routes = [
     ReactiveFormsModule,
     CommonModule,
     NgOptimizedImage
-  ],
-  exports: [RouterModule]
+  ]
 })
 export class AuthModule { }
