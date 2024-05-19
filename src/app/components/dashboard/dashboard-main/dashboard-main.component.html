@@ -1,16 +1,17 @@
-<aside class="hidden lg:flex lg:flex-col lg:shadow-md lg:h-dvh lg:w-1/6">
-    <a class="flex gap-x-2 justify-center items-center pl-3 py-9">
+<aside class="container hidden lg:flex lg:flex-col lg:shadow-md lg:p-5 lg:h-dvh lg:w-72">
+    <a class="flex gap-x-2 justify-center items-center p-6 cursor-pointer">
         <img class="object-cover w-8 h-8" ngSrc="assets/images/s1.png" width="200" height="200" alt="logo">
         <!-- TODO: make this text in i18n -->
-        <span class="text-xs">Soft UI Dashboard PRO</span>
+        <span class="text-sm text-charcoalBlue font-medium">Soft UI Dashboard PRO</span>
     </a>
     <mat-divider />
     <ng-container>
-        <div class="flex items-center justify-between cursor-pointer">
-            <div class="flex items-center gap-x-3 bg-charcoalBlue w-full">
+        <div class="flex items-center justify-between cursor-pointer p-4 ml-3">
+            <div class="flex items-center gap-x-3 w-full">
                 <div class="bg-white h-8 w-8 rounded-lg shadow-md"></div>
                 <h1 class="text-slateBlue text-sm font-light">{{ sidebarItems[0].title }}</h1>
             </div>
+            <mat-icon class="scale-50">keyboard_arrow_up</mat-icon>
         </div>
     </ng-container>
 </aside>
