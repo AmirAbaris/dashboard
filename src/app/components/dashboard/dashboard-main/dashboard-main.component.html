@@ -1,1 +1,16 @@
-<p>dashboard-main works!</p>
+<aside class="hidden lg:flex lg:flex-col lg:shadow-md lg:h-dvh lg:w-1/6">
+    <a class="flex gap-x-2 justify-center items-center pl-3 py-9">
+        <img class="object-cover w-8 h-8" ngSrc="assets/images/s1.png" width="200" height="200" alt="logo">
+        <!-- TODO: make this text in i18n -->
+        <span class="text-xs">Soft UI Dashboard PRO</span>
+    </a>
+    <mat-divider />
+    <ng-container>
+        <div class="flex items-center justify-between cursor-pointer">
+            <div class="flex items-center gap-x-3 bg-charcoalBlue w-full">
+                <div class="bg-white h-8 w-8 rounded-lg shadow-md"></div>
+                <h1 class="text-slateBlue text-sm font-light">{{ sidebarItems[0].title }}</h1>
+            </div>
+        </div>
+    </ng-container>
+</aside>
