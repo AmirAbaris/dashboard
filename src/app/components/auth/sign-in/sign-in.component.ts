@@ -24,7 +24,7 @@ export class SignInComponent implements OnInit {
     passwordCtrl: 'passwordCtrl',
     rememberCtrl: 'rememberCtrl'
   }
-  private readonly _PasswordMinLength = environment.passwordMinLength;
+  private readonly _passwordMinLength = environment.passwordMinLength;
   //#endregion
 
   //#region Lifecycle methods
@@ -50,7 +50,7 @@ export class SignInComponent implements OnInit {
   private _initializeSignInForm(): void {
     this.signInForm = this._fb.group({
       [this.formKeys.emailCtrl]: [null, [Validators.required, Validators.email]],
-      [this.formKeys.passwordCtrl]: [null, [Validators.required, Validators.minLength(this._PasswordMinLength)]],
+      [this.formKeys.passwordCtrl]: [null, [Validators.required, Validators.minLength(this._passwordMinLength)]],
       [this.formKeys.rememberCtrl]: [false]
     });
   }
