@@ -2,7 +2,6 @@ import { Component, OnInit, inject } from '@angular/core';
 import { SignInCaptionModel } from '../models/caption-models/sign-in.caption.model';
 import { TranslateService } from '@ngx-translate/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserLoginModel } from '../models/account/user-login.model';
 import { ErrorCaptionModel } from '../models/caption-models/error.caption.model';
 import { environment } from '../../../../environments/environment.development';
 import { forkJoin } from 'rxjs';
@@ -37,14 +36,9 @@ export class SignInComponent implements OnInit {
 
   //#region Handler methods
   public onClickSubmitButtonEventHandler(): void {
-    // create userInput object from form values
-    const userInput = this._convertSignInFormValuesToUserLoginModel();
+    if (!this.signInForm) return;
 
-    // check if userInput is not undefined
-    if (!userInput) return;
-
-    // log the userInput for debugging or development purposes
-    console.log(userInput);
+    console.log(this.signInForm.value);
   }
 
   public onClickSignUpEventHandler(): void {
@@ -74,19 +68,6 @@ export class SignInComponent implements OnInit {
         console.error('Error fetching translations:', err);
       }
     });
-  }
-  //#endregion
-
-  //#region Helper methods
-  private _convertSignInFormValuesToUserLoginModel(): UserLoginModel | undefined {
-    // guard to make sure we have signInForm values
-    if (!this.signInForm) return;
-
-    return {
-      email: this.signInForm.value.emailCtrl,
-      password: this.signInForm.value.passwordCtrl,
-      shouldRemember: this.signInForm.value.rememberCtrl
-    }
   }
   //#endregion
 }
