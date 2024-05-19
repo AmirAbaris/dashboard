@@ -7,6 +7,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { DashboardMainComponent } from './components/dashboard/dashboard-main/dashboard-main.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -15,7 +16,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardMainComponent
   ],
   imports: [
     BrowserModule,

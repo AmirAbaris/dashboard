@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
-import { SideBarComponent } from '../components/dashboard/side-bar/side-bar.component';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardMainComponent } from '../components/dashboard/dashboard-main/dashboard-main.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'side-bar', pathMatch: 'full' },
-  { path: 'side-bar', component: SideBarComponent }
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardMainComponent }
 ];
 
 @NgModule({
-  declarations: [SideBarComponent],
+  declarations: [],
   imports: [RouterModule.forChild(routes)]
 })
 export class DashboardModule { }
