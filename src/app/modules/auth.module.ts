@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent }
 ];
 
