@@ -13,15 +13,7 @@
         }
     }
 
-    .menu-item div[ngif] {
-        transition: max-height 0.3s ease, opacity 0.3s ease;
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
-    }
-
-    .menu-item div[ngif].isExpanded {
-        max-height: 100px;
-        opacity: 1;
+    .side-button {
+        width: 85%;
     }
 }

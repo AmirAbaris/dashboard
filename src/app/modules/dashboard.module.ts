@@ -4,6 +4,7 @@ import { DashboardMainComponent } from '../components/dashboard/dashboard-main/d
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -12,6 +13,13 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [DashboardMainComponent],
-  imports: [RouterModule.forChild(routes), NgOptimizedImage, MatDividerModule, MatIconModule, CommonModule]
+  imports: [
+    RouterModule.forChild(routes),
+    NgOptimizedImage,
+    MatDividerModule,
+    MatIconModule,
+    CommonModule,
+    MatButtonModule
+  ]
 })
 export class DashboardModule { }
