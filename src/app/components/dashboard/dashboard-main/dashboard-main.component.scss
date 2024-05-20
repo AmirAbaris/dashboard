@@ -1,5 +1,27 @@
 .container {
     mat-divider {
-        margin-bottom: 1.5rem;
+        margin-bottom: .7rem;
+    }
+
+    mat-icon {
+        scale: .8;
+        color: #999db5;
+        transition: transform 0.2s ease;
+
+        &.open {
+            transform: rotate(180deg);
+        }
+    }
+
+    .menu-item div[ngif] {
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+    }
+
+    .menu-item div[ngif].isExpanded {
+        max-height: 100px;
+        opacity: 1;
     }
 }

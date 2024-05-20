@@ -17,7 +17,8 @@ export class DashboardMainComponent {
         { title: 'Smart Home', link: '/dashboards/smart-home' },
         { title: 'Virtual Reality', link: '/dashboards/virtual-reality' },
         { title: 'CRM', link: '/dashboards/crm' }
-      ]
+      ],
+      isExpanded: false
     },
     {
       title: 'Pages',
@@ -41,6 +42,6 @@ export class DashboardMainComponent {
 
 
   toggle(item: SidebarItem): void {
-    // item.expanded = !item.expanded;
+    item.isExpanded = !item.isExpanded;
   }
 }

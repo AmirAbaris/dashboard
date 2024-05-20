@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardMainComponent } from '../components/dashboard/dashboard-main/dashboard-main.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
-import { NgOptimizedImage } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -12,6 +12,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [DashboardMainComponent],
-  imports: [RouterModule.forChild(routes), NgOptimizedImage, MatDividerModule, MatIconModule]
+  imports: [RouterModule.forChild(routes), NgOptimizedImage, MatDividerModule, MatIconModule, CommonModule]
 })
 export class DashboardModule { }

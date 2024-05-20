@@ -3,4 +3,5 @@ export interface SidebarItem {
     link?: string;
     icon?: string;
     children?: SidebarItem[];
+    isExpanded?: boolean;
 }

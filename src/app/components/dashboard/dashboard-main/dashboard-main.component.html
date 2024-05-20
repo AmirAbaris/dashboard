@@ -6,12 +6,28 @@
     </a>
     <mat-divider />
     <ng-container>
-        <div class="flex items-center justify-between cursor-pointer p-4 ml-3">
-            <div class="flex items-center gap-x-3 w-full">
-                <div class="bg-white h-8 w-8 rounded-lg shadow-md"></div>
-                <h1 class="text-slateBlue text-sm font-light">{{ sidebarItems[0].title }}</h1>
+        <!-- @for (item of sidebarItems; track $index) { -->
+        <div class="menu-item">
+            <div class="flex items-center justify-between cursor-pointer p-3 ml-3 rounded-xl"
+                (click)="toggle(sidebarItems[0])" [ngClass]="{'shadow-sm bg-white': sidebarItems[0]}">
+                <div class="flex items-center gap-x-3 w-full">
+                    <div class="bg-magenta h-8 w-8 rounded-lg shadow-md"></div>
+                    <h1 class="text-slateBlue text-sm font-light">{{ sidebarItems[0].title }}</h1>
+                </div>
+                <mat-icon [class.open]="sidebarItems[0].isExpanded">keyboard_arrow_down</mat-icon>
             </div>
-            <mat-icon class="scale-50">keyboard_arrow_up</mat-icon>
+
+            <div *ngIf="sidebarItems[0].isExpanded" class="isExpanded ml-12">
+                <ng-container>
+                    <ul class="ml-3 text-sm list-disc">
+                        <li class="flex items-center p-2 text-charcoalBlue" [routerLink]="sidebarItems[0].link">
+                            {{ sidebarItems[0].title }}
+                        </li>
+                    </ul>
+                </ng-container>
+
+            </div>
         </div>
+        <!-- } -->
     </ng-container>
 </aside>
