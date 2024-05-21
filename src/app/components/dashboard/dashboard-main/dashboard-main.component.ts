@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SidebarItem } from '../models/sidebar-item.model';
+import { SidebarItemModel } from '../models/sidebar-item.model';
 
 @Component({
   selector: 'app-dashboard-main',
@@ -8,7 +8,7 @@ import { SidebarItem } from '../models/sidebar-item.model';
 })
 export class DashboardMainComponent {
   // TODO: organize after confirmation
-  sidebarItems: SidebarItem[] = [
+  sidebarItems: SidebarItemModel[] = [
     {
       title: 'Dashboards',
       icon: 'fa fa-home',
@@ -84,7 +84,7 @@ export class DashboardMainComponent {
         { title: 'Changelog', link: '/docs/changelog' }
       ],
       isExpanded: false
-    },    {
+    }, {
       title: 'Dashboards',
       icon: 'fa fa-home',
       children: [
@@ -122,7 +122,7 @@ export class DashboardMainComponent {
       ],
       isExpanded: false
     }
-    ,    {
+    , {
       title: 'Dashboards',
       icon: 'fa fa-home',
       children: [
@@ -159,7 +159,7 @@ export class DashboardMainComponent {
         { title: 'Changelog', link: '/docs/changelog' }
       ],
       isExpanded: false
-    },    {
+    }, {
       title: 'Dashboards',
       icon: 'fa fa-home',
       children: [
@@ -196,7 +196,7 @@ export class DashboardMainComponent {
         { title: 'Changelog', link: '/docs/changelog' }
       ],
       isExpanded: false
-    },    {
+    }, {
       title: 'Dashboards',
       icon: 'fa fa-home',
       children: [
@@ -233,7 +233,7 @@ export class DashboardMainComponent {
         { title: 'Changelog', link: '/docs/changelog' }
       ],
       isExpanded: false
-    },    {
+    }, {
       title: 'Dashboards',
       icon: 'fa fa-home',
       children: [
@@ -270,7 +270,7 @@ export class DashboardMainComponent {
         { title: 'Changelog', link: '/docs/changelog' }
       ],
       isExpanded: false
-    },    {
+    }, {
       title: 'Dashboards',
       icon: 'fa fa-home',
       children: [
@@ -307,7 +307,7 @@ export class DashboardMainComponent {
         { title: 'Changelog', link: '/docs/changelog' }
       ],
       isExpanded: false
-    },    {
+    }, {
       title: 'Dashboards',
       icon: 'fa fa-home',
       children: [
@@ -344,7 +344,7 @@ export class DashboardMainComponent {
         { title: 'Changelog', link: '/docs/changelog' }
       ],
       isExpanded: false
-    },    {
+    }, {
       title: 'Dashboards',
       icon: 'fa fa-home',
       children: [
@@ -381,7 +381,7 @@ export class DashboardMainComponent {
         { title: 'Changelog', link: '/docs/changelog' }
       ],
       isExpanded: false
-    },    {
+    }, {
       title: 'Dashboards',
       icon: 'fa fa-home',
       children: [
@@ -420,11 +420,4 @@ export class DashboardMainComponent {
       isExpanded: false
     }
   ];
-
-
-  toggle(item: SidebarItem): void {
-    item.isExpanded = !item.isExpanded;
-
-    console.log('toggled');
-  }
 }

@@ -1,7 +1,7 @@
-export interface SidebarItem {
+export interface SidebarItemModel {
     title?: string;
     link?: string;
     icon?: string;
-    children?: SidebarItem[];
+    children?: SidebarItemModel[];
     isExpanded?: boolean;
 }
