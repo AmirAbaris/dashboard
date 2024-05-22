@@ -2,7 +2,7 @@
     <section class="flex flex-col flex-1 overflow-scroll">
         <a class="flex gap-x-2 justify-center items-center p-6 cursor-pointer">
             <img class="object-cover w-8 h-8" ngSrc="assets/images/s1.png" width="200" height="200" alt="logo">
-            <span class="text-sm text-charcoalBlue font-medium">Soft UI Dashboard PRO</span>
+            <span class="text-sm text-charcoalBlue font-medium">{{caption().title}}</span>
         </a>
         <mat-divider />
         <ng-container>
@@ -12,14 +12,15 @@
                 <h2 class="ml-3 p-4 text-xs text-slateBlue font-semibold">{{ item.sectionTitle }}</h2>
                 }
                 <div *ngIf="item.title" class="flex items-center justify-between cursor-pointer p-3 ml-3 rounded-lg"
-                    (click)="toggle(item)" [ngClass]="{'shadow-sm bg-white': item}">
+                    (click)="toggle(item)" [ngClass]="{'shadow-sm bg-white': isActive(item.title)}">
                     <div class="flex items-center gap-x-3 w-full">
-                        <div [ngClass]="{'bg-magenta': item}"
+                        <div [ngClass]="{'bg-magenta': isActive(item.title)}"
                             class="h-8 w-8 rounded-lg shadow-md flex items-center justify-center">
                             <mat-icon class="title-icon">{{item.icon}}</mat-icon>
                         </div>
-                        <h1 [ngClass]="{ 'text-charcoalBlue': item, 'text-slateBlue': !item }"
-                            class="text-sm">{{ item.title }}</h1>
+                        <h1 [ngClass]="{ 'text-charcoalBlue': isActive(item.title), 'text-slateBlue': !isActive(item.title) }"
+                            class="text-sm">{{
+                            item.title }}</h1>
                     </div>
                     <mat-icon class="arrow-icon" [class.open]="item.isExpanded">keyboard_arrow_down</mat-icon>
                 </div>
@@ -71,11 +72,12 @@
                 <div class="flex flex-col justify-between items-center h-2/3">
                     <div class="flex flex-col justify-around items-start w-[85%] text-white">
                         <div class="flex flex-col items-start">
-                            <p>Need help?</p>
-                            <p>Please check our docs</p>
+                            <p>{{caption().help}}</p>
+                            <p>{{caption().checkDocs}}</p>
                         </div>
                     </div>
-                    <button class="side-button mb-4" mat-flat-button>DOCUMENTATION</button>
+                    <button class="side-button mb-4" (click)="onClickDocButtonEventHandler()"
+                        mat-flat-button>{{caption().docs | uppercase}}</button>
                 </div>
             </div>
         </div>

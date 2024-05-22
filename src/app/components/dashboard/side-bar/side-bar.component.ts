@@ -1,7 +1,8 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { SidebarItemModel } from '../models/sidebar-item.model';
 import { Router } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { SidebarCaptionModel } from '../models/caption-models/sidebar.caption.model';
 
 @Component({
   selector: 'app-side-bar',
@@ -20,7 +21,15 @@ export class SideBarComponent {
   public readonly _router = inject(Router);
 
   public data = input.required<SidebarItemModel[]>();
-  public isActive = input.required<boolean>();
+  public caption = input.required<SidebarCaptionModel>();
+
+  public clickDocButtonEvent = output();
+  //#endregion
+
+  //#region Handler methods
+  public onClickDocButtonEventHandler(): void {
+    this.clickDocButtonEvent.emit();
+  }
   //#endregion
 
   //#region Main logic methods
@@ -29,7 +38,9 @@ export class SideBarComponent {
 
     console.log('toggled');
   }
+
+  public isActive(link: string): boolean {
+    return this._router.url === link;
+  }
   //#endregion
-
-
 }
