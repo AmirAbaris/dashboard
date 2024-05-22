@@ -1,18 +1,16 @@
-<div class="flex justify-center h-80 relative">
+<div class="content flex justify-center h-80 relative">
     <img class="object-cover rounded-2xl w-[90%]" src="assets/images/p1.jpg" alt="background">
 
     <div class="absolute bottom-[-3rem] right-0 flex justify-center w-full">
-        <div class="relative w-4/5 h-28 rounded-2xl shadow-md overflow-hidden">
-            <div class="absolute inset-0 gradient-bg rounded-2xl blur-bg"></div>
-            <div
-                class="relative flex flex-wrap justify-center items-center gap-x-6 h-full md:justify-start md:ml-4 z-10">
+        <div class="gradient-bg w-4/5 h-28 bg-charcoalBlue rounded-2xl shadow-md backdrop-blur-lg">
+            <div class="flex flex-wrap justify-center items-center gap-x-6 h-full md:justify-start md:ml-4">
                 <img class="rounded-xl" [ngSrc]="profileData.cover" height="74" width="74" alt="profile-cover">
                 <div class="flex flex-col gap-y-1">
-                    <div class="flex gap-x-1 font-semibold text-lg">
+                    <div class="flex gap-x-1 font-semibold text-lg text-charcoalBlue">
                         <h1>{{profileData.fistName}}</h1>
                         <h2>{{profileData.lastName}}</h2>
                     </div>
-                    <h3 class="text-sm">{{profileData.role}}</h3>
+                    <h3 class="text-sm texh">{{profileData.role}}</h3>
                 </div>
             </div>
         </div>

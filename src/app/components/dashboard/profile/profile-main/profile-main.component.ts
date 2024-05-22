@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ProfileModel } from '../models/profile.model';
 
 @Component({
   selector: 'app-profile-main',
