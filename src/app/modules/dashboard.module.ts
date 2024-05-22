@@ -19,8 +19,8 @@ const routes: Routes = [
     NgOptimizedImage,
     MatDividerModule,
     MatIconModule,
-    CommonModule,
-    MatButtonModule
+    MatButtonModule,
+    CommonModule
   ]
 })
 export class DashboardModule { }

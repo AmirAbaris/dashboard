@@ -11,7 +11,7 @@ export class DashboardMainComponent {
   sidebarItems: SidebarItemModel[] = [
     {
       title: 'Dashboards',
-      icon: 'fa fa-home',
+      icon: 'home',
       children: [
         { title: 'Default', link: '/dashboards/default' },
         { title: 'Automotive', link: '/dashboards/automotive' },
@@ -25,392 +25,90 @@ export class DashboardMainComponent {
         },
         { title: 'CRM', link: '/dashboards/crm' }
       ],
-      isExpanded: false
+      isExpanded: false,
     },
     {
+      sectionTitle: 'PAGES',
       title: 'Pages',
-      icon: 'fa fa-file',
+      icon: 'domain',
       children: [
-        { title: 'Applications', link: '/pages/applications' },
-        { title: 'Ecommerce', link: '/pages/ecommerce' },
-        { title: 'Authentication', link: '/pages/authentication' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Docs',
-      icon: 'fa fa-book',
-      children: [
-        { title: 'Basic', link: '/docs/basic' },
-        { title: 'Components', link: '/docs/components' },
-        { title: 'Changelog', link: '/docs/changelog' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Dashboards',
-      icon: 'fa fa-home',
-      children: [
-        { title: 'Default', link: '/dashboards/default' },
-        { title: 'Automotive', link: '/dashboards/automotive' },
-        { title: 'Smart Home', link: '/dashboards/smart-home' },
         {
-          title: 'Virtual Reality', link: '/dashboards/virtual-reality',
-          children: [
-            { title: 'VR Default', link: '/dashboards/virtual-reality/vr-default' },
-            { title: 'VR Info', link: '/dashboards/virtual-reality/vr-info' },
+          title: 'Profile', link: '/pages/profile', children: [
+            { title: 'Profile Overview', link: '/pages/profile/overview' },
+            { title: 'Teams', link: '/pages/profile/teams' },
+            { title: 'ALl Projects', link: '/pages/profile/all-projects' }
           ]
         },
-        { title: 'CRM', link: '/dashboards/crm' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Pages',
-      icon: 'fa fa-file',
-      children: [
-        { title: 'Applications', link: '/pages/applications' },
-        { title: 'Ecommerce', link: '/pages/ecommerce' },
-        { title: 'Authentication', link: '/pages/authentication' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Docs',
-      icon: 'fa fa-book',
-      children: [
-        { title: 'Basic', link: '/docs/basic' },
-        { title: 'Components', link: '/docs/components' },
-        { title: 'Changelog', link: '/docs/changelog' }
-      ],
-      isExpanded: false
-    }, {
-      title: 'Dashboards',
-      icon: 'fa fa-home',
-      children: [
-        { title: 'Default', link: '/dashboards/default' },
-        { title: 'Automotive', link: '/dashboards/automotive' },
-        { title: 'Smart Home', link: '/dashboards/smart-home' },
         {
-          title: 'Virtual Reality', link: '/dashboards/virtual-reality',
-          children: [
-            { title: 'VR Default', link: '/dashboards/virtual-reality/vr-default' },
-            { title: 'VR Info', link: '/dashboards/virtual-reality/vr-info' },
+          title: 'Users', link: '/pages/users', children: [
+            { title: 'Reports', link: '/pages/users/reports' },
+            { title: 'New User', link: '/pages/users/new-user' },
           ]
         },
-        { title: 'CRM', link: '/dashboards/crm' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Pages',
-      icon: 'fa fa-file',
-      children: [
-        { title: 'Applications', link: '/pages/applications' },
-        { title: 'Ecommerce', link: '/pages/ecommerce' },
-        { title: 'Authentication', link: '/pages/authentication' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Docs',
-      icon: 'fa fa-book',
-      children: [
-        { title: 'Basic', link: '/docs/basic' },
-        { title: 'Components', link: '/docs/components' },
-        { title: 'Changelog', link: '/docs/changelog' }
-      ],
-      isExpanded: false
-    }
-    , {
-      title: 'Dashboards',
-      icon: 'fa fa-home',
-      children: [
-        { title: 'Default', link: '/dashboards/default' },
-        { title: 'Automotive', link: '/dashboards/automotive' },
-        { title: 'Smart Home', link: '/dashboards/smart-home' },
         {
-          title: 'Virtual Reality', link: '/dashboards/virtual-reality',
-          children: [
-            { title: 'VR Default', link: '/dashboards/virtual-reality/vr-default' },
-            { title: 'VR Info', link: '/dashboards/virtual-reality/vr-info' },
+          title: 'Account', link: '/pages/account', children: [
+            { title: 'Settings', link: '/pages/account/settings' },
+            { title: 'Billing', link: '/pages/account/billing' },
+            { title: 'Invoice', link: '/pages/account/invoice' },
+            { title: 'Security', link: '/pages/account/security' },
           ]
         },
-        { title: 'CRM', link: '/dashboards/crm' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Pages',
-      icon: 'fa fa-file',
-      children: [
-        { title: 'Applications', link: '/pages/applications' },
-        { title: 'Ecommerce', link: '/pages/ecommerce' },
-        { title: 'Authentication', link: '/pages/authentication' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Docs',
-      icon: 'fa fa-book',
-      children: [
-        { title: 'Basic', link: '/docs/basic' },
-        { title: 'Components', link: '/docs/components' },
-        { title: 'Changelog', link: '/docs/changelog' }
-      ],
-      isExpanded: false
-    }, {
-      title: 'Dashboards',
-      icon: 'fa fa-home',
-      children: [
-        { title: 'Default', link: '/dashboards/default' },
-        { title: 'Automotive', link: '/dashboards/automotive' },
-        { title: 'Smart Home', link: '/dashboards/smart-home' },
         {
-          title: 'Virtual Reality', link: '/dashboards/virtual-reality',
-          children: [
-            { title: 'VR Default', link: '/dashboards/virtual-reality/vr-default' },
-            { title: 'VR Info', link: '/dashboards/virtual-reality/vr-info' },
+          title: 'Project', link: '/pages/project', children: [
+            { title: 'General', link: '/pages/project/general' },
+            { title: 'Timeline', link: '/pages/project/timeline' },
+            { title: 'New Project', link: '/pages/project/new-project' },
           ]
         },
-        { title: 'CRM', link: '/dashboards/crm' }
+        { title: 'Pricing Page', link: '/pages/pricing-page' },
+        { title: 'Messages', link: '/pages/message' },
+        { title: 'Widgets', link: '/pages/widgets' },
+        { title: 'Charts', link: '/pages/charts' },
+        { title: 'Sweet Alerts', link: '/pages/sweet-alerts' },
+        { title: 'RTL', link: '/pages/rtl' },
+        { title: 'Notifications', link: '/pages/notifications' },
       ],
       isExpanded: false
     },
     {
-      title: 'Pages',
-      icon: 'fa fa-file',
+      title: 'Applications',
+      icon: 'construction',
       children: [
-        { title: 'Applications', link: '/pages/applications' },
-        { title: 'Ecommerce', link: '/pages/ecommerce' },
-        { title: 'Authentication', link: '/pages/authentication' }
-      ],
-      isExpanded: false
+        { title: 'Kanban', link: '/applications/kanban' },
+        { title: 'Wizard', link: '/applications/wizard' },
+        { title: 'DataTables', link: '/applications/data-tables' },
+        { title: 'Calendar', link: '/applications/calendar' },
+        { title: 'Analytics', link: '/applications/analytics' },
+      ]
     },
     {
-      title: 'Docs',
-      icon: 'fa fa-book',
+      title: 'Ecommerce',
+      icon: 'shopping_cart',
       children: [
-        { title: 'Basic', link: '/docs/basic' },
-        { title: 'Components', link: '/docs/components' },
-        { title: 'Changelog', link: '/docs/changelog' }
-      ],
-      isExpanded: false
-    }, {
-      title: 'Dashboards',
-      icon: 'fa fa-home',
-      children: [
-        { title: 'Default', link: '/dashboards/default' },
-        { title: 'Automotive', link: '/dashboards/automotive' },
-        { title: 'Smart Home', link: '/dashboards/smart-home' },
+        { title: 'Overview', link: '/ecommerce/overview' },
         {
-          title: 'Virtual Reality', link: '/dashboards/virtual-reality',
+          title: 'Products',
           children: [
-            { title: 'VR Default', link: '/dashboards/virtual-reality/vr-default' },
-            { title: 'VR Info', link: '/dashboards/virtual-reality/vr-info' },
+            { title: 'New Product', link: '/ecommerce/products/new' },
+            { title: 'Edit Product', link: '/ecommerce/products/edit' },
+            { title: 'Product Page', link: '/ecommerce/products/page' },
+            { title: 'Products List', link: '/ecommerce/products/list' },
           ]
         },
-        { title: 'CRM', link: '/dashboards/crm' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Pages',
-      icon: 'fa fa-file',
-      children: [
-        { title: 'Applications', link: '/pages/applications' },
-        { title: 'Ecommerce', link: '/pages/ecommerce' },
-        { title: 'Authentication', link: '/pages/authentication' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Docs',
-      icon: 'fa fa-book',
-      children: [
-        { title: 'Basic', link: '/docs/basic' },
-        { title: 'Components', link: '/docs/components' },
-        { title: 'Changelog', link: '/docs/changelog' }
-      ],
-      isExpanded: false
-    }, {
-      title: 'Dashboards',
-      icon: 'fa fa-home',
-      children: [
-        { title: 'Default', link: '/dashboards/default' },
-        { title: 'Automotive', link: '/dashboards/automotive' },
-        { title: 'Smart Home', link: '/dashboards/smart-home' },
         {
-          title: 'Virtual Reality', link: '/dashboards/virtual-reality',
+          title: 'Orders',
           children: [
-            { title: 'VR Default', link: '/dashboards/virtual-reality/vr-default' },
-            { title: 'VR Info', link: '/dashboards/virtual-reality/vr-info' },
+            { title: 'Order List', link: '/ecommerce/orders/list' },
+            { title: 'Order Details', link: '/ecommerce/orders/details' },
           ]
         },
-        { title: 'CRM', link: '/dashboards/crm' }
+        { title: 'Referral', link: '/ecommerce/referral' }
       ],
       isExpanded: false
     },
     {
-      title: 'Pages',
-      icon: 'fa fa-file',
-      children: [
-        { title: 'Applications', link: '/pages/applications' },
-        { title: 'Ecommerce', link: '/pages/ecommerce' },
-        { title: 'Authentication', link: '/pages/authentication' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Docs',
-      icon: 'fa fa-book',
-      children: [
-        { title: 'Basic', link: '/docs/basic' },
-        { title: 'Components', link: '/docs/components' },
-        { title: 'Changelog', link: '/docs/changelog' }
-      ],
-      isExpanded: false
-    }, {
-      title: 'Dashboards',
-      icon: 'fa fa-home',
-      children: [
-        { title: 'Default', link: '/dashboards/default' },
-        { title: 'Automotive', link: '/dashboards/automotive' },
-        { title: 'Smart Home', link: '/dashboards/smart-home' },
-        {
-          title: 'Virtual Reality', link: '/dashboards/virtual-reality',
-          children: [
-            { title: 'VR Default', link: '/dashboards/virtual-reality/vr-default' },
-            { title: 'VR Info', link: '/dashboards/virtual-reality/vr-info' },
-          ]
-        },
-        { title: 'CRM', link: '/dashboards/crm' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Pages',
-      icon: 'fa fa-file',
-      children: [
-        { title: 'Applications', link: '/pages/applications' },
-        { title: 'Ecommerce', link: '/pages/ecommerce' },
-        { title: 'Authentication', link: '/pages/authentication' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Docs',
-      icon: 'fa fa-book',
-      children: [
-        { title: 'Basic', link: '/docs/basic' },
-        { title: 'Components', link: '/docs/components' },
-        { title: 'Changelog', link: '/docs/changelog' }
-      ],
-      isExpanded: false
-    }, {
-      title: 'Dashboards',
-      icon: 'fa fa-home',
-      children: [
-        { title: 'Default', link: '/dashboards/default' },
-        { title: 'Automotive', link: '/dashboards/automotive' },
-        { title: 'Smart Home', link: '/dashboards/smart-home' },
-        {
-          title: 'Virtual Reality', link: '/dashboards/virtual-reality',
-          children: [
-            { title: 'VR Default', link: '/dashboards/virtual-reality/vr-default' },
-            { title: 'VR Info', link: '/dashboards/virtual-reality/vr-info' },
-          ]
-        },
-        { title: 'CRM', link: '/dashboards/crm' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Pages',
-      icon: 'fa fa-file',
-      children: [
-        { title: 'Applications', link: '/pages/applications' },
-        { title: 'Ecommerce', link: '/pages/ecommerce' },
-        { title: 'Authentication', link: '/pages/authentication' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Docs',
-      icon: 'fa fa-book',
-      children: [
-        { title: 'Basic', link: '/docs/basic' },
-        { title: 'Components', link: '/docs/components' },
-        { title: 'Changelog', link: '/docs/changelog' }
-      ],
-      isExpanded: false
-    }, {
-      title: 'Dashboards',
-      icon: 'fa fa-home',
-      children: [
-        { title: 'Default', link: '/dashboards/default' },
-        { title: 'Automotive', link: '/dashboards/automotive' },
-        { title: 'Smart Home', link: '/dashboards/smart-home' },
-        {
-          title: 'Virtual Reality', link: '/dashboards/virtual-reality',
-          children: [
-            { title: 'VR Default', link: '/dashboards/virtual-reality/vr-default' },
-            { title: 'VR Info', link: '/dashboards/virtual-reality/vr-info' },
-          ]
-        },
-        { title: 'CRM', link: '/dashboards/crm' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Pages',
-      icon: 'fa fa-file',
-      children: [
-        { title: 'Applications', link: '/pages/applications' },
-        { title: 'Ecommerce', link: '/pages/ecommerce' },
-        { title: 'Authentication', link: '/pages/authentication' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Docs',
-      icon: 'fa fa-book',
-      children: [
-        { title: 'Basic', link: '/docs/basic' },
-        { title: 'Components', link: '/docs/components' },
-        { title: 'Changelog', link: '/docs/changelog' }
-      ],
-      isExpanded: false
-    }, {
-      title: 'Dashboards',
-      icon: 'fa fa-home',
-      children: [
-        { title: 'Default', link: '/dashboards/default' },
-        { title: 'Automotive', link: '/dashboards/automotive' },
-        { title: 'Smart Home', link: '/dashboards/smart-home' },
-        {
-          title: 'Virtual Reality', link: '/dashboards/virtual-reality',
-          children: [
-            { title: 'VR Default', link: '/dashboards/virtual-reality/vr-default' },
-            { title: 'VR Info', link: '/dashboards/virtual-reality/vr-info' },
-          ]
-        },
-        { title: 'CRM', link: '/dashboards/crm' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Pages',
-      icon: 'fa fa-file',
-      children: [
-        { title: 'Applications', link: '/pages/applications' },
-        { title: 'Ecommerce', link: '/pages/ecommerce' },
-        { title: 'Authentication', link: '/pages/authentication' }
-      ],
-      isExpanded: false
-    },
-    {
-      title: 'Docs',
+      sectionTitle: 'DOCS',
+      title: 'Basic',
       icon: 'fa fa-book',
       children: [
         { title: 'Basic', link: '/docs/basic' },
