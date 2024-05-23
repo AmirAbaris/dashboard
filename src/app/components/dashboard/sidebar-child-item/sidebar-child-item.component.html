@@ -1,0 +1,19 @@
+<div class="content ml-3 text-sm cursor-pointer" (click)="toggle(child())">
+    <div class="flex items-center p-2" [routerLink]="child().link">
+        <ul class="flex justify-between w-[98%]">
+            <li class="font-light text-blueGray">
+                <div class="flex items-center gap-x-2">
+                    <mat-icon class="circle-icon">circle</mat-icon>
+                    <p>{{ child().title }}</p>
+                </div>
+            </li>
+            <mat-icon class="arrow-icon" *ngIf="child().children"
+                [class.open]="child().isExpanded">keyboard_arrow_down</mat-icon>
+        </ul>
+    </div>
+</div>
+<div [@expandCollapse]="child().isExpanded ? 'expanded' : 'collapsed'">
+    @for (secondChild of child().children; track $index) {
+    <app-sidebar-child-item [child]="secondChild" [parentIsExpanded]="child().isExpanded" />
+    }
+</div>

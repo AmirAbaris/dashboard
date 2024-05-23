@@ -1,78 +1,33 @@
-<aside class="container hidden lg:flex lg:flex-col lg:p-5 lg:h-dvh">
+<aside class="content hidden lg:flex lg:flex-col lg:p-5 lg:h-dvh">
     <section class="flex flex-col flex-1 overflow-scroll">
         <a class="flex gap-x-2 justify-center items-center p-6 cursor-pointer">
-            <img class="object-cover w-8 h-8" ngSrc="assets/images/s1.png" width="200" height="200" alt="logo">
+            <img class="object-cover w-8 h-8" src="assets/images/s1.png" width="200" height="200" alt="logo">
             <span class="text-sm text-charcoalBlue font-medium">{{caption().title}}</span>
         </a>
         <mat-divider />
-        @for (item of data(); track itemIndex; let itemIndex = $index) {
+
+        @for (section of data(); track $index) {
         <div class="menu-item">
-            @if (item.sectionTitle) {
-            <h2 class="ml-3 p-4 text-xs text-slateBlue font-semibold">{{ item.sectionTitle }}</h2>
-            }
-            @for (item of item.items; track $index) {
-            <div *ngIf="item" class="flex items-center justify-between cursor-pointer p-3 ml-3 rounded-lg"
-                (click)="toggle(item)">
+            <h2 *ngIf="section.sectionTitle" class="ml-3 p-4 text-xs text-slateBlue font-semibold">
+                {{ section.sectionTitle }}
+            </h2>
+            @for (item of section.items; track $index) {
+            <div class="flex items-center justify-between cursor-pointer p-3 ml-3 rounded-lg" (click)="toggle(item)">
                 <div class="flex items-center gap-x-3 w-full">
                     <div class="h-8 w-8 rounded-lg shadow-md flex items-center justify-center">
                         <mat-icon class="title-icon">{{item.icon}}</mat-icon>
                     </div>
-                    <h1 class="text-sm">{{
-                        item.title }}</h1>
+                    <h1 class="text-sm">{{ item.title }}</h1>
                 </div>
                 <mat-icon class="arrow-icon" [class.open]="item.isExpanded">keyboard_arrow_down</mat-icon>
             </div>
-
-            <div [@expandCollapse]="item.isExpanded ? 'expanded' : 'collapsed'" class="ml-2">
-                @for (child of item.children; track childIndex; let childIndex = $index) {
-                <div class="ml-3 text-sm cursor-pointer" (click)="toggle(child)">
-                    <div class="flex items-center p-2" [routerLink]="child.link">
-                        <ul class="flex justify-between w-[98%]">
-                            <li class="font-light text-blueGray">
-                                <div class="flex items-center gap-x-2">
-                                    <mat-icon class="circle-icon">circle</mat-icon>
-                                    <p> {{ child.title }}</p>
-                                </div>
-                            </li>
-                            <mat-icon class="arrow-icon" *ngIf="child.children"
-                                [class.open]="child.isExpanded">keyboard_arrow_down</mat-icon>
-                        </ul>
-                    </div>
-                </div>
-                <div [@expandCollapse]="child.isExpanded ? 'expanded' : 'collapsed'">
-                    @for (secondChild of child.children; track $index) {
-                    <div class="flex items-center justify-between p-3 ml-10 rounded-xl cursor-pointer"
-                        [routerLink]="secondChild.link">
-                        <p *ngIf="secondChild.link" class="text-blueGray text-xs font-light">{{
-                            secondChild.title }}</p>
-                    </div>
-                    }
-                </div>
+            <div *ngIf="item.children" [@expandCollapse]="item.isExpanded ? 'expanded' : 'collapsed'" class="ml-2">
+                @for (child of item.children; track $index) {
+                <app-sidebar-child-item [child]="child" [parentIsExpanded]="item.isExpanded" />
                 }
             </div>
             }
         </div>
         }
-        <div class="flex aspect-video scale-90 rounded-xl shadow-md relative mt-6">
-            <img class="w-full h-full object-cover rounded-xl filter brightness" ngSrc="assets/images/s2.jpg"
-                height="300" width="400" alt="pattern">
-            <div class="absolute inset-2 mt-2 flex flex-col justify-between">
-                <div class="flex items-start h-1/3">
-                    <div class="h-8 w-8 ml-4 rounded-lg shadow-md bg-white flex justify-center items-center">
-                        <mat-icon class="title-icon">diamond</mat-icon>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-between items-center h-2/3">
-                    <div class="flex flex-col justify-around items-start w-[85%] text-white">
-                        <div class="flex flex-col items-start">
-                            <p>{{caption().help}}</p>
-                            <p>{{caption().checkDocs}}</p>
-                        </div>
-                    </div>
-                    <button class="side-button mb-4" (click)="onClickDocButtonEventHandler()"
-                        mat-flat-button>{{caption().docs | uppercase}}</button>
-                </div>
-            </div>
-        </div>
     </section>
 </aside>

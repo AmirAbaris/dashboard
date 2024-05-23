@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { SideBarComponent } from '../components/dashboard/side-bar/side-bar.component';
+import { SidebarChildItemComponent } from '../components/dashboard/sidebar-child-item/sidebar-child-item.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -13,7 +14,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [DashboardMainComponent, SideBarComponent],
+  declarations: [DashboardMainComponent, SideBarComponent, SidebarChildItemComponent],
   imports: [
     RouterModule.forChild(routes),
     NgOptimizedImage,

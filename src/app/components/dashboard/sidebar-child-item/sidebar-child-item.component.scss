@@ -1,8 +1,4 @@
 .content {
-    mat-divider {
-        margin-bottom: .7rem;
-    }
-
     .arrow-icon {
         scale: .8;
         color: #999db5;
@@ -14,12 +10,11 @@
         }
     }
 
-    .title-icon {
-        scale: .7;
-        color: #9fa3b9;
+    .circle-icon {
+        scale: .28;
 
         &.active {
-            color: white;
+            scale: .4;
         }
     }
 }
