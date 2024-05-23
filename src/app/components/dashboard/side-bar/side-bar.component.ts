@@ -1,8 +1,8 @@
 import { Component, inject, input, output } from '@angular/core';
-import { SidebarItemModel } from '../models/sidebar-item.model';
 import { Router } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { SidebarCaptionModel } from '../models/caption-models/sidebar.caption.model';
+import { SideBarSectionModel, SidebarItemModel } from '../models/sidebar-item.model';
 
 @Component({
   selector: 'app-side-bar',
@@ -18,9 +18,9 @@ import { SidebarCaptionModel } from '../models/caption-models/sidebar.caption.mo
 })
 export class SideBarComponent {
   //#region Properties
-  public readonly _router = inject(Router);
+  public readonly _router = inject(Router); // TODO: ?
 
-  public data = input.required<SidebarItemModel[]>();
+  public data = input.required<SideBarSectionModel[]>();
   public caption = input.required<SidebarCaptionModel>();
 
   public clickDocButtonEvent = output();
@@ -37,10 +37,6 @@ export class SideBarComponent {
     item.isExpanded = !item.isExpanded;
 
     console.log('toggled');
-  }
-
-  public isActive(link: string): boolean {
-    return this._router.url === link;
   }
   //#endregion
 }

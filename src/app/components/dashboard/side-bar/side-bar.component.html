@@ -5,61 +5,54 @@
             <span class="text-sm text-charcoalBlue font-medium">{{caption().title}}</span>
         </a>
         <mat-divider />
-        <ng-container>
-            @for (item of data(); track itemIndex; let itemIndex = $index) {
-            <div class="menu-item">
-                @if (item.sectionTitle) {
-                <h2 class="ml-3 p-4 text-xs text-slateBlue font-semibold">{{ item.sectionTitle }}</h2>
-                }
-                <div *ngIf="item.title" class="flex items-center justify-between cursor-pointer p-3 ml-3 rounded-lg"
-                    (click)="toggle(item)" [ngClass]="{'shadow-sm bg-white': isActive(item.title)}">
-                    <div class="flex items-center gap-x-3 w-full">
-                        <div [ngClass]="{'bg-magenta': isActive(item.title)}"
-                            class="h-8 w-8 rounded-lg shadow-md flex items-center justify-center">
-                            <mat-icon class="title-icon">{{item.icon}}</mat-icon>
-                        </div>
-                        <h1 [ngClass]="{ 'text-charcoalBlue': isActive(item.title), 'text-slateBlue': !isActive(item.title) }"
-                            class="text-sm">{{
-                            item.title }}</h1>
+        @for (item of data(); track itemIndex; let itemIndex = $index) {
+        <div class="menu-item">
+            @if (item.sectionTitle) {
+            <h2 class="ml-3 p-4 text-xs text-slateBlue font-semibold">{{ item.sectionTitle }}</h2>
+            }
+            @for (item of item.items; track $index) {
+            <div *ngIf="item" class="flex items-center justify-between cursor-pointer p-3 ml-3 rounded-lg"
+                (click)="toggle(item)">
+                <div class="flex items-center gap-x-3 w-full">
+                    <div class="h-8 w-8 rounded-lg shadow-md flex items-center justify-center">
+                        <mat-icon class="title-icon">{{item.icon}}</mat-icon>
                     </div>
-                    <mat-icon class="arrow-icon" [class.open]="item.isExpanded">keyboard_arrow_down</mat-icon>
+                    <h1 class="text-sm">{{
+                        item.title }}</h1>
                 </div>
+                <mat-icon class="arrow-icon" [class.open]="item.isExpanded">keyboard_arrow_down</mat-icon>
+            </div>
 
-                <div [@expandCollapse]="item.isExpanded ? 'expanded' : 'collapsed'" class="ml-2">
-                    <ng-container>
-                        @for (child of item.children; track childIndex; let childIndex = $index) {
-                        <div class="ml-3 text-sm cursor-pointer" (click)="toggle(child)">
-                            <div class="flex items-center p-2" [routerLink]="child.link">
-                                <ul class="flex justify-between w-[98%]">
-                                    <li class="font-light text-blueGray">
-                                        <div class="flex items-center gap-x-2">
-                                            <mat-icon class="circle-icon">circle</mat-icon>
-                                            <p> {{ child.title }}</p>
-                                        </div>
-                                    </li>
-                                    <mat-icon class="arrow-icon" *ngIf="child.children"
-                                        [class.open]="child.isExpanded">keyboard_arrow_down</mat-icon>
-                                </ul>
-                            </div>
-                        </div>
-                        <div [@expandCollapse]="child.isExpanded ? 'expanded' : 'collapsed'">
-                            @for (secondChild of child.children; track $index) {
-                            <ng-container>
-                                <div class="flex items-center justify-between p-3 ml-10 rounded-xl cursor-pointer"
-                                    [routerLink]="secondChild.link">
-                                    <p *ngIf="secondChild.link"
-                                        [ngClass]="{ 'text-charcoalBlue': isActive(secondChild.link), 'text-blueGray': !isActive(secondChild.link) }"
-                                        class="text-blueGray text-xs font-light">{{ secondChild.title }}</p>
+            <div [@expandCollapse]="item.isExpanded ? 'expanded' : 'collapsed'" class="ml-2">
+                @for (child of item.children; track childIndex; let childIndex = $index) {
+                <div class="ml-3 text-sm cursor-pointer" (click)="toggle(child)">
+                    <div class="flex items-center p-2" [routerLink]="child.link">
+                        <ul class="flex justify-between w-[98%]">
+                            <li class="font-light text-blueGray">
+                                <div class="flex items-center gap-x-2">
+                                    <mat-icon class="circle-icon">circle</mat-icon>
+                                    <p> {{ child.title }}</p>
                                 </div>
-                            </ng-container>
-                            }
-                        </div>
-                        }
-                    </ng-container>
+                            </li>
+                            <mat-icon class="arrow-icon" *ngIf="child.children"
+                                [class.open]="child.isExpanded">keyboard_arrow_down</mat-icon>
+                        </ul>
+                    </div>
                 </div>
+                <div [@expandCollapse]="child.isExpanded ? 'expanded' : 'collapsed'">
+                    @for (secondChild of child.children; track $index) {
+                    <div class="flex items-center justify-between p-3 ml-10 rounded-xl cursor-pointer"
+                        [routerLink]="secondChild.link">
+                        <p *ngIf="secondChild.link" class="text-blueGray text-xs font-light">{{
+                            secondChild.title }}</p>
+                    </div>
+                    }
+                </div>
+                }
             </div>
             }
-        </ng-container>
+        </div>
+        }
         <div class="flex aspect-video scale-90 rounded-xl shadow-md relative mt-6">
             <img class="w-full h-full object-cover rounded-xl filter brightness" ngSrc="assets/images/s2.jpg"
                 height="300" width="400" alt="pattern">

@@ -1,6 +1,10 @@
+export interface SideBarSectionModel {
+    sectionTitle?: string;
+    items: SidebarItemModel[];
+}
+
 export interface SidebarItemModel {
     title?: string;
-    sectionTitle?: string;
     link?: string;
     icon?: string;
     children?: SidebarItemModel[];
