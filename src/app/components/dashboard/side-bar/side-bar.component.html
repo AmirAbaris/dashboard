@@ -23,7 +23,7 @@
             </div>
             <div *ngIf="item.children" [@expandCollapse]="item.isExpanded ? 'expanded' : 'collapsed'" class="ml-2">
                 @for (child of item.children; track $index) {
-                <app-sidebar-child-item [child]="child" [parentIsExpanded]="item.isExpanded" />
+                <app-sidebar-child-item [child]="child" [parentIsExpanded]="item.isExpanded" [level]="0" />
                 }
             </div>
             }

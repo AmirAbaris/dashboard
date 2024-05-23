@@ -17,6 +17,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class SidebarChildItemComponent {
   public child = input.required<SidebarItemModel>();
   public parentIsExpanded = input<boolean>();
+  public level = input<number>(0);
 
   toggle(item: SidebarItemModel): void {
     item.isExpanded = !item.isExpanded;
