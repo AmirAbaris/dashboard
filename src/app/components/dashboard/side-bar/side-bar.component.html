@@ -13,14 +13,16 @@
             </h2>
             @for (item of section.items; track $index) {
             <div *ngIf="item.title" class="flex items-center justify-between cursor-pointer p-3 ml-3 rounded-lg"
-                (click)="toggleHandler(item)" activeMenuDir [itemTitle]="item.title.toLocaleLowerCase()">
+                (click)="toggleHandler(item)" activeMenuDir [itemTitle]="item.title.toLocaleLowerCase()"
+                [routerLink]="item.link">
                 <div class="flex items-center gap-x-3 w-full">
                     <div class="icon-container h-8 w-8 rounded-lg shadow-md flex items-center justify-center">
                         <mat-icon class="title-icon">{{item.icon}}</mat-icon>
                     </div>
-                    <h1 class="text-sm">{{ item.title }}</h1>
+                    <h1 class="text-sm text-slateBlue">{{ item.title }}</h1>
                 </div>
-                <mat-icon class="arrow-icon" [class.open]="item.isExpanded">keyboard_arrow_down</mat-icon>
+                <mat-icon class="arrow-icon" *ngIf="item.children"
+                    [class.open]="item.isExpanded">keyboard_arrow_down</mat-icon>
             </div>
             <div *ngIf="item.children" [@expandCollapse]="item.isExpanded ? 'expanded' : 'collapsed'" class="ml-3">
                 @for (child of item.children; track $index) {
