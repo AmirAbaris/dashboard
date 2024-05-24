@@ -1,5 +1,4 @@
-import { Component, inject, input, output } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, input, output } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { SidebarCaptionModel } from '../models/caption-models/sidebar.caption.model';
 import { SideBarSectionModel, SidebarItemModel } from '../models/sidebar-item.model';
@@ -18,8 +17,6 @@ import { SideBarSectionModel, SidebarItemModel } from '../models/sidebar-item.mo
 })
 export class SideBarComponent {
   //#region Properties
-  public readonly _router = inject(Router); // TODO: ?
-
   public data = input.required<SideBarSectionModel[]>();
   public caption = input.required<SidebarCaptionModel>();
 
@@ -27,16 +24,12 @@ export class SideBarComponent {
   //#endregion
 
   //#region Handler methods
-  public onClickDocButtonEventHandler(): void {
-    this.clickDocButtonEvent.emit();
-  }
-  //#endregion
-
-  //#region Main logic methods
-  public toggle(item: SidebarItemModel): void {
+  public toggleHandler(item: SidebarItemModel): void {
     item.isExpanded = !item.isExpanded;
+  }
 
-    console.log('toggled');
+  public onClickDocumentationButtonEventHandler(): void {
+    this.clickDocButtonEvent.emit();
   }
   //#endregion
 }

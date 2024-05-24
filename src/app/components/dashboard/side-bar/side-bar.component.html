@@ -13,7 +13,7 @@
             </h2>
             @for (item of section.items; track $index) {
             <div *ngIf="item.title" class="flex items-center justify-between cursor-pointer p-3 ml-3 rounded-lg"
-                (click)="toggle(item)" activeMenuDir [itemTitle]="item.title.toLocaleLowerCase()">
+                (click)="toggleHandler(item)" activeMenuDir [itemTitle]="item.title.toLocaleLowerCase()">
                 <div class="flex items-center gap-x-3 w-full">
                     <div class="icon-container h-8 w-8 rounded-lg shadow-md flex items-center justify-center">
                         <mat-icon class="title-icon">{{item.icon}}</mat-icon>
@@ -40,7 +40,7 @@
                 <p class="text-xs">{{caption().checkDocs}}</p>
             </div>
             <div class="w-full flex justify-center">
-                <button class="w-[90%]" (click)="onClickDocButtonEventHandler()" mat-flat-button>
+                <button class="w-[90%]" (click)="onClickDocumentationButtonEventHandler()" mat-flat-button>
                     <p class="tracking-tight text-xs">{{caption().docs | uppercase}}</p>
                 </button>
             </div>
