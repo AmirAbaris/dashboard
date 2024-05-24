@@ -1,6 +1,7 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { SidebarItemModel } from '../models/sidebar-item.model';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar-child-item',
@@ -15,6 +16,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class SidebarChildItemComponent {
+  public readonly _router = inject(Router);
+
   public child = input.required<SidebarItemModel>();
   public parentIsExpanded = input<boolean>();
   public level = input<number>(0);

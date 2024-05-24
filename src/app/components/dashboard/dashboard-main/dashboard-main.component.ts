@@ -47,7 +47,6 @@ const sidebarItems: SideBarSectionModel[] = [
           { title: 'Smart Home', link: '/dashboards/smart-home' },
           {
             title: 'Virtual Reality',
-            link: '/dashboards/virtual-reality',
             children: [
               { title: 'VR Default', link: '/dashboards/virtual-reality/vr-default' },
               { title: 'VR Info', link: '/dashboards/virtual-reality/vr-info' }
@@ -60,7 +59,7 @@ const sidebarItems: SideBarSectionModel[] = [
     ]
   },
   {
-    sectionTitle: 'Pages',
+    sectionTitle: '',
     items: [
       {
         title: 'Pages',
@@ -68,47 +67,43 @@ const sidebarItems: SideBarSectionModel[] = [
         children: [
           {
             title: 'Profile',
-            link: '/pages/profile',
             children: [
-              { title: 'Profile Overview', link: '/pages/profile/overview' },
-              { title: 'Teams', link: '/pages/profile/teams' },
-              { title: 'All Projects', link: '/pages/profile/all-projects' }
+              { title: 'Profile Overview', link: '/profile/overview' },
+              { title: 'Teams', link: '/profile/teams' },
+              { title: 'All Projects', link: '//profile/all-projects' }
             ]
           },
           {
             title: 'Users',
-            link: '/pages/users',
             children: [
-              { title: 'Reports', link: '/pages/users/reports' },
-              { title: 'New User', link: '/pages/users/new-user' }
+              { title: 'Reports', link: '/users/reports' },
+              { title: 'New User', link: '/users/new-user' }
             ]
           },
           {
             title: 'Account',
-            link: '/pages/account',
             children: [
-              { title: 'Settings', link: '/pages/account/settings' },
-              { title: 'Billing', link: '/pages/account/billing' },
-              { title: 'Invoice', link: '/pages/account/invoice' },
-              { title: 'Security', link: '/pages/account/security' }
+              { title: 'Settings', link: '/account/settings' },
+              { title: 'Billing', link: '/account/billing' },
+              { title: 'Invoice', link: '/account/invoice' },
+              { title: 'Security', link: '/account/security' }
             ]
           },
           {
             title: 'Project',
-            link: '/pages/project',
             children: [
-              { title: 'General', link: '/pages/project/general' },
-              { title: 'Timeline', link: '/pages/project/timeline' },
-              { title: 'New Project', link: '/pages/project/new-project' }
+              { title: 'General', link: '/project/general' },
+              { title: 'Timeline', link: '/project/timeline' },
+              { title: 'New Project', link: '/project/new-project' }
             ]
           },
-          { title: 'Pricing Page', link: '/pages/pricing-page' },
-          { title: 'Messages', link: '/pages/message' },
-          { title: 'Widgets', link: '/pages/widgets' },
-          { title: 'Charts', link: '/pages/charts' },
-          { title: 'Sweet Alerts', link: '/pages/sweet-alerts' },
-          { title: 'RTL', link: '/pages/rtl' },
-          { title: 'Notifications', link: '/pages/notifications' }
+          { title: 'Pricing Page', link: '/pricing-page' },
+          { title: 'Messages', link: '/message' },
+          { title: 'Widgets', link: '/widgets' },
+          { title: 'Charts', link: '/charts' },
+          { title: 'Sweet Alerts', link: '/sweet-alerts' },
+          { title: 'RTL', link: '//rtl' },
+          { title: 'Notifications', link: '/notifications' }
         ],
         isExpanded: false
       }

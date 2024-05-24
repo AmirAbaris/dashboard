@@ -15,6 +15,13 @@
 
         &.active {
             scale: .4;
+            color: #344767;
+        }
+    }
+
+    .child-title {
+        &.active {
+            color: #344767;
         }
     }
 }
