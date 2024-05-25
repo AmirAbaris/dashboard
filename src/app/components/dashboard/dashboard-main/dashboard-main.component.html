@@ -1,6 +1,6 @@
 <section class="flex">
     <div class="lg:w-72 lg:h-dvh">
-        <app-side-bar *ngIf="sidebarCaption" [data]="sidebarItems" [caption]="sidebarCaption" />
+        <app-side-bar *ngIf="sidebarCaption && sidebarItems" [data]="sidebarItems" [caption]="sidebarCaption" />
     </div>
 
     <router-outlet />

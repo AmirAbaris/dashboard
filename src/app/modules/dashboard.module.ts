@@ -11,6 +11,7 @@ import { ActiveMenuDirective } from '../components/dashboard/directives/active-m
 import { DefaultComponent } from '../components/dashboard/default/default.component';
 import { VrInfoComponent } from '../components/dashboard/vr-info/vr-info.component';
 import { ActivateChildDirective } from '../components/dashboard/directives/activate-child.directive';
+import { UserService } from '../services/user.service';
 
 const routes: Routes = [
   {
@@ -35,6 +36,7 @@ const routes: Routes = [
     MatIconModule,
     MatButtonModule,
     CommonModule
-  ]
+  ],
+  providers: [UserService]
 })
 export class DashboardModule { }
