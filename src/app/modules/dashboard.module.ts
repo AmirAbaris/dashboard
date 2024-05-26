@@ -10,6 +10,7 @@ import { SidebarChildItemComponent } from '../components/dashboard/sidebar-child
 import { ActiveMenuDirective } from '../components/dashboard/directives/active-menu.directive';
 import { ActivateMenuChildDirective } from '../components/dashboard/directives/activate-menu-child.directive';
 import { AppService } from '../services/app.service';
+import { AppRepository } from '../repositories/app-repository';
 
 const routes: Routes = [
   {
@@ -31,6 +32,6 @@ const routes: Routes = [
     MatButtonModule,
     CommonModule
   ],
-  providers: [AppService]
+  providers: [AppService, AppRepository]
 })
 export class DashboardModule { }
