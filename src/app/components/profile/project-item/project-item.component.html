@@ -1,13 +1,25 @@
-<section class="content h-64 bg-white rounded-xl p-4 flex flex-col justify-between">
+<section class="content h-64 bg-white rounded-xl p-4 flex flex-col justify-between shadow-md">
     <div class="flex">
         <div class="flex gap-x-4 flex-1">
             <div class="cover-container h-20 w-20 rounded-lg flex items-center justify-center">
-                <img class="object-cover" ngSrc="assets/images/profile-icons/i2.svg" width="60" height="60"
-                    alt="project-icon">
+                <img class="object-cover" [ngSrc]="data().cover" width="60" height="60" alt="project-icon">
             </div>
             <div class="flex flex-col justify-evenly">
-                <h1 class="text-base font-semibold text-charcoalBlue">Slack Bot</h1>
-                <h2>Photo place holder</h2>
+                <h1 class="text-base font-semibold text-charcoalBlue">{{data().title}}</h1>
+                <div class="flex -space-x-2 overflow-hidden">
+                    <img class="profile w-5 h-5 rounded-full ring-white ring-2"
+                        src="assets/images/participants-covers/par1.jpg" alt="">
+                    <img class="profile w-5 h-5 rounded-full ring-white ring-2"
+                        src="assets/images/participants-covers/par2.jpg" alt="">
+                    <img class="profile w-5 h-5 rounded-full ring-white ring-2"
+                        src="assets/images/participants-covers/par3.jpg" alt="">
+                    <img class="profile w-5 h-5 rounded-full ring-white ring-2"
+                        src="assets/images/participants-covers/par1.jpg" alt="">
+                    <img class="profile w-5 h-5 rounded-full ring-white ring-2"
+                        src="assets/images/participants-covers/par2.jpg" alt="">
+                    <img class="profile w-5 h-5 rounded-full ring-white ring-2"
+                        src="assets/images/participants-covers/par3.jpg" alt="">
+                </div>
             </div>
         </div>
         <div>
@@ -27,17 +39,16 @@
             </mat-menu>
         </div>
     </div>
-    <p class="text-sm text-slateBlue">If everything I did failed - which it doesn't, I think that it actually
-        succeeds. </p>
+    <p class="text-sm text-slateBlue">{{data().description}}</p>
 
     <mat-divider />
     <div class="flex justify-between">
         <div class="flex flex-col text-sm">
-            <p class="text-charcoalBlue">1</p>
+            <p class="text-charcoalBlue">{{data().registeredParticipantCount}}</p>
             <p class="text-slateBlue">Participants</p>
         </div>
         <div class="flex flex-col text-sm">
-            <p class="text-charcoalBlue">02.03.22</p>
+            <p class="text-charcoalBlue">{{data().dueDate | date: 'shortDate'}}</p>
             <p class="text-slateBlue">Due date</p>
         </div>
     </div>
