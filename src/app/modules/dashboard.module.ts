@@ -8,26 +8,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { SideBarComponent } from '../components/dashboard/side-bar/side-bar.component';
 import { SidebarChildItemComponent } from '../components/dashboard/sidebar-child-item/sidebar-child-item.component';
 import { ActiveMenuDirective } from '../components/dashboard/directives/active-menu.directive';
-import { DefaultComponent } from '../components/dashboard/default/default.component';
-import { VrInfoComponent } from '../components/dashboard/vr-info/vr-info.component';
 import { ActivateChildDirective } from '../components/dashboard/directives/activate-child.directive';
 import { UserService } from '../services/user.service';
 
 const routes: Routes = [
   {
-    path: '', component: DashboardMainComponent,
-    children: [
-      { path: 'dashboards/default', component: DefaultComponent },
-      { path: 'dashboards/virtual-reality/vr-info', component: VrInfoComponent }
-    ]
+    path: '', component: DashboardMainComponent
   },
 ];
 
 @NgModule({
   declarations: [
     DashboardMainComponent, SideBarComponent,
-    SidebarChildItemComponent, DefaultComponent,
-    VrInfoComponent, ActiveMenuDirective, ActivateChildDirective
+    SidebarChildItemComponent, ActiveMenuDirective,
+    ActivateChildDirective
   ],
   imports: [
     RouterModule.forChild(routes),
