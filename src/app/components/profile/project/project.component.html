@@ -1,11 +1,11 @@
 <div class="flex flex-col gap-y-11">
     <div class="flex flex-col gap-y-2">
-        <h1 class="text-xl text-charcoalBlue font-semibold">{{caption().header}}</h1>
-        <h2 class="text-base text-slateBlue">{{caption().description}}</h2>
+        <h1 class="text-xl text-charcoalBlue font-semibold">{{caption().projectCaption.header}}</h1>
+        <h2 class="text-base text-slateBlue">{{caption().projectCaption.description}}</h2>
     </div>
     <div class="flex flex-col gap-y-6 lg:grid lg:grid-cols-3 lg:gap-6">
-        @for (item of items; track $index) {
-        <app-project-item class="w-full" [data]="item" [participants]="participants" />
+        @for (item of projectItems(); track $index) {
+        <app-project-item class="w-full" [data]="item" [participants]="participants()" [caption]="caption().projectItemCaption" />
         }
     </div>
 </div>

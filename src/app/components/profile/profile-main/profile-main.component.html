@@ -1,6 +1,7 @@
 <div class="flex flex-col gap-y-11 bg-ghostWhite">
     <app-profile-overview class="mb-12" />
     <div class="flex justify-center w-full">
-        <app-project class="w-[90%]" *ngIf="projectCaption" [caption]="projectCaption" />
+        <app-project class="w-[90%]" *ngIf="projectInputCaption && projectItems && participants"
+            [projectItems]="projectItems" [participants]="participants" [caption]="projectInputCaption" />
     </div>
 </div>

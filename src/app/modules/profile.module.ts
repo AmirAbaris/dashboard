@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
 import { ParticipantCountPipe } from '../components/profile/pipes/participant-count.pipe';
+import { UserService } from '../services/user.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'profile', pathMatch: 'full' },
@@ -30,6 +31,7 @@ const routes: Routes = [
     MatMenuModule,
     MatDividerModule,
     RouterModule.forChild(routes)
-  ]
+  ],
+  providers: [UserService]
 })
 export class ProfileModule { }

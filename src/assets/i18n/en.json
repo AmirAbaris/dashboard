@@ -22,6 +22,10 @@
         "project": {
             "header": "Some of Our Awesome Projects",
             "description": "This is the paragraph where you can write more details about your projects. Keep your user engaged by providing meaningful information."
+        },
+        "project-item": {
+            "participant": "Participants",
+            "date": "Due date"
         }
     }
 }
