@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { SideBarComponent } from '../components/dashboard/side-bar/side-bar.component';
 import { SidebarChildItemComponent } from '../components/dashboard/sidebar-child-item/sidebar-child-item.component';
 import { ActiveMenuDirective } from '../components/dashboard/directives/active-menu.directive';
-import { ActivateChildDirective } from '../components/dashboard/directives/activate-child.directive';
+import { ActivateMenuChildDirective } from '../components/dashboard/directives/activate-menu-child.directive';
 import { UserService } from '../services/user.service';
 
 const routes: Routes = [
@@ -21,7 +21,7 @@ const routes: Routes = [
   declarations: [
     DashboardMainComponent, SideBarComponent,
     SidebarChildItemComponent, ActiveMenuDirective,
-    ActivateChildDirective
+    ActivateMenuChildDirective
   ],
   imports: [
     RouterModule.forChild(routes),

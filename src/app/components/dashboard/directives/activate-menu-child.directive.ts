@@ -3,9 +3,9 @@ import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
 
 @Directive({
-  selector: '[activateChildDir]'
+  selector: '[activateMenuChildDir]'
 })
-export class ActivateChildDirective {
+export class ActivateMenuChildDirective {
   //#region Properties
   private readonly _router = inject(Router);
   private readonly _el = inject(ElementRef);
