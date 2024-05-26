@@ -3,7 +3,7 @@ import { SideBarSectionModel } from '../components/dashboard/models/sidebar-item
 import { Observable, of } from 'rxjs';
 
 @Injectable()
-export class UserService {
+export class AppService {
   //#region Properties
   public sidebarData: SideBarSectionModel[] = sidebarItems;
   //#endregion

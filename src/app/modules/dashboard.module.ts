@@ -9,7 +9,7 @@ import { SideBarComponent } from '../components/dashboard/side-bar/side-bar.comp
 import { SidebarChildItemComponent } from '../components/dashboard/sidebar-child-item/sidebar-child-item.component';
 import { ActiveMenuDirective } from '../components/dashboard/directives/active-menu.directive';
 import { ActivateMenuChildDirective } from '../components/dashboard/directives/activate-menu-child.directive';
-import { UserService } from '../services/user.service';
+import { AppService } from '../services/app.service';
 
 const routes: Routes = [
   {
@@ -31,6 +31,6 @@ const routes: Routes = [
     MatButtonModule,
     CommonModule
   ],
-  providers: [UserService]
+  providers: [AppService]
 })
 export class DashboardModule { }

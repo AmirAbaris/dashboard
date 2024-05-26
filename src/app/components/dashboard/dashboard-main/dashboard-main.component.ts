@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { SidebarCaptionModel } from '../models/caption-models/sidebar.caption.model';
 import { TranslateService } from '@ngx-translate/core';
 import { SideBarSectionModel } from '../models/sidebar-item.model';
-import { UserService } from '../../../services/user.service';
+import { AppService } from '../../../services/app.service';
 
 @Component({
   selector: 'app-dashboard-main',
@@ -12,7 +12,7 @@ import { UserService } from '../../../services/user.service';
 export class DashboardMainComponent implements OnInit {
   //#region Properties
   private _translateService = inject(TranslateService);
-  private _userService = inject(UserService);
+  private _appService = inject(AppService);
 
   public sidebarItems: SideBarSectionModel[] | undefined;
   public sidebarCaption: SidebarCaptionModel | undefined;
@@ -36,7 +36,7 @@ export class DashboardMainComponent implements OnInit {
   }
 
   private _getSidebarItems(): void {
-    this._userService.getSidebarData().subscribe({
+    this._appService.getSidebarData().subscribe({
       next: (items) => {
         this.sidebarItems = items;
       },
