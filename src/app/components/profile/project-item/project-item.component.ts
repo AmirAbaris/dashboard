@@ -10,5 +10,6 @@ import { ParticipantModel } from '../models/participant.model';
 export class ProjectItemComponent {
   //#region Properties
   public data = input.required<ProjectItemModel>();
+  public participants = input.required<ParticipantModel[]>();
   //#endregion
 }

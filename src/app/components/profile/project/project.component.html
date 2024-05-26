@@ -5,7 +5,7 @@
     </div>
     <div class="flex flex-col gap-y-6 lg:grid lg:grid-cols-3 lg:gap-6">
         @for (item of items; track $index) {
-        <app-project-item class="w-full" [data]="item" />
+        <app-project-item class="w-full" [data]="item" [participants]="participants" />
         }
     </div>
 </div>

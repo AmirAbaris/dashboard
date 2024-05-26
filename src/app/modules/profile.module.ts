@@ -8,6 +8,7 @@ import { ProjectComponent } from '../components/profile/project/project.componen
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
+import { ParticipantCountPipe } from '../components/profile/pipes/participant-count.pipe';
 
 const routes: Routes = [
   { path: '', redirectTo: 'profile', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
     ProjectItemComponent,
     ProjectComponent,
     ProfileOverviewComponent,
+    ParticipantCountPipe
   ],
   imports: [
     CommonModule,

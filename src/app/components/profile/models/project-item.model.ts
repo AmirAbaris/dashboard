@@ -4,5 +4,4 @@ export interface ProjectItemModel {
     title: string;
     description: string;
     dueDate: Date;
-    registeredParticipantCount: number;
 }
