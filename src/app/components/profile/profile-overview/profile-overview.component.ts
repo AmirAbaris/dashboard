@@ -7,7 +7,9 @@ import { ProfileModel } from '../models/profile.model';
   styleUrl: './profile-overview.component.scss'
 })
 export class ProfileOverviewComponent {
+  //#region Properties
   public profileData: ProfileModel = profileData;
+  //#endregion
 }
 
 const profileData: ProfileModel = {

@@ -11,7 +11,8 @@ module.exports = {
       charcoalBlue: '#344767',
       slateBlue: '#67748E',
       magenta: '#CB0C9F',
-      white: '#FFFFFF'
+      white: '#FFFFFF',
+      ghostWhite: '#f8f9fa'
     },
   },
   plugins: [],

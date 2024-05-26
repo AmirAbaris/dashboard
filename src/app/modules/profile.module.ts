@@ -5,6 +5,9 @@ import { ProfileMainComponent } from '../components/profile/profile-main/profile
 import { ProfileOverviewComponent } from '../components/profile/profile-overview/profile-overview.component';
 import { ProjectItemComponent } from '../components/profile/project-item/project-item.component';
 import { ProjectComponent } from '../components/profile/project/project.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
 
 const routes: Routes = [
   { path: '', redirectTo: 'profile', pathMatch: 'full' },
@@ -16,11 +19,14 @@ const routes: Routes = [
     ProfileMainComponent,
     ProjectItemComponent,
     ProjectComponent,
-    ProfileOverviewComponent
+    ProfileOverviewComponent,
   ],
   imports: [
     CommonModule,
     NgOptimizedImage,
+    MatIconModule,
+    MatMenuModule,
+    MatDividerModule,
     RouterModule.forChild(routes)
   ]
 })

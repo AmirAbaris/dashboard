@@ -1,1 +1,44 @@
-<p>project-item works!</p>
+<section class="content h-64 bg-white rounded-xl p-4 flex flex-col justify-between">
+    <div class="flex">
+        <div class="flex gap-x-4 flex-1">
+            <div class="cover-container h-20 w-20 rounded-lg flex items-center justify-center">
+                <img class="object-cover" ngSrc="assets/images/profile-icons/i2.svg" width="60" height="60"
+                    alt="project-icon">
+            </div>
+            <div class="flex flex-col justify-evenly">
+                <h1 class="text-base font-semibold text-charcoalBlue">Slack Bot</h1>
+                <h2>Photo place holder</h2>
+            </div>
+        </div>
+        <div>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <span>Another action</span>
+                </button>
+                <button mat-menu-item>
+                    <span>Action</span>
+                </button>
+                <button mat-menu-item>
+                    <span>something else here</span>
+                </button>
+            </mat-menu>
+        </div>
+    </div>
+    <p class="text-sm text-slateBlue">If everything I did failed - which it doesn't, I think that it actually
+        succeeds. </p>
+
+    <mat-divider />
+    <div class="flex justify-between">
+        <div class="flex flex-col text-sm">
+            <p class="text-charcoalBlue">1</p>
+            <p class="text-slateBlue">Participants</p>
+        </div>
+        <div class="flex flex-col text-sm">
+            <p class="text-charcoalBlue">02.03.22</p>
+            <p class="text-slateBlue">Due date</p>
+        </div>
+    </div>
+</section>

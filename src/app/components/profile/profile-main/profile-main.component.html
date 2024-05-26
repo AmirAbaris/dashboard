@@ -1,1 +1,6 @@
-<app-profile-overview />
+<div class="flex flex-col h-dvh gap-y-11 bg-ghostWhite">
+    <app-profile-overview class="mb-12" />
+    <div class="flex justify-center w-full">
+        <app-project class="w-[90%]" *ngIf="projectCaption" [caption]="projectCaption" />
+    </div>
+</div>

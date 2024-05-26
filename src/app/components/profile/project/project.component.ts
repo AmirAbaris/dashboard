@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { ProjectCaptionModel } from '../models/caption-models/project.caption.model';
 
 @Component({
   selector: 'app-project',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './project.component.scss'
 })
 export class ProjectComponent {
-
+  //#region Properties
+  public caption = input.required<ProjectCaptionModel>();
+  //#endregion
 }

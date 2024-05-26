@@ -17,5 +17,11 @@
             "attentionCurrency": "Attention is the new currency",
             "writingEffort": "The more effortless the writing looks, the more effort the writer actually put into the process."
         }
+    },
+    "profile": {
+        "project": {
+            "header": "Some of Our Awesome Projects",
+            "description": "This is the paragraph where you can write more details about your projects. Keep your user engaged by providing meaningful information."
+        }
     }
 }
