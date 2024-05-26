@@ -17,18 +17,19 @@
             </div>
         </div>
         <div>
-            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
                 <mat-icon>more_vert</mat-icon>
             </button>
+            <!-- has no handler because of no functionality in origin website as well -->
             <mat-menu #menu="matMenu">
                 <button mat-menu-item>
-                    <span>Another action</span>
+                    <span>{{caption().actionTitle}}</span>
                 </button>
                 <button mat-menu-item>
-                    <span>Action</span>
+                    <span>{{caption().anotherCationTitle}}</span>
                 </button>
                 <button mat-menu-item>
-                    <span>something else here</span>
+                    <span>{{caption().otherTitle}}</span>
                 </button>
             </mat-menu>
         </div>

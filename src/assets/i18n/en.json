@@ -25,7 +25,10 @@
         },
         "project-item": {
             "participant": "Participants",
-            "date": "Due date"
+            "date": "Due date",
+            "actionTitle": "Action",
+            "anotherCationTitle": "Another action",
+            "otherTitle": "Something else here"
         }
     }
 }
