@@ -11,8 +11,8 @@ import { AppService } from '../../../services/app.service';
 })
 export class DashboardMainComponent implements OnInit {
   //#region Properties
-  private _translateService = inject(TranslateService);
-  private _appService = inject(AppService);
+  private readonly _translateService = inject(TranslateService);
+  private readonly _appService = inject(AppService);
 
   public sidebarItems: SideBarSectionModel[] | undefined;
   public sidebarCaption: SidebarCaptionModel | undefined;
