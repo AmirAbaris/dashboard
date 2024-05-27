@@ -3,13 +3,13 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileMainComponent } from '../components/profile/profile-main/profile-main.component';
 import { ProjectItemComponent } from '../components/profile/project-item/project-item.component';
-import { ProjectComponent } from '../components/profile/project/project.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
 import { ParticipantCountPipe } from '../components/profile/pipes/participant-count.pipe';
 import { UserService } from '../services/user.service';
 import { ProfileIntroductionComponent } from '../components/profile/profile-introduction/profile-introduction.component';
+import { ProfileProjectComponent } from '../components/profile/profile-project/profile-project.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'profile', pathMatch: 'full' },
@@ -20,7 +20,7 @@ const routes: Routes = [
   declarations: [
     ProfileMainComponent,
     ProjectItemComponent,
-    ProjectComponent,
+    ProfileProjectComponent,
     ProfileIntroductionComponent,
     ParticipantCountPipe
   ],

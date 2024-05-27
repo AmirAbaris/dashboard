@@ -5,10 +5,10 @@ import { ProjectInputCaptionModel } from '../models/caption-models/project-input
 
 @Component({
   selector: 'app-project',
-  templateUrl: './project.component.html',
-  styleUrl: './project.component.scss'
+  templateUrl: './profile-project.component.html',
+  styleUrl: './profile-project.component.scss'
 })
-export class ProjectComponent {
+export class ProfileProjectComponent {
   //#region Properties
   public caption = input.required<ProjectInputCaptionModel>();
   public projectItems = input.required<ProjectItemModel[]>();
