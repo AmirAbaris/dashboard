@@ -15,6 +15,7 @@
 </div>
 <div [@expandCollapse]="child().isExpanded ? 'expanded' : 'collapsed'">
     @for (secondChild of child().children; track $index) {
-    <app-sidebar-child-item [child]="secondChild" [level]="level() + 1" />
+    <app-sidebar-child-item [child]="secondChild" [level]="level() + 1" activateMenuChildDir
+        [secondChildLink]="secondChild.link" />
     }
 </div>

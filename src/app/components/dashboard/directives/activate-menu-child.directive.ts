@@ -9,6 +9,7 @@ export class ActivateMenuChildDirective implements AfterViewInit, OnChanges {
   private readonly _renderer = inject(Renderer2);
 
   public childLink = input<string>();
+  public secondChildLink = input<string>();
   public url = input<string>();
 
   private _circleIcon: HTMLElement | null = null;
@@ -30,7 +31,7 @@ export class ActivateMenuChildDirective implements AfterViewInit, OnChanges {
 
   //#region Main logic methods
   private _applyForActiveChildren(): void {
-    if (this.url() === this.childLink()) {
+    if (this.url() === this.childLink() || this.url() === this.secondChildLink()) {
       this._addClass(this._circleIcon, 'active');
       this._addClass(this._childTitleElement, 'active');
     }
