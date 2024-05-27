@@ -29,6 +29,9 @@
             "actionTitle": "Action",
             "anotherCationTitle": "Another action",
             "otherTitle": "Something else here"
+        },
+        "add-project-card": {
+            "newProject": "New Project"
         }
     }
 }

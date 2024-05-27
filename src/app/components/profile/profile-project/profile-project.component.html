@@ -8,5 +8,6 @@
         <app-project-item class="w-full" [data]="item" [participants]="participants"
             [caption]="caption.projectItemCaption" />
         }
+        <app-add-project-card *ngIf="addProjectCaption" [caption]="addProjectCaption" />
     </div>
 </div>

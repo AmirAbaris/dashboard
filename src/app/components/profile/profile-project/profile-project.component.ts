@@ -5,6 +5,7 @@ import { ProjectInputCaptionModel } from '../models/caption-models/project-input
 import { TranslateService } from '@ngx-translate/core';
 import { forkJoin } from 'rxjs';
 import { UserService } from '../../../services/user.service';
+import { AddProjectCaptionModel } from '../models/caption-models/add-project.caption.model';
 
 @Component({
   selector: 'app-project',
@@ -20,9 +21,11 @@ export class ProfileProjectComponent implements OnInit {
   public projectItems: ProjectItemModel[] | undefined;
 
   public caption: ProjectInputCaptionModel | undefined;
+  public addProjectCaption: AddProjectCaptionModel | undefined;
   private readonly _projectCaptionPath = {
-    projectCaption: 'profile.project',
-    projectItemCaption: 'profile.project-item'
+    project: 'profile.project',
+    projectItem: 'profile.project-item',
+    addProject: 'profile.add-project-card'
   }
   //#endregion
 
@@ -35,14 +38,16 @@ export class ProfileProjectComponent implements OnInit {
 
   //#region Main logic methods
   private _getCaptions(): void {
-    const projectCaption = this._translateService.get(this._projectCaptionPath.projectCaption);
-    const projectItemCaption = this._translateService.get(this._projectCaptionPath.projectItemCaption);
+    const projectCaption = this._translateService.get(this._projectCaptionPath.project);
+    const projectItemCaption = this._translateService.get(this._projectCaptionPath.projectItem);
+    const addProjectCaption = this._translateService.get(this._projectCaptionPath.addProject);
 
-    forkJoin([projectCaption, projectItemCaption]).subscribe(([projectCaptionData, projectItemCaptionData]) => {
+    forkJoin([projectCaption, projectItemCaption, addProjectCaption]).subscribe(([projectCaptionData, projectItemCaptionData, addProjectCaptionData]) => {
       this.caption = {
         projectCaption: projectCaptionData,
         projectItemCaption: projectItemCaptionData
       }
+      this.addProjectCaption = addProjectCaptionData;
     });
   }
 
