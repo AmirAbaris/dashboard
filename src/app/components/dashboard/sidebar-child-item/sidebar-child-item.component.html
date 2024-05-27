@@ -2,7 +2,7 @@
     <div class="flex items-center p-2" [routerLink]="child().link">
         <ul class="flex justify-between w-[98%]">
             <li class="font-light text-blueGray">
-                <div activateMenuChildDir [childTitle]="child().title"
+                <div activateMenuChildDir [childLink]="child().link"
                     [ngClass]="{ 'flex items-center gap-x-2': level() === 0, 'ml-8': level() !== 0 }">
                     <mat-icon *ngIf="level() === 0" class="circle-icon">circle</mat-icon>
                     <a class="child-title">{{ child().title }}</a>

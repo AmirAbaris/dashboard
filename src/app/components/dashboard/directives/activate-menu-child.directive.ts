@@ -1,80 +1,63 @@
-import { Directive, ElementRef, Renderer2, inject, input } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs';
+import { AfterViewInit, Directive, ElementRef, OnDestroy, Renderer2, inject, input } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { Subscription, filter } from 'rxjs';
 
 @Directive({
   selector: '[activateMenuChildDir]'
 })
-export class ActivateMenuChildDirective {
+export class ActivateMenuChildDirective implements AfterViewInit, OnDestroy {
   //#region Properties
   private readonly _router = inject(Router);
   private readonly _el = inject(ElementRef);
   private readonly _renderer = inject(Renderer2);
 
-  public childTitle = input<string>();
+  public childLink = input<string>();
+  private _routerSubscription: Subscription | undefined;
   //#endregion
 
   //#region Lifecycle methods
-  ngOnInit(): void {
+  public ngAfterViewInit(): void {
+    this._routerSubscription = this._router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this._applyForActiveChildren();
+    });
+
+    // Initial check
     this._applyForActiveChildren();
+  }
+
+  public ngOnDestroy(): void {
+    if (this._routerSubscription) {
+      this._routerSubscription.unsubscribe();
+    }
   }
   //#endregion
 
   //#region Main logic methods
   private _applyForActiveChildren(): void {
-    this._router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      const currentUrl = this._router.url;
-      const normalizedTitle: string | undefined = this.normalizeTitle(this.childTitle()?.toLowerCase());
-      const normalizedUrl = this.normalizeUrl(currentUrl);
+    const currentUrl = this._router.url;
+    const element: HTMLElement = this._el.nativeElement;
+    const circleIcon: HTMLElement | null = element.querySelector('.circle-icon');
+    const childTitleElement: HTMLElement | null = element.querySelector('.child-title');
+    const link: string | undefined = this.childLink();
 
-      const element: HTMLElement = this._el.nativeElement;
-      const circleIcon: HTMLElement | null = element.querySelector('.circle-icon');
-      const childTitleElement: HTMLElement | null = element.querySelector('.child-title');
+    if (!link) return;
+    const isActive = currentUrl.startsWith(link);
 
-      // add a guard to make sure title is not null
-      if (!normalizedTitle) return;
-      
-      this.toggleActiveClass(circleIcon, normalizedUrl, normalizedTitle);
-      this.toggleActiveClass(childTitleElement, normalizedUrl, normalizedTitle);
-    });
+    console.log(isActive);
+
+    if (!(circleIcon && childTitleElement)) return;
+    this._toggleClass(circleIcon, 'active', isActive);
+    this._toggleClass(childTitleElement, 'active', isActive);
   }
 
-  /**
-   * Toggles the 'active' class for the given element based on the normalized URL and title.
-   * @param element The HTML element to toggle the 'active' class on.
-   * @param normalizedUrl The normalized URL of the current page.
-   * @param normalizedTitle The normalized title of the child item.
-   */
-  private toggleActiveClass(element: HTMLElement | null, normalizedUrl: string | undefined, normalizedTitle: string): void {
-    if (!element || !normalizedUrl || !normalizedTitle) return;
-
-    if (normalizedUrl.includes(normalizedTitle)) {
-      this._renderer.addClass(element, 'active');
+  private _toggleClass(element: HTMLElement, className: string, canAdd: boolean): void {
+    if (canAdd) {
+      this._renderer.addClass(element, className);
     } else {
-      this._renderer.removeClass(element, 'active');
+      this._renderer.removeClass(element, className);
     }
-  }
-
-  /**
-   * Normalizes the title by replacing spaces with dashes.
-   * @param title The title to normalize.
-   * @returns The normalized title.
-   */
-  private normalizeTitle(title: string | undefined): string | undefined {
-    if (!title) return;
-
-    return title.replace(/\s+/g, '-');
-  }
-
-  /**
-   * Normalizes the URL by replacing slashes with dashes.
-   * @param url The URL to normalize.
-   * @returns The normalized URL.
-   */
-  private normalizeUrl(url: string): string {
-    return url.replace(/\//g, '-');
   }
   //#endregion
 }

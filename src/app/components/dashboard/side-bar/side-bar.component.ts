@@ -42,7 +42,7 @@ export class SideBarComponent implements OnInit {
   //#endregion
 
   //#region Main logic methods
-  private _saveSidebarState() {
+  private _saveSidebarState(): void {
     const state = this.data().map(section => {
       return {
         ...section,
@@ -56,7 +56,7 @@ export class SideBarComponent implements OnInit {
     localStorage.setItem('sidebarState', JSON.stringify(state));
   }
 
-  private _loadSidebarState() {
+  private _loadSidebarState(): void {
     const state = localStorage.getItem('sidebarState');
     if (state) {
       this.data.set(JSON.parse(state));

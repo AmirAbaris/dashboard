@@ -1,27 +1,41 @@
-import { AfterViewInit, Directive, ElementRef, Renderer2, inject, input } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, OnDestroy, Renderer2, inject, input } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
+import { Subscription, filter } from 'rxjs';
 
 @Directive({
   selector: '[activeMenuDir]'
 })
-export class ActiveMenuDirective implements AfterViewInit {
+export class ActiveMenuDirective implements AfterViewInit, OnDestroy {
   //#region Properties
   private readonly _router = inject(Router);
   private readonly _el = inject(ElementRef);
   private readonly _renderer = inject(Renderer2);
 
   public itemTitle = input.required<string>();
+  private _routerSubscription: Subscription | undefined;
   //#endregion
 
   //#region Lifecycle methods
   public ngAfterViewInit(): void {
+    this._routerSubscription = this._router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this._applyForActiveItems();
+    });
+
+    // init check
     this._applyForActiveItems();
+  }
+
+  public ngOnDestroy(): void {
+    if (this._routerSubscription) {
+      this._routerSubscription.unsubscribe();
+    }
   }
   //#endregion
 
   //#region Main logic methods
-  private _applyForActiveItems() {
+  private _applyForActiveItems(): void {
     const currentUrl = this._router.url;
     const targetElement: HTMLElement = this._el.nativeElement;
     const iconContainer: HTMLElement | null = targetElement.querySelector('.icon-container');
