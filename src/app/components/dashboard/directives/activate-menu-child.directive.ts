@@ -45,8 +45,6 @@ export class ActivateMenuChildDirective implements AfterViewInit, OnDestroy {
     if (!link) return;
     const isActive = currentUrl.startsWith(link);
 
-    console.log(isActive);
-
     if (!(circleIcon && childTitleElement)) return;
     this._toggleClass(circleIcon, 'active', isActive);
     this._toggleClass(childTitleElement, 'active', isActive);

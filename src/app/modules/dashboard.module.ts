@@ -12,12 +12,14 @@ import { ActivateMenuChildDirective } from '../components/dashboard/directives/a
 import { AppService } from '../services/app.service';
 import { AppRepository } from '../repositories/app-repository';
 import { DefaultComponent } from '../components/dashboard/default/default.component';
+import { VrInfoComponent } from '../components/dashboard/vr-info/vr-info.component';
 
 const routes: Routes = [
   {
     path: '', component: DashboardMainComponent,
     children: [
-      { path: 'dashboards/default', component: DefaultComponent }
+      { path: 'dashboards/default', component: DefaultComponent },
+      { path: 'dashboards/virtual-reality/vr-info', component: VrInfoComponent }
     ]
   },
 ];
@@ -26,7 +28,7 @@ const routes: Routes = [
   declarations: [
     DashboardMainComponent, SideBarComponent,
     SidebarChildItemComponent, ActiveMenuDirective,
-    ActivateMenuChildDirective, DefaultComponent
+    ActivateMenuChildDirective, DefaultComponent, VrInfoComponent
   ],
   imports: [
     RouterModule.forChild(routes),
