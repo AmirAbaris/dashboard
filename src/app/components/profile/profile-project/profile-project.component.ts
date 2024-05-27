@@ -1,5 +1,4 @@
 import { Component, OnInit, inject, input } from '@angular/core';
-import { ParticipantModel } from '../models/participant.model';
 import { ProjectItemModel } from '../models/project-item.model';
 import { ProjectInputCaptionModel } from '../models/caption-models/project-input.caption.model';
 import { TranslateService } from '@ngx-translate/core';
@@ -17,7 +16,6 @@ export class ProfileProjectComponent implements OnInit {
   private readonly _translateService = inject(TranslateService);
   private readonly _userService = inject(UserService);
 
-  public participants: ParticipantModel[] | undefined;
   public projectItems: ProjectItemModel[] | undefined;
 
   public caption: ProjectInputCaptionModel | undefined;
@@ -52,12 +50,8 @@ export class ProfileProjectComponent implements OnInit {
   }
 
   private _getData(): void {
-    const projectItem = this._userService.getProjectItem();
-    const participant = this._userService.getParticipant();
-
-    forkJoin([projectItem, participant]).subscribe(([projectItemData, participantData]) => {
+    const projectItem = this._userService.getProjectItem().subscribe((projectItemData) => {
       this.projectItems = projectItemData;
-      this.participants = participantData;
     });
   }
   //#endregion
