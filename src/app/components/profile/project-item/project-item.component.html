@@ -7,11 +7,9 @@
             <div class="flex flex-col justify-evenly">
                 <h1 class="text-base font-semibold text-charcoalBlue">{{data().title}}</h1>
                 <div class="flex -space-x-2 overflow-hidden cursor-pointer">
-                    @for (participant of participants(); track $index) {
-                    @if (participant.registeredProjectIds.includes(data().id)) {
+                    @for (participant of participants() | isParticipantRegistered: data().id; track $index) {
                     <img class="profile rounded-full ring-white ring-2" [ngSrc]="participant.cover" width="20"
                         height="20" alt="participant-cover">
-                    }
                     }
                 </div>
             </div>

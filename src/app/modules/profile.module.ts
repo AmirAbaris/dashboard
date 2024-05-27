@@ -11,6 +11,7 @@ import { UserService } from '../services/user.service';
 import { ProfileIntroductionComponent } from '../components/profile/profile-introduction/profile-introduction.component';
 import { ProfileProjectComponent } from '../components/profile/profile-project/profile-project.component';
 import { AddProjectCardComponent } from '../components/profile/add-project-card/add-project-card.component';
+import { IsParticipantRegisteredPipe } from '../components/profile/pipes/is-participant-registered.pipe';
 
 const routes: Routes = [
   { path: '', redirectTo: 'profile', pathMatch: 'full' },
@@ -24,7 +25,8 @@ const routes: Routes = [
     ProfileProjectComponent,
     ProfileIntroductionComponent,
     AddProjectCardComponent,
-    ParticipantCountPipe
+    ParticipantCountPipe,
+    IsParticipantRegisteredPipe
   ],
   imports: [
     CommonModule,
