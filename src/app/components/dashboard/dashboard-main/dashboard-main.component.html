@@ -1,7 +1,9 @@
-<section class="flex">
+<section class="flex h-screen">
     <div class="lg:w-72 lg:h-dvh">
         <app-side-bar *ngIf="sidebarCaption && sidebarItems" [data]="sidebarItems" [caption]="sidebarCaption" />
     </div>
 
-    <router-outlet />
+    <div class="container">
+        <router-outlet />
+    </div>
 </section>
