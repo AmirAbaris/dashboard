@@ -33,19 +33,19 @@
             }
         </div>
         }
-        <div class="help-section rounded-xl mt-6 shadow-md w-[95%] h-44 flex flex-col justify-between py-2">
-            <div class="h-8 w-8 ml-4 rounded-lg shadow-md bg-white flex justify-center items-center">
-                <mat-icon class="title-icon">diamond</mat-icon>
-            </div>
-            <div class="flex flex-col items-start justify-center ml-4 text-white">
-                <p>{{caption().help}}</p>
-                <p class="text-xs">{{caption().checkDocs}}</p>
-            </div>
-            <div class="w-full flex justify-center">
-                <button class="w-[90%]" (click)="onClickDocumentationButtonEventHandler()" mat-flat-button>
-                    <p class="tracking-tight text-xs">{{caption().docs | uppercase}}</p>
-                </button>
-            </div>
-        </div>
     </section>
+    <div class="help-section rounded-xl mt-6 shadow-md w-[95%] h-44 flex flex-col justify-between py-2">
+        <div class="h-8 w-8 ml-4 rounded-lg shadow-md bg-white flex justify-center items-center">
+            <mat-icon class="title-icon">diamond</mat-icon>
+        </div>
+        <div class="flex flex-col items-start justify-center ml-4 text-white">
+            <p>{{caption().help}}</p>
+            <p class="text-xs">{{caption().checkDocs}}</p>
+        </div>
+        <div class="w-full flex justify-center">
+            <button class="w-[90%]" (click)="onClickDocumentationButtonEventHandler()" mat-flat-button>
+                <p class="tracking-tight text-xs">{{caption().docs | uppercase}}</p>
+            </button>
+        </div>
+    </div>
 </aside>
