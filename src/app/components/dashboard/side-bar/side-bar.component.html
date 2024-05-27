@@ -1,7 +1,7 @@
-<aside class="content hidden lg:flex lg:flex-col lg:p-5 lg:overflow-x-hidden">
-    <section class="flex flex-col flex-1 overflow-scroll">
+<aside class="content flex flex-col p-3 overflow-x-hidden h-full">
+    <section class="flex flex-col flex-1">
         <a class="flex gap-x-2 justify-center items-center p-6 cursor-pointer">
-            <img class="object-cover w-8 h-8" src="assets/images/s1.png" width="200" height="200" alt="logo">
+            <img class="object-cover w-8 h-8" ngSrc="assets/images/s1.png" width="200" height="200" alt="logo">
             <span class="text-sm text-charcoalBlue font-medium">{{caption().title}}</span>
         </a>
         <mat-divider />
@@ -12,9 +12,10 @@
                 {{ section.sectionTitle }}
             </h2>
             @for (item of section.items; track $index) {
-            <div *ngIf="item.title" class="flex items-center justify-between cursor-pointer p-3 ml-3 rounded-lg"
-                (click)="toggleHandler(item)" activeMenuDir [itemTitle]="item.title.toLocaleLowerCase()"
-                [routerLink]="item.link">
+            <div *ngIf="item.title && currentUrl"
+                class="flex items-center justify-between cursor-pointer p-3 ml-3 rounded-lg"
+                (click)="onToggleHandler(item)" activeMenuDir [itemTitle]="item.title.toLocaleLowerCase()"
+                [url]="currentUrl" [routerLink]="item.link">
                 <div class="flex items-center gap-x-3 w-full">
                     <div class="icon-container h-8 w-8 rounded-lg shadow-md flex items-center justify-center">
                         <mat-icon class="title-icon">{{item.icon}}</mat-icon>
@@ -26,15 +27,14 @@
             </div>
             <div *ngIf="item.children" [@expandCollapse]="item.isExpanded ? 'expanded' : 'collapsed'" class="ml-3">
                 @for (child of item.children; track $index) {
-                <app-sidebar-child-item [child]="child" [parentIsExpanded]="item.isExpanded" [level]="0"
-                    [routerLink]="child.link" />
+                <app-sidebar-child-item [child]="child" [level]="0" [routerLink]="child.link" [urlPath]="currentUrl" />
                 }
             </div>
             }
         </div>
         }
     </section>
-    <div class="help-section rounded-xl mt-6 shadow-md w-[95%] h-44 flex flex-col justify-between py-2">
+    <div class="help-section rounded-xl mt-6 shadow-md w-[95%] h-44 flex flex-col flex-shrink-0 justify-between py-2">
         <div class="h-8 w-8 ml-4 rounded-lg shadow-md bg-white flex justify-center items-center">
             <mat-icon class="title-icon">diamond</mat-icon>
         </div>

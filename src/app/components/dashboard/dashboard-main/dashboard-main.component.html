@@ -1,6 +1,7 @@
 <section class="flex h-screen">
-    <div class="lg:w-72 lg:h-dvh">
-        <app-side-bar *ngIf="sidebarCaption && sidebarItems" [data]="sidebarItems" [caption]="sidebarCaption" />
+    <div class="hidden lg:flex lg:w-96 lg:h-dvh lg:overflow-y-auto">
+        <app-side-bar *ngIf="sidebarCaption && sidebarItems" [data]="sidebarItems" [caption]="sidebarCaption"
+            (clickDocButtonEvent)="$event" />
     </div>
 
     <div class="container">

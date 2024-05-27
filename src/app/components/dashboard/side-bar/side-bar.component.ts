@@ -1,7 +1,9 @@
-import { Component, OnInit, input, model, output } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject, input, model, output } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { SidebarCaptionModel } from '../models/caption-models/sidebar.caption.model';
 import { SideBarSectionModel, SidebarItemModel } from '../models/sidebar-item.model';
+import { NavigationEnd, Router } from '@angular/router';
+import { Subscription, filter } from 'rxjs';
 
 @Component({
   selector: 'app-side-bar',
@@ -15,22 +17,40 @@ import { SideBarSectionModel, SidebarItemModel } from '../models/sidebar-item.mo
     ])
   ]
 })
-export class SideBarComponent implements OnInit {
+export class SideBarComponent implements OnInit, OnDestroy {
   //#region Properties
+  private readonly _router = inject(Router);
+
   public data = model.required<SideBarSectionModel[]>();
   public caption = input.required<SidebarCaptionModel>();
 
   public clickDocButtonEvent = output();
+
+  public currentUrl: string | undefined;
+  private _routerSubscription: Subscription | undefined;
   //#endregion
 
   //#region Lifecycle methods
   public ngOnInit(): void {
+    this._routerSubscription = this._router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.currentUrl = this._router.url;
+    });
+
+    this.currentUrl = this._router.url;
     this._loadSidebarState();
+  }
+
+  public ngOnDestroy(): void {
+    if (this._routerSubscription) {
+      this._routerSubscription.unsubscribe();
+    }
   }
   //#endregion
 
   //#region Handler methods
-  public toggleHandler(item: SidebarItemModel): void {
+  public onToggleHandler(item: SidebarItemModel): void {
     item.isExpanded = !item.isExpanded;
 
     this._saveSidebarState();

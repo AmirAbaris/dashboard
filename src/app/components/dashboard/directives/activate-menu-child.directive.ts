@@ -1,61 +1,65 @@
-import { AfterViewInit, Directive, ElementRef, OnDestroy, Renderer2, inject, input } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { Subscription, filter } from 'rxjs';
+import { AfterViewInit, Directive, ElementRef, OnChanges, Renderer2, SimpleChanges, inject, input } from '@angular/core';
 
 @Directive({
   selector: '[activateMenuChildDir]'
 })
-export class ActivateMenuChildDirective implements AfterViewInit, OnDestroy {
+export class ActivateMenuChildDirective implements AfterViewInit, OnChanges {
   //#region Properties
-  private readonly _router = inject(Router);
   private readonly _el = inject(ElementRef);
   private readonly _renderer = inject(Renderer2);
 
   public childLink = input<string>();
-  private _routerSubscription: Subscription | undefined;
+  public url = input<string>();
+
+  private _circleIcon: HTMLElement | null = null;
+  private _childTitleElement: HTMLElement | null = null;
   //#endregion
 
   //#region Lifecycle methods
   public ngAfterViewInit(): void {
-    this._routerSubscription = this._router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      this._applyForActiveChildren();
-    });
-
-    // Initial check
+    this._initializeElements();
     this._applyForActiveChildren();
   }
 
-  public ngOnDestroy(): void {
-    if (this._routerSubscription) {
-      this._routerSubscription.unsubscribe();
+  public ngOnChanges(changes: SimpleChanges): void {
+    if (changes['url']) {
+      this._applyForActiveChildren();
     }
   }
   //#endregion
 
   //#region Main logic methods
   private _applyForActiveChildren(): void {
-    const currentUrl = this._router.url;
-    const element: HTMLElement = this._el.nativeElement;
-    const circleIcon: HTMLElement | null = element.querySelector('.circle-icon');
-    const childTitleElement: HTMLElement | null = element.querySelector('.child-title');
-    const link: string | undefined = this.childLink();
-
-    if (!link) return;
-    const isActive = currentUrl.startsWith(link);
-
-    if (!(circleIcon && childTitleElement)) return;
-    this._toggleClass(circleIcon, 'active', isActive);
-    this._toggleClass(childTitleElement, 'active', isActive);
+    if (this.url() === this.childLink()) {
+      this._addClass(this._circleIcon, 'active');
+      this._addClass(this._childTitleElement, 'active');
+    }
+    else {
+      this._removeClass(this._circleIcon, 'active');
+      this._removeClass(this._childTitleElement, 'active');
+    }
   }
 
-  private _toggleClass(element: HTMLElement, className: string, canAdd: boolean): void {
-    if (canAdd) {
-      this._renderer.addClass(element, className);
-    } else {
-      this._renderer.removeClass(element, className);
-    }
+  /**
+   * created methods like this to handle null element parameters!
+   */
+  private _addClass(element: HTMLElement | null, className: string): void {
+    if (!element) return;
+
+    this._renderer.addClass(element, className);
+  }
+
+  private _removeClass(element: HTMLElement | null, className: string): void {
+    if (!element) return;
+
+    this._renderer.removeClass(element, className);
+  }
+
+  private _initializeElements(): void {
+    const element: HTMLElement = this._el.nativeElement;
+
+    this._circleIcon = element.querySelector('.circle-icon');
+    this._childTitleElement = element.querySelector('.child-title');
   }
   //#endregion
 }

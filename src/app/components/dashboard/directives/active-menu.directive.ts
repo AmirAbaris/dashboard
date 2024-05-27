@@ -1,48 +1,39 @@
-import { AfterViewInit, Directive, ElementRef, OnDestroy, Renderer2, inject, input } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { Subscription, filter } from 'rxjs';
+import { AfterViewInit, Directive, ElementRef, OnChanges, Renderer2, SimpleChanges, inject, input } from '@angular/core';
 
 @Directive({
   selector: '[activeMenuDir]'
 })
-export class ActiveMenuDirective implements AfterViewInit, OnDestroy {
+export class ActiveMenuDirective implements AfterViewInit, OnChanges {
   //#region Properties
-  private readonly _router = inject(Router);
   private readonly _el = inject(ElementRef);
   private readonly _renderer = inject(Renderer2);
 
   public itemTitle = input.required<string>();
-  private _routerSubscription: Subscription | undefined;
+  public url = input<string>();
   //#endregion
 
   //#region Lifecycle methods
   public ngAfterViewInit(): void {
-    this._routerSubscription = this._router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      this._applyForActiveItems();
-    });
-
-    // init check
     this._applyForActiveItems();
   }
 
-  public ngOnDestroy(): void {
-    if (this._routerSubscription) {
-      this._routerSubscription.unsubscribe();
+  public ngOnChanges(changes: SimpleChanges): void {
+    if (changes['url']) {
+      this._applyForActiveItems();
     }
   }
   //#endregion
 
   //#region Main logic methods
   private _applyForActiveItems(): void {
-    const currentUrl = this._router.url;
     const targetElement: HTMLElement = this._el.nativeElement;
     const iconContainer: HTMLElement | null = targetElement.querySelector('.icon-container');
     const titleIcon: HTMLElement | null = targetElement.querySelector('.title-icon');
+    const urlPath: string | undefined = this.url();
 
     // if url path started URL matched with item title, it will be true!
-    const isActive = currentUrl.startsWith('/' + this.itemTitle().toLocaleLowerCase());
+    if (!urlPath) return;
+    const isActive = urlPath.startsWith('/' + this.itemTitle().toLocaleLowerCase());
 
     this._toggleClass(targetElement, 'shadow-md', isActive);
     this._toggleClass(targetElement, 'bg-white', isActive);

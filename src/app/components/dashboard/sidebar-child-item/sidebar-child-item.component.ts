@@ -14,15 +14,15 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     ])
   ]
 })
-export class SidebarChildItemComponent {
+export class SidebarChildItemComponent  {
   //#region Properties
   public child = input.required<SidebarItemModel>();
-  public parentIsExpanded = input<boolean>();
   public level = input<number>(0);
+  public urlPath = input<string>();
   //#endregion
 
   //#region Handler methods
-  public toggleHandler(item: SidebarItemModel): void {
+  public onToggleHandler(item: SidebarItemModel): void {
     item.isExpanded = !item.isExpanded;
   }
   //#endregion
