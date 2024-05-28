@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { PlatformSettingCaptionModel } from '../models/caption-models/platform-setting.caption.model';
 
 @Component({
   selector: 'app-platform-setting',
@@ -6,4 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './platform-setting.component.scss'
 })
 export class PlatformSettingComponent {
+  //#region Properties
+  public caption = input.required<PlatformSettingCaptionModel>();
+  //#endregion
 }

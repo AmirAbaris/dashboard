@@ -1,3 +1,5 @@
 <div class="w-full h-dvh bg-ghostWhite">
-    <app-platform-setting />
+    @if (platformSettingCaption) {
+    <app-platform-setting [caption]="platformSettingCaption" />
+    }
 </div>
