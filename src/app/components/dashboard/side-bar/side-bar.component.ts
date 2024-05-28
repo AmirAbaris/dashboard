@@ -39,7 +39,6 @@ export class SideBarComponent implements OnInit, OnDestroy {
     });
 
     this.currentUrl = this._router.url;
-    this._loadSidebarState();
   }
 
   public ngOnDestroy(): void {
@@ -52,35 +51,10 @@ export class SideBarComponent implements OnInit, OnDestroy {
   //#region Handler methods
   public onToggleHandler(item: SidebarItemModel): void {
     item.isExpanded = !item.isExpanded;
-
-    this._saveSidebarState();
   }
 
   public onClickDocumentationButtonEventHandler(): void {
     this.clickDocButtonEvent.emit();
-  }
-  //#endregion
-
-  //#region Main logic methods
-  private _saveSidebarState(): void {
-    const state = this.data().map(section => {
-      return {
-        ...section,
-        items: section.items.map(item => ({
-          ...item,
-          isExpanded: item.isExpanded
-        }))
-      };
-    });
-
-    localStorage.setItem('sidebarState', JSON.stringify(state));
-  }
-
-  private _loadSidebarState(): void {
-    const state = localStorage.getItem('sidebarState');
-    if (state) {
-      this.data.set(JSON.parse(state));
-    }
   }
   //#endregion
 }
