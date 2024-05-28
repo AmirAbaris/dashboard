@@ -8,7 +8,7 @@ const routes: Routes = [
     loadChildren: () => import('../app/modules/auth.module').then((module) => module.AuthModule)
   },
   {
-    path: 'profile',
+    path: '',
     loadChildren: () => import('../app/modules/profile.module').then((module) => module.ProfileModule)
   }
 ];

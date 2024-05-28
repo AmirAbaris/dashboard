@@ -1,36 +1,35 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileMainComponent } from '../components/profile/profile-main/profile-main.component';
-import { ProjectItemComponent } from '../components/profile/project-item/project-item.component';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatDividerModule } from '@angular/material/divider';
 import { UserService } from '../services/user.service';
-import { ProfileIntroductionComponent } from '../components/profile/profile-introduction/profile-introduction.component';
-import { ProfileProjectComponent } from '../components/profile/profile-project/profile-project.component';
-import { AddProjectCardComponent } from '../components/profile/add-project-card/add-project-card.component';
+import { ProfileIntroductionModule } from './profile-introduction.module';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'profile', pathMatch: 'full' },
-  { path: 'profile', component: ProfileMainComponent }
+  {
+    path: '',
+    redirectTo: 'profile',
+    pathMatch: 'full'
+  },
+  {
+    path: 'profile',
+    component: ProfileMainComponent,
+    children: [
+      {
+        path: '', // Empty path to ensure ProfileMainComponent is always displayed
+        loadChildren: () => import('./profile-project.module').then(m => m.ProfileProjectModule)
+      }
+    ]
+  }
 ];
+
 
 @NgModule({
   declarations: [
-    ProfileMainComponent,
-    ProjectItemComponent,
-    ProfileProjectComponent,
-    ProfileIntroductionComponent,
-    AddProjectCardComponent
+    ProfileMainComponent
   ],
   imports: [
-    CommonModule,
-    NgOptimizedImage,
-    MatIconModule,
-    MatMenuModule,
-    MatDividerModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ProfileIntroductionModule
   ],
   providers: [UserService]
 })

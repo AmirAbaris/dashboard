@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ProjectItemModel } from '../components/profile/models/project-item.model';
+import { ProjectItemModel } from '../components/profile-project/models/project-item.model';
 import { Observable, of } from 'rxjs';
-import { ProfileModel } from '../components/profile/models/profile.model';
+import { ProfileModel } from '../components/profile-introduction/models/profile.model';
 
 @Injectable()
 export class UserService {

@@ -1,17 +1,17 @@
-import { Component, OnInit, inject, input } from '@angular/core';
-import { ProjectItemModel } from '../models/project-item.model';
-import { ProjectInputCaptionModel } from '../models/caption-models/project-input.caption.model';
+import { Component, OnInit, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { forkJoin } from 'rxjs';
 import { UserService } from '../../../services/user.service';
 import { AddProjectCaptionModel } from '../models/caption-models/add-project.caption.model';
+import { ProjectInputCaptionModel } from '../models/caption-models/project-input.caption.model';
+import { ProjectItemModel } from '../models/project-item.model';
 
 @Component({
-  selector: 'app-project',
-  templateUrl: './profile-project.component.html',
-  styleUrl: './profile-project.component.scss'
+  selector: 'app-project-main',
+  templateUrl: './profile-project-main.component.html',
+  styleUrl: './profile-project-main.component.scss'
 })
-export class ProfileProjectComponent implements OnInit {
+export class ProfileProjectMainComponent implements OnInit {
   //#region Properties
   private readonly _translateService = inject(TranslateService);
   private readonly _userService = inject(UserService);
@@ -21,9 +21,9 @@ export class ProfileProjectComponent implements OnInit {
   public caption: ProjectInputCaptionModel | undefined;
   public addProjectCaption: AddProjectCaptionModel | undefined;
   private readonly _projectCaptionPath = {
-    project: 'profile.project',
-    projectItem: 'profile.project-item',
-    addProject: 'profile.add-project-card'
+    project: 'profile-project.project',
+    projectItem: 'profile-project.project-item',
+    addProject: 'profile-project.add-project-card'
   }
   //#endregion
 

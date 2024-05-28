@@ -1,13 +1,13 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ProfileModel } from '../models/profile.model';
 import { UserService } from '../../../services/user.service';
+import { ProfileModel } from '../models/profile.model';
 
 @Component({
-  selector: 'app-profile-introduction',
-  templateUrl: './profile-introduction.component.html',
-  styleUrl: './profile-introduction.component.scss'
+  selector: 'app-profile-introduction-main',
+  templateUrl: './profile-introduction-main.component.html',
+  styleUrl: './profile-introduction-main.component.scss'
 })
-export class ProfileIntroductionComponent implements OnInit {
+export class ProfileIntroductionMainComponent implements OnInit {
   //#region Properties
   private readonly _userService = inject(UserService);
 

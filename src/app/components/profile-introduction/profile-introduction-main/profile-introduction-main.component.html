@@ -1,7 +1,8 @@
+@if (profileData) {
 <div class="content flex justify-center h-80 relative">
     <img class="object-cover rounded-2xl w-full" src="assets/images/p1.jpg" alt="background">
 
-    <div *ngIf="profileData" class="absolute bottom-[-3rem] right-0 flex justify-center w-full">
+    <div class="absolute bottom-[-3rem] right-0 flex justify-center w-full">
         <div class="gradient-bg w-[90%] py-4 bg-charcoalBlue rounded-2xl shadow-md backdrop-blur-lg">
             <div class="flex flex-wrap justify-center items-center gap-x-6 h-full md:justify-start md:ml-4">
                 <img class="rounded-xl" [ngSrc]="profileData.cover" height="74" width="74" alt="profile-cover">
@@ -16,3 +17,4 @@
         </div>
     </div>
 </div>
+}
