@@ -14,8 +14,8 @@
             @for (item of section.items; track $index) {
             <div *ngIf="item.title && currentUrl"
                 class="flex items-center justify-between cursor-pointer p-3 ml-3 rounded-lg"
-                (click)="onToggleHandler(item)" activeMenuDir [itemTitle]="item.title.toLocaleLowerCase()"
-                [url]="currentUrl" [routerLink]="item.link">
+                (click)="onToggleHandler(item)" activeMenuDir [itemMenu]="item" [url]="currentUrl"
+                [routerLink]="item.link">
                 <div class="flex items-center gap-x-3 w-full">
                     <div class="icon-container h-8 w-8 rounded-lg shadow-md flex items-center justify-center">
                         <mat-icon class="title-icon">{{item.icon}}</mat-icon>

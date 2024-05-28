@@ -1,4 +1,5 @@
 import { AfterViewInit, Directive, ElementRef, OnChanges, Renderer2, SimpleChanges, inject, input } from '@angular/core';
+import { SidebarItemModel } from '../models/sidebar-item.model';
 
 @Directive({
   selector: '[activeMenuDir]'
@@ -8,7 +9,7 @@ export class ActiveMenuDirective implements AfterViewInit, OnChanges {
   private readonly _el = inject(ElementRef);
   private readonly _renderer = inject(Renderer2);
 
-  public itemTitle = input.required<string>();
+  public itemMenu = input.required<SidebarItemModel>();
   public url = input<string>();
   //#endregion
 
@@ -31,9 +32,8 @@ export class ActiveMenuDirective implements AfterViewInit, OnChanges {
     const titleIcon: HTMLElement | null = targetElement.querySelector('.title-icon');
     const urlPath: string | undefined = this.url();
 
-    // if url path started URL matched with item title, it will be true!
     if (!urlPath) return;
-    const isActive = urlPath.startsWith('/' + this.itemTitle().toLocaleLowerCase());
+    const isActive = this._isActiveMenu(this.itemMenu(), urlPath);
 
     this._toggleClass(targetElement, 'shadow-md', isActive);
     this._toggleClass(targetElement, 'bg-white', isActive);
@@ -42,6 +42,17 @@ export class ActiveMenuDirective implements AfterViewInit, OnChanges {
       this._toggleClass(iconContainer, 'bg-magenta', isActive);
       this._toggleClass(iconContainer, 'active', isActive);
     }
+  }
+
+  private _isActiveMenu(menu: SidebarItemModel, urlPath: string): boolean {
+    if (menu.link && urlPath.startsWith(menu.link)) {
+      return true;
+    }
+    if (menu.children) {
+      return menu.children.some(child => this._isActiveMenu(child, urlPath));
+    }
+
+    return false;
   }
 
   private _toggleClass(element: HTMLElement, className: string, canAdd: boolean): void {
@@ -53,4 +64,3 @@ export class ActiveMenuDirective implements AfterViewInit, OnChanges {
   }
   //#endregion
 }
-

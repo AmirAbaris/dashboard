@@ -2,7 +2,7 @@
     <div class="flex items-center p-2" [routerLink]="child().link">
         <ul class="flex justify-between w-[98%]">
             <li class="font-light text-blueGray">
-                <div activateMenuChildDir [childLink]="child().link" [url]="urlPath()"
+                <div activateMenuChildDir [itemMenu]="child()" [url]="urlPath()"
                     [ngClass]="{ 'flex items-center gap-x-2': level() === 0, 'ml-8': level() !== 0 }">
                     <mat-icon *ngIf="level() === 0" class="circle-icon">circle</mat-icon>
                     <a class="child-title">{{ child().title }}</a>
@@ -15,7 +15,7 @@
 </div>
 <div [@expandCollapse]="child().isExpanded ? 'expanded' : 'collapsed'">
     @for (secondChild of child().children; track $index) {
-    <app-sidebar-child-item [child]="secondChild" [level]="level() + 1" activateMenuChildDir
-        [secondChildLink]="secondChild.link" />
+    <app-sidebar-child-item [child]="secondChild" [level]="level() + 1" activateMenuChildDir [itemMenu]="secondChild"
+        [url]="urlPath()" />
     }
 </div>
