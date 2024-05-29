@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { ProfileModel } from '../models/profile.model';
 import { ProfileInformationCaptionModel } from '../models/caption-models/profile-information.caption.model';
 
@@ -11,5 +11,13 @@ export class ProfileInformationComponent {
   //#region Properties
   public data = input.required<ProfileModel>();
   public caption = input.required<ProfileInformationCaptionModel>();
+  public clickEditEven = output<void>();
+  //#endregion
+
+
+  //#region Method handler
+  public onClickEditEventHandler(): void {
+    this.clickEditEven.emit();
+  }
   //#endregion
 }

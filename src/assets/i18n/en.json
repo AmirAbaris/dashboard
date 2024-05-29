@@ -38,6 +38,12 @@
             "location": "Location",
             "social": "Social",
             "editProfile": "Edit Profile"
+        },
+        "conversation": {
+            "conversationTitle": "Conversations"
+        },
+        "conversation-item": {
+            "replyItem": "reply"
         }
     }
 }

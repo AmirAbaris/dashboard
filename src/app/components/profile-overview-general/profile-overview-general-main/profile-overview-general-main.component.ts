@@ -5,6 +5,8 @@ import { UserService } from '../../../services/user.service';
 import { ProfileModel } from '../models/profile.model';
 import { forkJoin } from 'rxjs';
 import { ProfileInformationCaptionModel } from '../models/caption-models/profile-information.caption.model';
+import { ConversationItemModel } from '../models/conversation-item.model';
+import { ConversationInputCaptionModel } from '../models/caption-models/conversation-input.caption.model';
 
 @Component({
   selector: 'app-profile-overview-general-main',
@@ -17,11 +19,15 @@ export class ProfileOverviewGeneralMainComponent implements OnInit {
   private readonly _userService = inject(UserService);
 
   public profileInfo: ProfileModel | undefined;
+  public conversationItems: ConversationItemModel[] | undefined;
   public platformSettingCaption: PlatformSettingCaptionModel | undefined;
   public profileInfoCaption: ProfileInformationCaptionModel | undefined;
+  public conversationInputCaption: ConversationInputCaptionModel | undefined;
   private readonly _captionPath = {
     platformSettingCaption: 'profile-overview-general.platform-setting',
-    profileInfoCaption: 'profile-overview-general.profile-information'
+    profileInfoCaption: 'profile-overview-general.profile-information',
+    conversationCaption: 'profile-overview-general.conversation',
+    conversationItemCaption: 'profile-overview-general.conversation-item'
   }
   //#endregion
 
@@ -32,15 +38,32 @@ export class ProfileOverviewGeneralMainComponent implements OnInit {
   }
   //#endregion
 
+  //#region Handler methods
+  public onClickReplyEventHandler(id: string): void {
+    console.log('reply item clicked with id of:', id);
+  }
+
+  public onClickEditEventHandler(): void {
+    console.log('profile edit clicked');
+  }
+  //#endregion
+
   //#region Main logic methods
   private _getCaption(): void {
     const platformSettingCaption = this._translateService.get(this._captionPath.platformSettingCaption);
     const profileInfoCaption = this._translateService.get(this._captionPath.profileInfoCaption);
+    const conversationCaption = this._translateService.get(this._captionPath.conversationCaption);
+    const conversationItemCaption = this._translateService.get(this._captionPath.conversationItemCaption);
 
-    forkJoin([platformSettingCaption, profileInfoCaption]).subscribe(([platformSettingCaptionData, profileInfoCaptionData]) => {
-      this.platformSettingCaption = platformSettingCaptionData;
-      this.profileInfoCaption = profileInfoCaptionData;
-    })
+    forkJoin([platformSettingCaption, profileInfoCaption, conversationCaption, conversationItemCaption])
+      .subscribe(([platformSettingCaptionData, profileInfoCaptionData, conversationCaptionData, conversationItemCaptionData]) => {
+        this.platformSettingCaption = platformSettingCaptionData;
+        this.profileInfoCaption = profileInfoCaptionData;
+        this.conversationInputCaption = {
+          conversationCaption: conversationCaptionData,
+          conversationItemCaption: conversationItemCaptionData
+        };
+      })
 
     this._translateService.get(this._captionPath.platformSettingCaption).subscribe((caption) => {
       this.platformSettingCaption = caption;
@@ -48,8 +71,12 @@ export class ProfileOverviewGeneralMainComponent implements OnInit {
   }
 
   private _getData(): void {
-    this._userService.getProfile().subscribe((data) => {
-      this.profileInfo = data;
+    const profile = this._userService.getProfile();
+    const conversationItems = this._userService.getConversationItems();
+
+    forkJoin([profile, conversationItems]).subscribe(([profileData, conversationItemData]) => {
+      this.profileInfo = profileData;
+      this.conversationItems = conversationItemData;
     });
   }
   //#endregion

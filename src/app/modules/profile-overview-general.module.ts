@@ -9,6 +9,8 @@ import { UserService } from '../services/user.service';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ConversationComponent } from '../components/profile-overview-general/conversation/conversation.component';
+import { ConversationItemComponent } from '../components/profile-overview-general/conversation-item/conversation-item.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'profile-overview', pathMatch: 'full' },
@@ -17,7 +19,8 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [ProfileOverviewGeneralMainComponent, PlatformSettingComponent, ProfileInformationComponent],
+  declarations: [ProfileOverviewGeneralMainComponent, PlatformSettingComponent,
+    ProfileInformationComponent, ConversationItemComponent, ConversationComponent],
   imports: [
     MatSlideToggleModule,
     CommonModule,

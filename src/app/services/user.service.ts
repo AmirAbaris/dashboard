@@ -1,12 +1,19 @@
 import { Injectable } from '@angular/core';
 import { ProfileModel } from '../components/profile-overview-general/models/profile.model';
 import { Observable, of } from 'rxjs';
+import { ConversationItemModel } from '../components/profile-overview-general/models/conversation-item.model';
 
 @Injectable()
 export class UserService {
+  //#region Main logic methods
   public getProfile(): Observable<ProfileModel> {
     return of(profileData);
   }
+
+  public getConversationItems(): Observable<ConversationItemModel[]> {
+    return of(conversationItems);
+  }
+  //#endregion
 }
 
 
@@ -23,3 +30,36 @@ const profileData: ProfileModel = {
     instagramLink: 'https://instagram.com/alec.thompson'
   }
 }
+
+const conversationItems: ConversationItemModel[] = [
+  {
+    id: '1',
+    cover: 'assets/images/people/c1.jpg',
+    name: 'Sophie B.',
+    bio: 'Hi! I need more information..',
+  },
+  {
+    id: '2',
+    cover: 'assets/images/people/c2.jpg',
+    name: 'Anne Marie',
+    bio: 'Awesome work, can you..',
+  },
+  {
+    id: '3',
+    cover: 'assets/images/people/c3.jpg',
+    name: 'Ivanna',
+    bio: 'About files I can..',
+  },
+  {
+    id: '4',
+    cover: 'assets/images/people/c4.jpg',
+    name: 'Peterson',
+    bio: 'Have a great afternoon..',
+  },
+  {
+    id: '5',
+    cover: 'assets/images/people/c5.jpg',
+    name: 'Nick Daniel',
+    bio: 'Hi! I need more information..',
+  },
+];
