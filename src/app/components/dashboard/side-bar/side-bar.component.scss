@@ -1,0 +1,29 @@
+.content {
+    mat-divider {
+        margin-bottom: .7rem;
+    }
+
+    .arrow-icon {
+        scale: .8;
+        color: #999db5;
+        transition: transform 0.2s ease;
+
+        &.open {
+            transform: rotate(180deg);
+            color: #344767;
+        }
+    }
+
+    .title-icon {
+        scale: .7;
+        color: #9fa3b9;
+
+        &.active {
+            color: white;
+        }
+    }
+
+    .help-section {
+        background-image: url('/assets/images/s2.jpg');
+    }
+}

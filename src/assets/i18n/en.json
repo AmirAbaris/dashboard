@@ -17,5 +17,13 @@
             "attentionCurrency": "Attention is the new currency",
             "writingEffort": "The more effortless the writing looks, the more effort the writer actually put into the process."
         }
+    },
+    "dashboard": {
+        "sidebar": {
+            "title": "Soft UI Dashboard PRO",
+            "help": "Need help?",
+            "checkDocs": "Please check our docs",
+            "docs": "Documentation"
+        }
     }
 }
