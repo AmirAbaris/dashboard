@@ -49,9 +49,13 @@ export class ActiveMenuDirective implements AfterViewInit, OnChanges {
       return true;
     }
     if (menu.children) {
-      return menu.children.some(child => this._isActiveMenu(child, urlPath));
+      const childIsActive = menu.children.some(child => this._isActiveMenu(child, urlPath));
+      if (childIsActive) {
+        menu.isExpanded = true; // Expand the parent menu if a child is active
+        return true; // Return true to ensure parent is marked active as well
+      }
     }
-
+    menu.isExpanded = false;
     return false;
   }
 
