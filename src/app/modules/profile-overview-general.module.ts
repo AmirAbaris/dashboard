@@ -28,7 +28,7 @@ const routes: Routes = [
     MatIconModule,
     MatTooltipModule,
     NgOptimizedImage,
-    RouterModule.forChild(routes),
+    RouterModule.forChild(routes)
   ],
   providers: [UserService]
 })
