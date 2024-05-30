@@ -25,6 +25,10 @@ export class SignInComponent implements OnInit {
   public captions: SignInCaptionModel | undefined;
   public errorCaption: ErrorCaptionModel | undefined;
   private readonly _passwordMinLength = environment.passwordMinLength;
+  private readonly _captionPath = {
+    errorPath: 'auth.error',
+    loginPath: 'auth.sign-in'
+  }
   //#endregion
 
   //#region Lifecycle methods
@@ -57,8 +61,8 @@ export class SignInComponent implements OnInit {
 
   private _getCaptions(): void {
     forkJoin({
-      errorsCaptions: this._translateService.get('auth.error'),
-      UserLoginCaptions: this._translateService.get('auth.sign-in')
+      errorsCaptions: this._translateService.get(this._captionPath.errorPath),
+      UserLoginCaptions: this._translateService.get(this._captionPath.loginPath)
     }).subscribe({
       next: ({ errorsCaptions, UserLoginCaptions }) => {
         this.errorCaption = errorsCaptions;

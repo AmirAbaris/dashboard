@@ -1,0 +1,27 @@
+.content {
+    .arrow-icon {
+        scale: .8;
+        color: #999db5;
+        transition: transform 0.2s ease;
+
+        &.open {
+            transform: rotate(180deg);
+            color: #344767;
+        }
+    }
+
+    .circle-icon {
+        scale: .28;
+
+        &.active {
+            scale: .4;
+            color: #344767;
+        }
+    }
+
+    .child-title {
+        &.active {
+            color: #344767;
+        }
+    }
+}

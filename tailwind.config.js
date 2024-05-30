@@ -12,7 +12,9 @@ module.exports = {
       slateBlue: '#67748E',
       magenta: '#CB0C9F',
       white: '#FFFFFF',
-      ghostWhite: '#f8f9fa'
+      mutedPurple: '#999db5',
+      ghostWhite: '#f8f9fa',
+      blueGray: '#9fa3b9'
     },
   },
   plugins: [],
