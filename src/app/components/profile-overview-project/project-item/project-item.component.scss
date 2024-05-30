@@ -1,0 +1,17 @@
+.content {
+    button {
+        border-radius: 10px;
+        height: 2.2rem;
+        width: 9rem;
+        border-color: #CB0C9F;
+        color: #CB0C9F;
+
+        p {
+            font-family: 'Open Sans', sans-serif;
+        }
+    }
+
+    .profile:hover {
+        z-index: 1;
+    }
+}

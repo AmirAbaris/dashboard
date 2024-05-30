@@ -5,7 +5,10 @@ import { ProjectItemComponent } from '../components/profile-overview-project/pro
 import { Routes, RouterModule } from '@angular/router';
 import { ProjectComponent } from '../components/profile-overview-project/project/project.component';
 import { UserService } from '../services/user.service';
-import { NgOptimizedImage } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   { path: '', redirectTo: 'profile-overview', pathMatch: 'full' },
@@ -21,6 +24,10 @@ const routes: Routes = [
   ],
   imports: [
     NgOptimizedImage,
+    MatButtonModule,
+    MatTooltipModule,
+    MatIconModule,
+    CommonModule,
     RouterModule.forChild(routes)
   ],
   providers: [UserService]

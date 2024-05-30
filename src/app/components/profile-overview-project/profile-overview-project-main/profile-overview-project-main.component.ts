@@ -1,7 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ProjectInputCaptionModel } from '../models/caption-models/project-input.caption.model';
 import { TranslateService } from '@ngx-translate/core';
-import { NewProjectCaptionModel } from '../models/caption-models/new-project.caption.model';
 import { forkJoin } from 'rxjs';
 import { UserService } from '../../../services/user.service';
 import { ProjectModel } from '../models/project.model';
@@ -19,7 +18,6 @@ export class ProfileOverviewProjectMainComponent implements OnInit {
   public project: ProjectModel[] | undefined;
 
   public projectInputCaption: ProjectInputCaptionModel | undefined;
-  public newProjectCaption: NewProjectCaptionModel | undefined;
   private readonly _captionPath = {
     projectCaption: 'profile-overview-project.project',
     projectItemCaption: 'profile-overview-project.project-item',
@@ -35,6 +33,16 @@ export class ProfileOverviewProjectMainComponent implements OnInit {
   }
   //#endregion
 
+  //#region Handler methods
+  public onClickAddCardEventHandler(): void {
+    console.log('add button clicked');
+  }
+
+  public onClickItemEventHandler(id: string): void {
+    console.log('item id:', id);
+  }
+  //#endregion
+
   //#region Main logic methods
   private _getCaption(): void {
     const projectCaption = this._translateService.get(this._captionPath.projectCaption);
@@ -45,9 +53,9 @@ export class ProfileOverviewProjectMainComponent implements OnInit {
       .subscribe(([projectCaptionData, projectItemCaptionData, newProjectCaptionData]) => {
         this.projectInputCaption = {
           projectCaption: projectCaptionData,
-          projectItemCaption: projectItemCaptionData
-        },
-          this.newProjectCaption = newProjectCaptionData;
+          projectItemCaption: projectItemCaptionData,
+          newProjectCaption: newProjectCaptionData
+        }
       });
   }
 

@@ -1,5 +1,6 @@
-<div class="w-full h-dvh bg-ghostWhite">
+<div class="w-full h-full bg-ghostWhite">
     @if (project && projectInputCaption) {
-    <app-project [data]="project" [caption]="projectInputCaption" />
+    <app-project [data]="project" [caption]="projectInputCaption" (clickItemEvent)="onClickItemEventHandler($event)"
+        (clickAddCardEvent)="onClickAddCardEventHandler()" />
     }
 </div>

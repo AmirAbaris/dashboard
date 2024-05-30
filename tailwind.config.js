@@ -13,6 +13,7 @@ module.exports = {
       magenta: '#CB0C9F',
       white: '#FFFFFF',
       ghostWhite: '#f8f9fa',
+      gray: '#dee2e6'
     },
   },
   plugins: [],

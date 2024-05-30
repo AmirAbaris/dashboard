@@ -11,6 +11,17 @@ export class ProjectComponent {
   //#region Properties
   public data = input.required<ProjectModel[]>();
   public caption = input.required<ProjectInputCaptionModel>();
-  public clickEvent = output<string>();
+  public clickAddCardEvent = output<void>();
+  public clickItemEvent = output<string>();
+  //#endregion
+
+  //#region Handler methods
+  public onClickAddCardEventHandler(): void {
+    this.clickAddCardEvent.emit();
+  }
+
+  public onClickItemEventHandler(id: string): void {
+    this.clickItemEvent.emit(id);
+  }
   //#endregion
 }

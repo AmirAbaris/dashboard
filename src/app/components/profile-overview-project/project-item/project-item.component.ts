@@ -8,8 +8,16 @@ import { ProjectItemCaptionModel } from '../models/caption-models/project-item.c
   styleUrl: './project-item.component.scss'
 })
 export class ProjectItemComponent {
+  //#region Properties
   public data = input.required<ProjectModel>();
   public caption = input.required<ProjectItemCaptionModel>();
   public projectCount = input.required<number>();
-  public clickEvent = output<string>();
+  public clickItemEvent = output<string>();
+  //#endregion
+
+  //#region Handler methods
+  public onClickItemEventHandler(id: string): void {
+    this.clickItemEvent.emit(id);
+  }
+  //#endregion
 }
