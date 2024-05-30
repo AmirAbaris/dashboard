@@ -14,7 +14,14 @@ import { ConversationItemComponent } from '../components/profile-overview-genera
 
 const routes: Routes = [
   { path: '', redirectTo: 'profile-overview', pathMatch: 'full' },
-  { path: 'profile-overview', component: ProfileOverviewGeneralMainComponent }
+  {
+    path: 'profile-overview', component: ProfileOverviewGeneralMainComponent, children: [
+      {
+        path: '',
+        loadChildren: () => import('../modules/profile-overview-project.module').then(m => m.ProfileOverviewProjectModule)
+      }
+    ]
+  }
 ];
 
 

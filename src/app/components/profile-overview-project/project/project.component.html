@@ -6,7 +6,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 h-full">
         @for (item of data(); track $index) {
-        <app-project-item [data]="item" [caption]="caption().projectItemCaption" [projectCount]="$index"
+        <app-project-item [data]="item" [caption]="caption().projectItemCaption" [projectCount]="$index + 1"
             (clickItemEvent)="onClickItemEventHandler($event)" />
         }
         <app-new-project [caption]="caption().newProjectCaption" (clickAddCardEvent)="onClickAddCardEventHandler()" />

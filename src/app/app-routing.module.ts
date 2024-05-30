@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: () => import('../app/modules/profile-overview-project.module').then((module) => module.ProfileOverviewProjectModule)
+    loadChildren: () => import('../app/modules/profile-overview-general.module').then((module) => module.ProfileOverviewGeneralModule)
   }
 ];
 

@@ -5,11 +5,12 @@
             <h1>{{caption().title}}</h1>
             <h2>#{{projectCount()}}</h2>
         </div>
-        <h3 class="font-semibold text-charcoalBlue text-base mb-2">{{data().title}}</h3>
+        <h3 class="font-semibold text-charcoalBlue text-base mb-2 cursor-pointer"
+            (click)="onClickItemEventHandler(data().id)">{{data().title}}</h3>
         <h4 class="text-slateBlue text-sm">{{data().description}}</h4>
     </div>
 
-    <div class="flex justify-between items-center my-4">
+    <div class="flex justify-between items-center mt-4">
         <button mat-stroked-button (click)="onClickItemEventHandler(data().id)">
             <p class="tracking-tight text-xs font-semibold">{{caption().view | uppercase}}</p>
         </button>
