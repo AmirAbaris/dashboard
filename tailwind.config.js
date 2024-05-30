@@ -14,7 +14,7 @@ module.exports = {
       white: '#FFFFFF',
       mutedPurple: '#999db5',
       ghostWhite: '#f8f9fa',
-      blueGray: '#9fa3b9'
+      blueGray: '#9fa3b9',
       gray: '#dee2e6'
     },
   },
