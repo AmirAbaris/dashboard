@@ -3,33 +3,35 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProfileMainComponent } from '../components/profile/profile-main/profile-main.component';
 import { UserService } from '../services/user.service';
 import { ProfileIntroductionModule } from './profile-introduction.module';
+import { ProfileProjectModule } from './profile-project.module';
+import { ProfileIntroductionMainComponent } from '../components/profile-introduction/profile-introduction-main/profile-introduction-main.component';
+import { ProfileProjectMainComponent } from '../components/profile-project/profile-project-main/profile-project-main.component';
 
-const routes: Routes = [
+const routes = [
   {
     path: '',
-    redirectTo: 'profile',
-    pathMatch: 'full'
-  },
-  {
-    path: 'profile',
     component: ProfileMainComponent,
     children: [
       {
-        path: '', // Empty path to ensure ProfileMainComponent is always displayed
+        path: 'profile-introduction',
+        component: ProfileIntroductionMainComponent
+      },
+      {
+        path: 'profile-project',
         loadChildren: () => import('./profile-project.module').then(m => m.ProfileProjectModule)
       }
     ]
   }
 ];
 
-
 @NgModule({
   declarations: [
-    ProfileMainComponent
+    ProfileMainComponent,
+    ProfileIntroductionMainComponent
   ],
   imports: [
     RouterModule.forChild(routes),
-    ProfileIntroductionModule
+    ProfileProjectModule
   ],
   providers: [UserService]
 })

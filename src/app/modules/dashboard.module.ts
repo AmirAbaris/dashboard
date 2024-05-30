@@ -11,15 +11,17 @@ import { ActiveMenuDirective } from '../components/dashboard/directives/active-m
 import { ActivateMenuChildDirective } from '../components/dashboard/directives/activate-menu-child.directive';
 import { AppService } from '../services/app.service';
 import { AppRepository } from '../repositories/app-repository';
-import { DefaultComponent } from '../components/dashboard/default/default.component';
-import { VrInfoComponent } from '../components/dashboard/vr-info/vr-info.component';
+import { UserService } from '../services/user.service';
 
 const routes: Routes = [
   {
-    path: '', component: DashboardMainComponent,
+    path: '',
+    component: DashboardMainComponent,
     children: [
-      { path: 'dashboards/default', component: DefaultComponent },
-      { path: 'dashboards/virtual-reality/vr-info', component: VrInfoComponent }
+      {
+        path: 'profile/all-projects',
+        loadChildren: () => import('../modules/profile.module').then(m => m.ProfileModule)
+      }
     ]
   },
 ];
@@ -28,7 +30,7 @@ const routes: Routes = [
   declarations: [
     DashboardMainComponent, SideBarComponent,
     SidebarChildItemComponent, ActiveMenuDirective,
-    ActivateMenuChildDirective, DefaultComponent, VrInfoComponent
+    ActivateMenuChildDirective
   ],
   imports: [
     RouterModule.forChild(routes),
@@ -38,6 +40,6 @@ const routes: Routes = [
     MatButtonModule,
     CommonModule
   ],
-  providers: [AppService, AppRepository]
+  providers: [AppService, AppRepository, UserService]
 })
 export class DashboardModule { }
