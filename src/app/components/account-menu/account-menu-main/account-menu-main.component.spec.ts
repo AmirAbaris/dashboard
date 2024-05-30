@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VrInfoComponent } from './vr-info.component';
+import { AccountMenuMainComponent } from './account-menu-main.component';
 
-describe('VrInfoComponent', () => {
-  let component: VrInfoComponent;
-  let fixture: ComponentFixture<VrInfoComponent>;
+describe('AccountMenuMainComponent', () => {
+  let component: AccountMenuMainComponent;
+  let fixture: ComponentFixture<AccountMenuMainComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [VrInfoComponent]
+      declarations: [AccountMenuMainComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(VrInfoComponent);
+    fixture = TestBed.createComponent(AccountMenuMainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
