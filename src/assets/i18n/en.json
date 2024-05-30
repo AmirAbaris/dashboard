@@ -25,5 +25,10 @@
             "checkDocs": "Please check our docs",
             "docs": "Documentation"
         }
+    },
+    "account-profile": {
+        "account-profile-main": {
+            "switch": "Switch to invisible"
+        }
     }
 }
