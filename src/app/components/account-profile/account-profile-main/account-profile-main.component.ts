@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { UserService } from '../../../services/user.service';
 import { ProfileModel } from '../models/profile.model';
 import { TranslateService } from '@ngx-translate/core';
 import { AccountProfileCaptionModel } from './caption-models/account-profile.caption.model';
+import { AppService } from '../../../services/app.service';
 
 @Component({
   selector: 'app-account-profile-main',
@@ -11,7 +11,7 @@ import { AccountProfileCaptionModel } from './caption-models/account-profile.cap
 })
 export class AccountProfileMainComponent implements OnInit {
   //#region Properties
-  private readonly _userService = inject(UserService);
+  private readonly _appService = inject(AppService);
   private readonly _translateService = inject(TranslateService);
 
   public profileData: ProfileModel | undefined;
@@ -30,7 +30,7 @@ export class AccountProfileMainComponent implements OnInit {
 
   //#region Main logic methods
   private _getProfile(): void {
-    this._userService.getProfile().subscribe({
+    this._appService.getProfileItem().subscribe({
       next: (data) => {
         this.profileData = data;
       },

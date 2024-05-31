@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { UserService } from '../services/user.service';
 import { AccountProfileMainComponent } from '../components/account-profile/account-profile-main/account-profile-main.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgOptimizedImage } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { AppService } from '../services/app.service';
+import { AppRepository } from '../repositories/app-repository';
 
 const routes: Routes = [
   { path: '', component: AccountProfileMainComponent }
@@ -16,6 +17,6 @@ const routes: Routes = [
     MatSlideToggleModule,
     RouterModule.forChild(routes),
   ],
-  providers: [UserService]
+  providers: [AppService, AppRepository] // TODO: ?
 })
 export class AccountProfileModule { }
