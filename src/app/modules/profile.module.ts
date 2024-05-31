@@ -4,20 +4,18 @@ import { ProfileMainComponent } from '../components/profile/profile-main/profile
 import { UserService } from '../services/user.service';
 import { ProfileIntroductionModule } from './profile-introduction.module';
 import { ProfileProjectModule } from './profile-project.module';
-import { ProfileIntroductionMainComponent } from '../components/profile-introduction/profile-introduction-main/profile-introduction-main.component';
-import { ProfileProjectMainComponent } from '../components/profile-project/profile-project-main/profile-project-main.component';
-
-const routes = [
+const routes: Routes = [
   {
     path: '',
     component: ProfileMainComponent,
     children: [
       {
-        path: 'profile-introduction',
-        component: ProfileIntroductionMainComponent
+        path: '',
+        redirectTo: 'all-projects',
+        pathMatch: 'full'
       },
       {
-        path: 'profile-project',
+        path: 'all-projects',
         loadChildren: () => import('./profile-project.module').then(m => m.ProfileProjectModule)
       }
     ]
@@ -26,12 +24,11 @@ const routes = [
 
 @NgModule({
   declarations: [
-    ProfileMainComponent,
-    ProfileIntroductionMainComponent
+    ProfileMainComponent
   ],
   imports: [
     RouterModule.forChild(routes),
-    ProfileProjectModule
+    ProfileIntroductionModule
   ],
   providers: [UserService]
 })
