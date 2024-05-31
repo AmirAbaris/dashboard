@@ -5,9 +5,16 @@
         width: 9rem;
         border-color: #CB0C9F;
         color: #CB0C9F;
+        transition: transform 0.3s;
 
         p {
             font-family: 'Open Sans', sans-serif;
+        }
+
+        &:hover {
+            transform: scale(1.03);
+            border-color: #e054bc;
+            color: #e054bc;
         }
     }
 
