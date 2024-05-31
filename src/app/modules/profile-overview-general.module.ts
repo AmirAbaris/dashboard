@@ -5,12 +5,13 @@ import { PlatformSettingComponent } from '../components/profile-overview-general
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ProfileInformationComponent } from '../components/profile-overview-general/profile-information/profile-information.component';
-import { UserService } from '../services/user.service';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ConversationComponent } from '../components/profile-overview-general/conversation/conversation.component';
 import { ConversationItemComponent } from '../components/profile-overview-general/conversation-item/conversation-item.component';
+import { AppRepository } from '../repositories/app-repository';
+import { AppService } from '../services/app.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'profile-overview', pathMatch: 'full' },
@@ -18,7 +19,7 @@ const routes: Routes = [
     path: 'profile-overview', component: ProfileOverviewGeneralMainComponent, children: [
       {
         path: '',
-        loadChildren: () => import('../modules/profile-overview-project.module').then(m => m.ProfileOverviewProjectModule)
+        loadChildren: () => import('./profile-overview-house-project.module').then(m => m.ProfileOverviewHouseProjectModule)
       }
     ]
   }
@@ -37,6 +38,6 @@ const routes: Routes = [
     NgOptimizedImage,
     RouterModule.forChild(routes)
   ],
-  providers: [UserService]
+  providers: [AppService, AppRepository]
 })
 export class ProfileOverviewGeneralModule { }

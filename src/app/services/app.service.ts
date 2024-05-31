@@ -2,6 +2,9 @@ import { Injectable, inject } from '@angular/core';
 import { SideBarSectionModel } from '../components/dashboard/models/sidebar-item.model';
 import { Observable } from 'rxjs';
 import { AppRepository } from '../repositories/app-repository';
+import { ProfileInfoModel } from '../components/profile-overview-general/models/profile-info.model';
+import { HouseProjectModel } from '../components/profile-overview-house-project/models/house-project.model';
+import { ConversationItemModel } from '../components/profile-overview-general/models/conversation-item.model';
 
 @Injectable()
 export class AppService {
@@ -10,8 +13,20 @@ export class AppService {
   //#endregion
 
   //#region Main logic methods
-  public getSidebarData(): Observable<SideBarSectionModel[]> {
+  public getSidebarItems(): Observable<SideBarSectionModel[]> {
     return this._appRepository.getSidebarItems();
+  }
+
+  public getProfileInfoItem(): Observable<ProfileInfoModel> {
+    return this._appRepository.getProfileInfoItem();
+  }
+
+  public getHouseProjectItems(): Observable<HouseProjectModel[]> {
+    return this._appRepository.getHouseProjectItems();
+  }
+
+  public getConversationItems(): Observable<ConversationItemModel[]> {
+    return this._appRepository.getConversationItems();
   }
   //#endregion
 }

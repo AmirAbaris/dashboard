@@ -1,6 +1,6 @@
 import { ParticipantModel } from "./participant.model";
 
-export interface ProjectModel {
+export interface HouseProjectModel {
     id: string;
     cover: string;
     title: string;

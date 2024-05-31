@@ -1,0 +1,4 @@
+@if (houseProject && houseProjectInputCaption) {
+<app-house-project [data]="houseProject" [caption]="houseProjectInputCaption" (clickItemEvent)="onClickItemEventHandler($event)"
+    (clickAddCardEvent)="onClickAddCardEventHandler()" />
+}

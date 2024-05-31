@@ -1,12 +1,12 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { PlatformSettingCaptionModel } from '../models/caption-models/platform-setting.caption.model';
-import { UserService } from '../../../services/user.service';
 import { forkJoin } from 'rxjs';
 import { ProfileInformationCaptionModel } from '../models/caption-models/profile-information.caption.model';
 import { ConversationItemModel } from '../models/conversation-item.model';
 import { ConversationInputCaptionModel } from '../models/caption-models/conversation-input.caption.model';
 import { ProfileInfoModel } from '../models/profile-info.model';
+import { AppService } from '../../../services/app.service';
 
 @Component({
   selector: 'app-profile-overview-general-main',
@@ -16,7 +16,7 @@ import { ProfileInfoModel } from '../models/profile-info.model';
 export class ProfileOverviewGeneralMainComponent implements OnInit {
   //#region Properties
   private readonly _translateService = inject(TranslateService);
-  private readonly _userService = inject(UserService);
+  private readonly _appService = inject(AppService);
 
   public profileInfo: ProfileInfoModel | undefined;
   public conversationItems: ConversationItemModel[] | undefined;
@@ -71,8 +71,8 @@ export class ProfileOverviewGeneralMainComponent implements OnInit {
   }
 
   private _getData(): void {
-    const profile = this._userService.getProfile();
-    const conversationItems = this._userService.getConversationItems();
+    const profile = this._appService.getProfileInfoItem();
+    const conversationItems = this._appService.getConversationItems();
 
     forkJoin([profile, conversationItems]).subscribe(([profileData, conversationItemData]) => {
       this.profileInfo = profileData;

@@ -54,16 +54,16 @@
             "replyItem": "reply"
         }
     },
-    "profile-overview-project": {
-        "project": {
+    "profile-overview-house-project": {
+        "house-project": {
             "title": "Projects",
             "intro": "Architects design houses"
         },
-        "project-item": {
+        "house-project-item": {
             "title": "Project",
             "view": "View Projects"
         },
-        "new-project": {
+        "new-house-project": {
             "title": "New project"
         }
     }

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfileOverviewProjectMainComponent } from './profile-overview-project-main.component';
+import { ProfileOverviewProjectMainComponent } from './profile-overview-house-project-main.component';
 
 describe('ProfileOverviewProjectMainComponent', () => {
   let component: ProfileOverviewProjectMainComponent;
@@ -10,8 +10,8 @@ describe('ProfileOverviewProjectMainComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ProfileOverviewProjectMainComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(ProfileOverviewProjectMainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
