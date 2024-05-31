@@ -17,7 +17,7 @@ export class AppService {
   }
 
   public getProjectItems(): Observable<ProjectItemModel[]> {
-    return this._appRepository.getProfileItems();
+    return this._appRepository.getProjectItems();
   }
 
   public getProfileItem(): Observable<ProfileModel> {

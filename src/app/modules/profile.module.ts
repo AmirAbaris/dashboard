@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileMainComponent } from '../components/profile/profile-main/profile-main.component';
 import { ProfileIntroductionModule } from './profile-introduction.module';
-import { ProfileProjectModule } from './profile-project.module';
 const routes: Routes = [
   {
     path: '',

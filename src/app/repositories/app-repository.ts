@@ -23,7 +23,7 @@ export class AppRepository {
     return this._http.get<SideBarSectionModel[]>(`${environment.fileUrl}${this._dataFilePaths.sidebarItems}`);
   }
 
-  public getProfileItems(): Observable<ProjectItemModel[]> {
+  public getProjectItems(): Observable<ProjectItemModel[]> {
     return this._http.get<ProjectItemModel[]>(`${environment.fileUrl}${this._dataFilePaths.projectItems}`);
   }
 
