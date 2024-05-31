@@ -1,0 +1,7 @@
+@if (menuItems) {
+<div class="bg-white drop-shadow-md rounded-xl p-4 w-full lg:w-60">
+    @for (item of menuItems; track $index) {
+    <app-account-menu-items [data]="item" />
+    }
+</div>
+}

@@ -11,14 +11,15 @@ import { ActiveMenuDirective } from '../components/dashboard/directives/active-m
 import { ActivateMenuChildDirective } from '../components/dashboard/directives/activate-menu-child.directive';
 import { AppService } from '../services/app.service';
 import { AppRepository } from '../repositories/app-repository';
+import { AccountMenuModule } from '../modules/account-menu.module';
 
 const routes: Routes = [
   {
     path: '', component: DashboardMainComponent,
     children: [
       {
-        path: 'account/settings/profile',
-        loadChildren: () => import('./account-profile.module').then(m => m.AccountProfileModule)
+        path: 'account/settings',
+        loadChildren: () => import('../modules/account-menu.module').then((m) => m.AccountMenuModule)
       }
     ]
   },
@@ -36,7 +37,8 @@ const routes: Routes = [
     MatDividerModule,
     MatIconModule,
     MatButtonModule,
-    CommonModule
+    CommonModule,
+    AccountMenuModule
   ],
   providers: [AppService, AppRepository]
 })
