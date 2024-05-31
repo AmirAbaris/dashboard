@@ -17,6 +17,6 @@ const routes: Routes = [
     MatSlideToggleModule,
     RouterModule.forChild(routes),
   ],
-  providers: [AppService, AppRepository] // TODO: ?
+  providers: [AppService, AppRepository]
 })
 export class AccountProfileModule { }
