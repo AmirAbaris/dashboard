@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { ProfileModel } from '../components/profile-overview-general/models/profile.model';
 import { Observable, of } from 'rxjs';
 import { ConversationItemModel } from '../components/profile-overview-general/models/conversation-item.model';
 import { ProjectModel } from '../components/profile-overview-project/models/project.model';
+import { ProfileInfoModel } from '../components/profile-overview-general/models/profile-info.model';
 
 @Injectable()
 export class UserService {
   //#region Main logic methods
-  public getProfile(): Observable<ProfileModel> {
+  public getProfile(): Observable<ProfileInfoModel> {
     return of(profileData);
   }
 
@@ -21,8 +21,7 @@ export class UserService {
   //#endregion
 }
 
-
-const profileData: ProfileModel = {
+const profileData: ProfileInfoModel = {
   firstName: 'Alec',
   lastName: 'Thompson',
   description: "Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).",
@@ -68,6 +67,7 @@ const conversationItems: ConversationItemModel[] = [
     bio: 'Hi! I need more information..',
   },
 ];
+
 const projectData: ProjectModel[] = [
   {
     id: '1',

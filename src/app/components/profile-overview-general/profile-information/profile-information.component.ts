@@ -1,5 +1,5 @@
 import { Component, input, output } from '@angular/core';
-import { ProfileModel } from '../models/profile.model';
+import { ProfileInfoModel } from '../models/profile-info.model';
 import { ProfileInformationCaptionModel } from '../models/caption-models/profile-information.caption.model';
 
 @Component({
@@ -9,7 +9,7 @@ import { ProfileInformationCaptionModel } from '../models/caption-models/profile
 })
 export class ProfileInformationComponent {
   //#region Properties
-  public data = input.required<ProfileModel>();
+  public data = input.required<ProfileInfoModel>();
   public caption = input.required<ProfileInformationCaptionModel>();
   public clickEditEven = output<void>();
   //#endregion

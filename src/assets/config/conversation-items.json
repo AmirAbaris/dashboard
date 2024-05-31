@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "cover": "assets/images/people/c1.jpg",
+        "name": "Sophie B.",
+        "bio": "Hi! I need more information.."
+    },
+    {
+        "id": "2",
+        "cover": "assets/images/people/c2.jpg",
+        "name": "Anne Marie",
+        "bio": "Awesome work, can you.."
+    },
+    {
+        "id": "3",
+        "cover": "assets/images/people/c3.jpg",
+        "name": "Ivanna",
+        "bio": "About files I can.."
+    },
+    {
+        "id": "4",
+        "cover": "assets/images/people/c4.jpg",
+        "name": "Peterson",
+        "bio": "Have a great afternoon.."
+    },
+    {
+        "id": "5",
+        "cover": "assets/images/people/c5.jpg",
+        "name": "Nick Daniel",
+        "bio": "Hi! I need more information.."
+    }
+]

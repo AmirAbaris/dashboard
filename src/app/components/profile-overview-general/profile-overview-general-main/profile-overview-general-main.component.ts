@@ -2,11 +2,11 @@ import { Component, OnInit, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { PlatformSettingCaptionModel } from '../models/caption-models/platform-setting.caption.model';
 import { UserService } from '../../../services/user.service';
-import { ProfileModel } from '../models/profile.model';
 import { forkJoin } from 'rxjs';
 import { ProfileInformationCaptionModel } from '../models/caption-models/profile-information.caption.model';
 import { ConversationItemModel } from '../models/conversation-item.model';
 import { ConversationInputCaptionModel } from '../models/caption-models/conversation-input.caption.model';
+import { ProfileInfoModel } from '../models/profile-info.model';
 
 @Component({
   selector: 'app-profile-overview-general-main',
@@ -18,7 +18,7 @@ export class ProfileOverviewGeneralMainComponent implements OnInit {
   private readonly _translateService = inject(TranslateService);
   private readonly _userService = inject(UserService);
 
-  public profileInfo: ProfileModel | undefined;
+  public profileInfo: ProfileInfoModel | undefined;
   public conversationItems: ConversationItemModel[] | undefined;
   public platformSettingCaption: PlatformSettingCaptionModel | undefined;
   public profileInfoCaption: ProfileInformationCaptionModel | undefined;

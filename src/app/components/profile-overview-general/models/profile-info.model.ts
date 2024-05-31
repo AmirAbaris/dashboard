@@ -1,6 +1,6 @@
 import { ProfileSocialModel } from "./profile-social.model";
 
-export interface ProfileModel {
+export interface ProfileInfoModel {
     firstName: string;
     lastName: string;
     description: string;
