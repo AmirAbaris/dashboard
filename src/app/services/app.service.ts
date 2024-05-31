@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { SideBarSectionModel } from '../components/dashboard/models/sidebar-item.model';
 import { Observable } from 'rxjs';
 import { AppRepository } from '../repositories/app-repository';
+import { ProfileModel } from '../components/account-profile/models/profile.model';
 import { AccountMenuItemModel } from '../components/account-menu/models/account-menu-item.model';
 
 @Injectable()
@@ -13,6 +14,10 @@ export class AppService {
   //#region Main logic methods
   public getSidebarData(): Observable<SideBarSectionModel[]> {
     return this._appRepository.getSidebarItems();
+  }
+
+  public getProfileItem(): Observable<ProfileModel> {
+    return this._appRepository.getProfileItem();
   }
 
   public getMenuItemData(): Observable<AccountMenuItemModel[]> {
