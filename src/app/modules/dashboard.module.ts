@@ -11,7 +11,6 @@ import { ActiveMenuDirective } from '../components/dashboard/directives/active-m
 import { ActivateMenuChildDirective } from '../components/dashboard/directives/activate-menu-child.directive';
 import { AppService } from '../services/app.service';
 import { AppRepository } from '../repositories/app-repository';
-import { UserService } from '../services/user.service';
 
 const routes: Routes = [
   {
@@ -40,6 +39,6 @@ const routes: Routes = [
     MatButtonModule,
     CommonModule
   ],
-  providers: [AppService, AppRepository, UserService]
+  providers: [AppService, AppRepository]
 })
 export class DashboardModule { }

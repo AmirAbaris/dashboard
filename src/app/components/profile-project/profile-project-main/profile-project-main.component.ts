@@ -1,10 +1,10 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { forkJoin } from 'rxjs';
-import { UserService } from '../../../services/user.service';
 import { AddProjectCaptionModel } from '../models/caption-models/add-project.caption.model';
 import { ProjectInputCaptionModel } from '../models/caption-models/project-input.caption.model';
 import { ProjectItemModel } from '../models/project-item.model';
+import { AppService } from '../../../services/app.service';
 
 @Component({
   selector: 'app-project-main',
@@ -14,7 +14,7 @@ import { ProjectItemModel } from '../models/project-item.model';
 export class ProfileProjectMainComponent implements OnInit {
   //#region Properties
   private readonly _translateService = inject(TranslateService);
-  private readonly _userService = inject(UserService);
+  private readonly _appService = inject(AppService);
 
   public projectItems: ProjectItemModel[] | undefined;
 
@@ -50,7 +50,7 @@ export class ProfileProjectMainComponent implements OnInit {
   }
 
   private _getData(): void {
-    const projectItem = this._userService.getProjectItem().subscribe((projectItemData) => {
+    const projectItem = this._appService.getProjectItems().subscribe((projectItemData) => {
       this.projectItems = projectItemData;
     });
   }
