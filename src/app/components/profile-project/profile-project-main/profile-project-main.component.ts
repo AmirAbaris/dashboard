@@ -50,7 +50,7 @@ export class ProfileProjectMainComponent implements OnInit {
   }
 
   private _getData(): void {
-    const projectItem = this._appService.getProjectItems().subscribe((projectItemData) => {
+    this._appService.getProjectItems().subscribe((projectItemData) => {
       this.projectItems = projectItemData;
     });
   }
