@@ -32,7 +32,13 @@
             "currentPassword": "Current Password",
             "newPassword": "New Password",
             "confirmPassword": "Confirm New Password",
-            "updatePassword": "Update Password"
+            "updatePassword": "Update Password",
+            "passwordRequirements": "Password requirements",
+            "strongPasswordGuide": "Please follow this guide for a strong password",
+            "specialCharacters": "One special character",
+            "minCharacters": "Min 6 characters",
+            "oneNumber": "One number (2 are recommended)",
+            "changeOften": "Change it often"
         },
         "password-error": {
             "passwordRequiredError": "Password is required",

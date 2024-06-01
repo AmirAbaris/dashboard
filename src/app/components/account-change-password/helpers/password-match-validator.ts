@@ -10,5 +10,5 @@ export function passwordMatchValidator(group: AbstractControl): ValidationErrors
     const newPassword = group.get('newPasswordCtrl')?.value;
     const confirmPassword = group.get('confirmNewPasswordCtrl')?.value;
 
-    return newPassword === confirmPassword ? null : { passwordMismatch: true };
+    return newPassword === confirmPassword ? null : { passwordMismatch: true }
 }
