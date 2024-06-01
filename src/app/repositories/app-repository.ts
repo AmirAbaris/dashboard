@@ -3,7 +3,7 @@ import { environment } from '../../environments/environment.development';
 import { Observable } from 'rxjs';
 import { SideBarSectionModel } from '../components/dashboard/models/sidebar-item.model';
 import { HttpClient } from '@angular/common/http';
-import { ProfileModel } from '../components/account-profile/models/profile.model';
+import { ProfileModel } from '../components/account-menu/models/profile.model';
 import { AccountMenuItemModel } from '../components/account-menu/models/account-menu-item.model';
 
 @Injectable()

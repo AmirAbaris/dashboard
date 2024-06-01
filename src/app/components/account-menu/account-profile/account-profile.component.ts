@@ -1,15 +1,15 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ProfileModel } from '../models/profile.model';
 import { TranslateService } from '@ngx-translate/core';
-import { AccountProfileCaptionModel } from './caption-models/account-profile.caption.model';
+import { AccountProfileCaptionModel } from '../models/caption-models/account-profile.caption.model';
 import { AppService } from '../../../services/app.service';
 
 @Component({
-  selector: 'app-account-profile-main',
-  templateUrl: './account-profile-main.component.html',
-  styleUrl: './account-profile-main.component.scss'
+  selector: 'app-account-profile',
+  templateUrl: './account-profile.component.html',
+  styleUrl: './account-profile.component.scss'
 })
-export class AccountProfileMainComponent implements OnInit {
+export class AccountProfileComponent implements OnInit {
   //#region Properties
   private readonly _appService = inject(AppService);
   private readonly _translateService = inject(TranslateService);
