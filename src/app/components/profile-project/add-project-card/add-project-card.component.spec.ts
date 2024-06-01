@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VrInfoComponent } from './vr-info.component';
+import { AddProjectCardComponent } from './add-project-card.component';
 
-describe('VrInfoComponent', () => {
-  let component: VrInfoComponent;
-  let fixture: ComponentFixture<VrInfoComponent>;
+describe('AddProjectCardComponent', () => {
+  let component: AddProjectCardComponent;
+  let fixture: ComponentFixture<AddProjectCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [VrInfoComponent]
+      declarations: [AddProjectCardComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(VrInfoComponent);
+    fixture = TestBed.createComponent(AddProjectCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
