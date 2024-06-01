@@ -3,11 +3,11 @@ import { ProfileModel } from '../models/profile.model';
 import { AppService } from '../../../services/app.service';
 
 @Component({
-  selector: 'app-profile-introduction-main',
-  templateUrl: './profile-introduction-main.component.html',
-  styleUrl: './profile-introduction-main.component.scss'
+  selector: 'app-profile-introduction',
+  templateUrl: './profile-introduction.component.html',
+  styleUrl: './profile-introduction.component.scss'
 })
-export class ProfileIntroductionMainComponent implements OnInit {
+export class ProfileIntroductionComponent implements OnInit {
   //#region Properties
   private readonly _appService = inject(AppService);
 
