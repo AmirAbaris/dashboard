@@ -37,7 +37,6 @@ export class AccountChangePasswordMainComponent implements OnInit {
   public ngOnInit(): void {
     this._initializeChangePasswordForm();
     this._getCaptions();
-    console.log(this.changePasswordCaption);
   }
 
   //#region Handler methods
@@ -60,9 +59,7 @@ export class AccountChangePasswordMainComponent implements OnInit {
         ]],
         [this.formKeys.confirmNewPasswordCtrl]: [null, [Validators.required]]
       },
-      {
-        validators: passwordMatchValidator
-      }
+      { validators: passwordMatchValidator }
     );
   }
 
