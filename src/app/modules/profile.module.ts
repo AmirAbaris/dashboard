@@ -9,11 +9,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'all-projects',
+        redirectTo: '',
         pathMatch: 'full'
       },
       {
-        path: 'all-projects',
+        path: '',
         loadChildren: () => import('./profile-project.module').then(m => m.ProfileProjectModule)
       }
     ]
