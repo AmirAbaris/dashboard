@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from '../../../../environments/environment.development';
 import { passwordMatchValidator } from '../helpers/password-match-validator';
@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { PasswordErrorCaptionModel } from '../models/caption-models/password-error.caption.model';
 import { ChangePasswordCaptionModel } from '../models/caption-models/change-password.caption.model';
 import { forkJoin } from 'rxjs';
+import { ChangePasswordFromModel } from '../models/change-password-form.model';
 
 @Component({
   selector: 'app-account-change-password-main',
@@ -17,6 +18,8 @@ export class AccountChangePasswordMainComponent implements OnInit {
   //#region Properties
   private readonly _fb = inject(FormBuilder);
   private readonly _translateService = inject(TranslateService);
+
+  public changedPasswordOutput = output<ChangePasswordFromModel>();
 
   public readonly formKeys = {
     currentPasswordCtrl: 'currentPasswordCtrl',
@@ -42,8 +45,8 @@ export class AccountChangePasswordMainComponent implements OnInit {
   //#region Handler methods
   public onClickSubmitButtonEventHandler(): void {
     if (!this.fg) return;
-
-    console.log(this.fg.value);
+    
+    this.changedPasswordOutput.emit(this.fg.value as ChangePasswordFromModel);
   }
   //#endregion
 
