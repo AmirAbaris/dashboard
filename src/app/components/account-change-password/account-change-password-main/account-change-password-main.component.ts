@@ -28,7 +28,7 @@ export class AccountChangePasswordMainComponent implements OnInit {
   public changePasswordCaption: ChangePasswordCaptionModel | undefined;
   private readonly _passwordMinLength = environment.passwordMinLength;
   private readonly _captionPath = {
-    changePasswordPath: 'account-change-password.change-password-form-label',
+    changePasswordPath: 'account-change-password.account-change-password-main',
     passwordErrorPath: 'account-change-password.password-error'
   }
   //#endregion
@@ -37,6 +37,7 @@ export class AccountChangePasswordMainComponent implements OnInit {
   public ngOnInit(): void {
     this._initializeChangePasswordForm();
     this._getCaptions();
+    console.log(this.changePasswordCaption);
   }
 
   //#region Handler methods
