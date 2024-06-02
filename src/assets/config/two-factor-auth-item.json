@@ -5,7 +5,5 @@
         "status": "Configured",
         "number": "+4012374423"
     },
-    "authenticatorStatus": {
-        "status": "Not Configured"
-    }
+    "authenticatorStatus": "Not Configured"
 }
