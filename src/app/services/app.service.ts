@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AppRepository } from '../repositories/app-repository';
 import { ProjectItemModel } from '../components/profile-project/models/project-item.model';
 import { ProfileModel } from '../components/profile-introduction/models/profile.model';
+import { TwoFactorAuthModel } from '../components/two-factor-auth/models/two-factor-auth.model';
 
 @Injectable()
 export class AppService {
@@ -22,6 +23,10 @@ export class AppService {
 
   public getProfileItem(): Observable<ProfileModel> {
     return this._appRepository.getProfileItem();
+  }
+
+  public getTwoFactorAuthItem(): Observable<TwoFactorAuthModel> {
+    return this._appRepository.getTwoFactorAuthItem();
   }
   //#endregion
 }

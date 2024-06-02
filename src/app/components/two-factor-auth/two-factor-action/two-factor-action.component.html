@@ -1,0 +1,13 @@
+<section class="flex flex-col gap-y-3">
+    <app-two-factor-action-item [title]="caption().SecurityKeyLabel" [status]="data().securityKeysStatus"
+        [buttonText]="caption().addButton" />
+    <mat-divider />
+
+    <app-two-factor-action-item [title]="caption().smsLabel"
+        [status]="data().smsNumberStatus.status === 'Not Configured' ? data().smsNumberStatus.status : data().smsNumberStatus.number"
+        [buttonText]="caption().editButton" />
+    <mat-divider />
+
+    <app-two-factor-action-item [title]="caption().authLabel" [status]="data().securityKeysStatus"
+        [buttonText]="caption().setupButton" />
+</section>

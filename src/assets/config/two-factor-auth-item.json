@@ -1,0 +1,11 @@
+{
+    "statusEnabled": true,
+    "securityKeysStatus": "No Security Keys",
+    "smsNumberStatus": {
+        "status": "Configured",
+        "number": "+4012374423"
+    },
+    "authenticatorStatus": {
+        "status": "Not Configured"
+    }
+}

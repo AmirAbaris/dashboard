@@ -1,0 +1,1 @@
+export type AuthenticatorStatusType = "Not Configured" | "Configured";

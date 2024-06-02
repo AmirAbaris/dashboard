@@ -41,5 +41,20 @@
         "add-project-card": {
             "newProject": "New Project"
         }
+    },
+    "two-factor-auth": {
+        "two-factor-auth-main": {
+            "title": "Two-factor authentication",
+            "statusEnabled": "Enabled"
+        },
+        "two-factor-action": {
+            "SecurityKeyLabel": "Security keys",
+            "noKeys": "No Security Keys",
+            "smsLabel": "SMS number",
+            "authLabel": "Authenticator app",
+            "addButton": "Add",
+            "editButton": "Edit",
+            "setupButton": "Set Up"
+        }
     }
 }
