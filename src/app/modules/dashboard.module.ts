@@ -20,6 +20,10 @@ const routes: Routes = [
       {
         path: 'profile/all-projects',
         loadChildren: () => import('../modules/profile.module').then(m => m.ProfileModule)
+      },
+      {
+        path: 'profile/overview',
+        loadChildren: () => import('./profile-overview-general.module').then(m => m.ProfileOverviewGeneralModule)
       }
     ]
   },

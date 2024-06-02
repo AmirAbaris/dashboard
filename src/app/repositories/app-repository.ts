@@ -7,7 +7,7 @@ import { ProfileInfoModel } from '../components/profile-overview-general/models/
 import { HouseProjectModel } from '../components/profile-overview-house-project/models/house-project.model';
 import { ConversationItemModel } from '../components/profile-overview-general/models/conversation-item.model';
 import { ProjectItemModel } from '../components/profile-project/models/project-item.model';
-import { ProfileModel } from '../components/profile-introduction/models/profile.model';
+import { ProfileModel } from '../components/profile/models/profile.model';
 
 @Injectable()
 export class AppRepository {

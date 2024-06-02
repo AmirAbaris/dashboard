@@ -14,9 +14,9 @@ import { AppRepository } from '../repositories/app-repository';
 import { AppService } from '../services/app.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'profile-overview', pathMatch: 'full' },
+  { path: '', redirectTo: '', pathMatch: 'full' },
   {
-    path: 'profile-overview', component: ProfileOverviewGeneralMainComponent, children: [
+    path: '', component: ProfileOverviewGeneralMainComponent, children: [
       {
         path: '',
         loadChildren: () => import('./profile-overview-house-project.module').then(m => m.ProfileOverviewHouseProjectModule)

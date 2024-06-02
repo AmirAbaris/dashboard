@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileMainComponent } from '../components/profile/profile-main/profile-main.component';
-import { ProfileIntroductionComponent } from '../components/profile-introduction/profile-introduction/profile-introduction.component';
 import { NgOptimizedImage } from '@angular/common';
-import { ProfileProjectModule } from './profile-project.module';
+import { ProfileIntroductionComponent } from '../components/profile/profile-introduction/profile-introduction.component';
 
 const routes: Routes = [
   {

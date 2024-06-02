@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ProfileModel } from '../models/profile.model';
 import { AppService } from '../../../services/app.service';
+import { ProfileModel } from '../models/profile.model';
 
 @Component({
   selector: 'app-profile-introduction',
