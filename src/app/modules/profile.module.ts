@@ -10,8 +10,12 @@ const routes: Routes = [
     component: ProfileMainComponent,
     children: [
       {
-        path: '',
+        path: 'all-projects',
         loadChildren: () => import('./profile-project.module').then(m => m.ProfileProjectModule)
+      },
+      {
+        path: 'overview',
+        loadChildren: () => import('./profile-overview-general.module').then(m => m.ProfileOverviewGeneralModule)
       }
     ]
   }

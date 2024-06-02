@@ -18,15 +18,11 @@ const routes: Routes = [
     component: DashboardMainComponent,
     children: [
       {
-        path: 'profile/all-projects',
+        path: 'profile',
         loadChildren: () => import('../modules/profile.module').then(m => m.ProfileModule)
-      },
-      {
-        path: 'profile/overview',
-        loadChildren: () => import('./profile-overview-general.module').then(m => m.ProfileOverviewGeneralModule)
       }
     ]
-  },
+  }
 ];
 
 @NgModule({
