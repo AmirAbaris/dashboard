@@ -72,7 +72,6 @@ export class TwoFactorAuthTwoFactorAuthMainComponent implements OnInit {
    * @return {string} The SMS status, which can be either the configured number or the status itself.
    */
   private _getSmsStatus(): string {
-    // TODO: fix
     if (!this.twoFactorAuthItem) return '';
 
     const smsNumberStatus: SmsNumberStatusModel = this.twoFactorAuthItem.smsNumberStatus;
