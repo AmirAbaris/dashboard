@@ -6,7 +6,6 @@ import { TwoFactorActionComponent } from '../components/two-factor-auth/two-fact
 import { AppService } from '../services/app.service';
 import { AppRepository } from '../repositories/app-repository';
 import { MatButtonModule } from '@angular/material/button';
-import { TwoFactorActionItemComponent } from '../components/two-factor-auth/two-factor-action-item/two-factor-action-item.component';
 import { MatDividerModule } from '@angular/material/divider';
 
 const routes: Routes = [
@@ -14,7 +13,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [TwoFactorAuthTwoFactorAuthMainComponent, TwoFactorActionComponent, TwoFactorActionItemComponent],
+  declarations: [TwoFactorAuthTwoFactorAuthMainComponent, TwoFactorActionComponent],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,

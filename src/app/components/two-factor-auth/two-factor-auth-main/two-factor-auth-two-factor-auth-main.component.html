@@ -1,13 +1,18 @@
-@if (caption && twoFactorAuthItem) {
+@if (mainCaption && twoFactorAuthItem && actionItemData) {
 <section class="flex flex-col gap-y-8 bg-white rounded-2xl p-6 drop-shadow-md">
     <div class="flex justify-between items-center">
-        <h1 class="text-charcoalBlue text-xl font-semibold">{{caption.mainCaption.title}}</h1>
+        <h1 class="text-charcoalBlue text-xl font-semibold">{{mainCaption.title}}</h1>
         @if (twoFactorAuthItem.statusEnabled) {
         <p class="py-1 px-3 bg-paleGreen text-lawnGreen font-bold text-xs rounded-lg">
-            {{caption.mainCaption.statusEnabled |
+            {{mainCaption.statusEnabled |
             uppercase}}</p>
         }
     </div>
-    <app-two-factor-action [data]="twoFactorAuthItem" [caption]="caption.actionCaption" />
+    @for (item of actionItemData; track $index) {
+    <app-two-factor-action [data]="item" />
+    @if (!$last) {
+    <mat-divider />
+    }
+    }
 </section>
 }

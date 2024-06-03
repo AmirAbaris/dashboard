@@ -1,11 +1,7 @@
-@for (item of actionItemData; track $index) {
-<!-- <app-two-factor-action-item [title]="item.title" [status]="item.status" [buttonText]="item.buttonText" />
-<mat-divider /> -->
 <div class="content flex items-center w-full">
-    <h2 class="flex-1 text-slateBlue text-base">{{ item.title }}</h2>
+    <h2 class="flex-1 text-slateBlue text-base">{{ data().title }}</h2>
     <div class="flex items-center gap-x-4">
-        <p class="text-slateBlue text-sm">{{ item.status }}</p>
-        <button mat-stroked-button>{{ item.buttonText| uppercase }}</button>
+        <p class="text-slateBlue text-sm">{{ data().status }}</p>
+        <button mat-stroked-button>{{ data().buttonText | uppercase }}</button>
     </div>
 </div>
-}
