@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, output } from '@angular/core';
 import { HouseProjectInputCaptionModel } from '../models/caption-models/house-project-input.caption.model';
 import { TranslateService } from '@ngx-translate/core';
 import { forkJoin } from 'rxjs';
@@ -6,14 +6,17 @@ import { HouseProjectModel } from '../models/house-project.model';
 import { UserService } from '../../../services/user.service';
 
 @Component({
-  selector: 'app-profile-overview-house-project-main',
-  templateUrl: './profile-overview-house-project-main.component.html',
-  styleUrl: './profile-overview-house-project-main.component.scss'
+  selector: 'app-profile-overview-house-project',
+  templateUrl: './profile-overview-house-project.component.html',
+  styleUrl: './profile-overview-house-project.component.scss'
 })
-export class ProfileOverviewHouseProjectMainComponent implements OnInit {
+export class ProfileOverviewHouseProjectComponent implements OnInit {
   //#region Properties
   private readonly _translateService = inject(TranslateService);
   private readonly _userService = inject(UserService);
+
+  public clickAddCardEvent = output<void>();
+  public clickItemEvent = output<string>();
 
   public houseProject: HouseProjectModel[] | undefined;
 
@@ -34,11 +37,11 @@ export class ProfileOverviewHouseProjectMainComponent implements OnInit {
 
   //#region Handler methods
   public onClickAddCardEventHandler(): void {
-    console.log('add button clicked');
+    this.clickAddCardEvent.emit();
   }
 
   public onClickItemEventHandler(id: string): void {
-    console.log('item id:', id);
+    this.clickItemEvent.emit(id);
   }
   //#endregion
 

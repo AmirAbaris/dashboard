@@ -14,5 +14,6 @@
             (clickReplyEvent)="onClickReplyEventHandler($event)" />
         }
     </div>
-    <app-profile-overview-house-project-main />
+    <app-profile-overview-house-project (clickAddCardEvent)="onClickAddCardEventHandler()"
+        (clickItemEvent)="onClickItemEventHandler($event)" />
 </section>
