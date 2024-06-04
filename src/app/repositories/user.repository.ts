@@ -2,12 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment.development';
-import { SideBarSectionModel } from '../components/dashboard/models/sidebar-item.model';
 import { ProfileOverviewConversationItemModel } from '../components/profile-overview-general/models/profile-overview-conversation-item.model';
 import { ProfileOverviewProfileInfoModel } from '../components/profile-overview-general/models/profile-overview-profile-info.model';
-import { HouseProjectModel } from '../components/profile-overview-general/models/house-project.model';
 import { ProjectItemModel } from '../components/profile-project/models/project-item.model';
 import { ProfileModel } from '../components/profile/models/profile.model';
+import { HouseProjectItemModel } from '../components/profile-overview-general/models/house-project-item.model';
 
 @Injectable()
 export class UserRepository {
@@ -36,8 +35,8 @@ export class UserRepository {
     return this._http.get<ProfileOverviewProfileInfoModel>(`${environment.fileUrl}${this._dataFilePaths.profileInfoItem}`);
   }
 
-  public getHouseProjectItems(): Observable<HouseProjectModel[]> {
-    return this._http.get<HouseProjectModel[]>(`${environment.fileUrl}${this._dataFilePaths.houseProjectItems}`);
+  public getHouseProjectItems(): Observable<HouseProjectItemModel[]> {
+    return this._http.get<HouseProjectItemModel[]>(`${environment.fileUrl}${this._dataFilePaths.houseProjectItems}`);
   }
 
   public getConversationItems(): Observable<ProfileOverviewConversationItemModel[]> {

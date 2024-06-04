@@ -1,6 +1,6 @@
 import { Component, input, output } from '@angular/core';
-import { HouseProjectModel } from '../models/house-project.model';
 import { HouseProjectItemCaptionModel } from '../models/caption-models/house-project-item.caption.model';
+import { HouseProjectItemModel } from '../models/house-project-item.model';
 
 @Component({
   selector: 'app-house-project-item',
@@ -9,7 +9,7 @@ import { HouseProjectItemCaptionModel } from '../models/caption-models/house-pro
 })
 export class HouseProjectItemComponent {
   //#region Properties
-  public data = input.required<HouseProjectModel>();
+  public data = input.required<HouseProjectItemModel>();
   public caption = input.required<HouseProjectItemCaptionModel>();
   public houseProjectCount = input.required<number>();
   public clickItemEvent = output<string>();

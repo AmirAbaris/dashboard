@@ -22,7 +22,7 @@ export class ProfileOverviewGeneralMainComponent implements OnInit {
 
   public profileInfo: ProfileOverviewProfileInfoModel | undefined;
   public conversationItems: ProfileOverviewConversationItemModel[] | undefined;
-  public houseProject: HouseProjectModel[] | undefined;
+  public houseProject: HouseProjectModel | undefined;
   public platformSettingCaption: ProfileOverviewPlatformSettingCaptionModel | undefined;
   public profileInfoCaption: ProfileOverviewProfileInformationCaptionModel | undefined;
   public conversationInputCaption: ProfileOverviewConversationInputCaptionModel | undefined;
@@ -98,12 +98,14 @@ export class ProfileOverviewGeneralMainComponent implements OnInit {
   private _getData(): void {
     const profile = this._userService.getProfileInfoItem();
     const conversationItems = this._userService.getConversationItems();
-    const houseProject = this._userService.getHouseProjectItems();
+    const houseProjectItems = this._userService.getHouseProjectItems();
 
-    forkJoin([profile, conversationItems, houseProject]).subscribe(([profileData, conversationItemData, houseProjectData]) => {
+    forkJoin([profile, conversationItems, houseProjectItems]).subscribe(([profileData, conversationItemData, houseProjectItemData]) => {
       this.profileInfo = profileData;
       this.conversationItems = conversationItemData;
-      this.houseProject = houseProjectData;
+      this.houseProject = {
+        item: [...houseProjectItemData]
+      }
     });
   }
   //#endregion

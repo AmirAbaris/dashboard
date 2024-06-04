@@ -7,8 +7,8 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 h-full">
-        @for (item of data(); track $index) {
-        <app-house-project-item [data]="item" [caption]="caption().houseProjectItemCaption"
+        @for (houseProjectItem of data().item; track $index) {
+        <app-house-project-item [data]="houseProjectItem" [caption]="caption().houseProjectItemCaption"
             [houseProjectCount]="$index + 1" (clickItemEvent)="onClickItemEventHandler($event)" />
         }
         <app-new-house-project [caption]="caption().newHouseProjectCaption"

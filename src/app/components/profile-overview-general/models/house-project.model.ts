@@ -1,9 +1,5 @@
-import { ParticipantModel } from "./participant.model";
+import { HouseProjectItemModel } from "./house-project-item.model";
 
 export interface HouseProjectModel {
-    id: string;
-    cover: string;
-    title: string;
-    description: string;
-    participants: ParticipantModel[];
+    item: HouseProjectItemModel[];
 }

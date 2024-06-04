@@ -10,7 +10,7 @@ import { HouseProjectModel } from '../../profile-overview-general/models/house-p
 export class ProfileOverviewHouseProjectComponent {
   //#region Properties
   public caption = input.required<HouseProjectInputCaptionModel>();
-  public data = input.required<HouseProjectModel[]>();
+  public data = input.required<HouseProjectModel>();
 
   public clickAddCardEvent = output<void>();
   public clickItemEvent = output<string>();
