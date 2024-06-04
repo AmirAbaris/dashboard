@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConversationComponent } from './conversation.component';
+import { ConversationComponent } from './profile-overview-conversation.component';
 
 describe('ConversationComponent', () => {
   let component: ConversationComponent;
@@ -10,8 +10,8 @@ describe('ConversationComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ConversationComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(ConversationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

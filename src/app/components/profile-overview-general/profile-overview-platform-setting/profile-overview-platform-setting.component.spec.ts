@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlatformSettingComponent } from './platform-setting.component';
+import { PlatformSettingComponent } from './profile-overview-platform-setting.component';
 
 describe('PlatformSettingComponent', () => {
   let component: PlatformSettingComponent;
@@ -10,8 +10,8 @@ describe('PlatformSettingComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [PlatformSettingComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(PlatformSettingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

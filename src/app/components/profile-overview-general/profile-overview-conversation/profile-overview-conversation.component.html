@@ -1,7 +1,7 @@
 <section class="content w-full h-[27rem] bg-white shadow-md rounded-2xl flex flex-col justify-between p-3">
     <h1 class="text-charcoalBlue text-base font-semibold">{{caption().conversationCaption.conversationTitle}}</h1>
     @for (item of data(); track $index) {
-    <app-conversation-item [data]="item" [caption]="caption().conversationItemCaption"
+    <app-profile-overview-conversation-item [data]="item" [caption]="caption().conversationItemCaption"
         (clickReplyEvent)="onClickReplyEventHandler($event)" />
     }
 </section>

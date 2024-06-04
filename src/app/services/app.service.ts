@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 import { AppRepository } from '../repositories/app-repository';
 import { ProjectItemModel } from '../components/profile-project/models/project-item.model';
 import { ProfileModel } from '../components/profile/models/profile.model';
-import { ProfileInfoModel } from '../components/profile-overview-general/models/profile-info.model';
+import { ProfileOverviewProfileInfoModel } from '../components/profile-overview-general/models/profile-overview-profile-info.model';
 import { HouseProjectModel } from '../components/profile-overview-house-project/models/house-project.model';
-import { ConversationItemModel } from '../components/profile-overview-general/models/conversation-item.model';
+import { ProfileOverviewConversationItemModel } from '../components/profile-overview-general/models/profile-overview-conversation-item.model';
 
 @Injectable()
 export class AppService {
@@ -27,7 +27,7 @@ export class AppService {
     return this._appRepository.getProfileItem();
   }
 
-  public getProfileInfoItem(): Observable<ProfileInfoModel> {
+  public getProfileInfoItem(): Observable<ProfileOverviewProfileInfoModel> {
     return this._appRepository.getProfileInfoItem();
   }
 
@@ -35,7 +35,7 @@ export class AppService {
     return this._appRepository.getHouseProjectItems();
   }
 
-  public getConversationItems(): Observable<ConversationItemModel[]> {
+  public getConversationItems(): Observable<ProfileOverviewConversationItemModel[]> {
     return this._appRepository.getConversationItems();
   }
   //#endregion

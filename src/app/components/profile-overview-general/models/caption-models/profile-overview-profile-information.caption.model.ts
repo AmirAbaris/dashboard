@@ -1,4 +1,4 @@
-export interface ProfileInformationCaptionModel {
+export interface ProfileOverviewProfileInformationCaptionModel {
     profileInformation: string;
     fullName: string;
     mobile: string;

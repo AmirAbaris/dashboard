@@ -1,4 +1,4 @@
-export interface PlatformSettingCaptionModel {
+export interface ProfileOverviewPlatformSettingCaptionModel {
     mainHeading: string;
     accountHeading: string;
     emailWhenFollows: string;

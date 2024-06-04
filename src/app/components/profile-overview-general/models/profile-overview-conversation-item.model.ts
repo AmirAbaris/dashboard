@@ -1,4 +1,4 @@
-export interface ConversationItemModel {
+export interface ProfileOverviewConversationItemModel {
     id: string;
     cover: string;
     name: string;

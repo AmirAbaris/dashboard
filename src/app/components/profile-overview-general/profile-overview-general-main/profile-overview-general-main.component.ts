@@ -1,11 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { PlatformSettingCaptionModel } from '../models/caption-models/platform-setting.caption.model';
+import { ProfileOverviewPlatformSettingCaptionModel } from '../models/caption-models/profile-overview-platform-setting.caption.model';
 import { forkJoin } from 'rxjs';
-import { ProfileInformationCaptionModel } from '../models/caption-models/profile-information.caption.model';
-import { ConversationItemModel } from '../models/conversation-item.model';
-import { ConversationInputCaptionModel } from '../models/caption-models/conversation-input.caption.model';
-import { ProfileInfoModel } from '../models/profile-info.model';
+import { ProfileOverviewProfileInformationCaptionModel } from '../models/caption-models/profile-overview-profile-information.caption.model';
+import { ProfileOverviewConversationItemModel } from '../models/profile-overview-conversation-item.model';
+import { ProfileOverviewConversationInputCaptionModel } from '../models/caption-models/profile-overview-conversation-input.caption.model';
+import { ProfileOverviewProfileInfoModel } from '../models/profile-overview-profile-info.model';
 import { AppService } from '../../../services/app.service';
 
 @Component({
@@ -18,16 +18,16 @@ export class ProfileOverviewGeneralMainComponent implements OnInit {
   private readonly _translateService = inject(TranslateService);
   private readonly _appService = inject(AppService);
 
-  public profileInfo: ProfileInfoModel | undefined;
-  public conversationItems: ConversationItemModel[] | undefined;
-  public platformSettingCaption: PlatformSettingCaptionModel | undefined;
-  public profileInfoCaption: ProfileInformationCaptionModel | undefined;
-  public conversationInputCaption: ConversationInputCaptionModel | undefined;
+  public profileInfo: ProfileOverviewProfileInfoModel | undefined;
+  public conversationItems: ProfileOverviewConversationItemModel[] | undefined;
+  public platformSettingCaption: ProfileOverviewPlatformSettingCaptionModel | undefined;
+  public profileInfoCaption: ProfileOverviewProfileInformationCaptionModel | undefined;
+  public conversationInputCaption: ProfileOverviewConversationInputCaptionModel | undefined;
   private readonly _captionPath = {
-    platformSettingCaption: 'profile-overview-general.platform-setting',
-    profileInfoCaption: 'profile-overview-general.profile-information',
-    conversationCaption: 'profile-overview-general.conversation',
-    conversationItemCaption: 'profile-overview-general.conversation-item'
+    platformSettingCaption: 'profile-overview-general.profile-overview-platform-setting',
+    profileInfoCaption: 'profile-overview-general.profile-overview-profile-information',
+    conversationCaption: 'profile-overview-general.profile-overview-conversation',
+    conversationItemCaption: 'profile-overview-general.profile-overview-conversation-item'
   }
   //#endregion
 

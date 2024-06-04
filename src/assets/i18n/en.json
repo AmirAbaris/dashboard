@@ -43,7 +43,7 @@
         }
     },
     "profile-overview-general": {
-        "platform-setting": {
+        "profile-overview-platform-setting": {
             "mainHeading": "Platform Settings",
             "accountHeading": "Account",
             "emailWhenFollows": "Email me when someone follows me",
@@ -54,7 +54,7 @@
             "monthlyProductUpdates": "Monthly product updates",
             "subscribeToNewsletter": "Subscribe to newsletter"
         },
-        "profile-information": {
+        "profile-overview-profile-information": {
             "profileInformation": "Profile Information",
             "fullName": "Full Name",
             "mobile": "Mobile",
@@ -63,10 +63,10 @@
             "social": "Social",
             "editProfile": "Edit Profile"
         },
-        "conversation": {
+        "profile-overview-conversation": {
             "conversationTitle": "Conversations"
         },
-        "conversation-item": {
+        "profile-overview-conversation-item": {
             "replyItem": "reply"
         }
     },

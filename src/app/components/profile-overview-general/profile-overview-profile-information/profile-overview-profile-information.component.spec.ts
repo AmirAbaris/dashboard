@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfileInformationComponent } from './profile-information.component';
+import { ProfileInformationComponent } from './profile-overview-profile-information.component';
 
 describe('ProfileInformationComponent', () => {
   let component: ProfileInformationComponent;
@@ -10,8 +10,8 @@ describe('ProfileInformationComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ProfileInformationComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(ProfileInformationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

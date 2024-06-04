@@ -1,16 +1,16 @@
 <section class="w-full h-dvh bg-ghostWhite">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
         @if (platformSettingCaption) {
-        <app-platform-setting [caption]="platformSettingCaption" />
+        <app-profile-overview-platform-setting [caption]="platformSettingCaption" />
         }
 
         @if (profileInfo && profileInfoCaption) {
-        <app-profile-information [data]="profileInfo" [caption]="profileInfoCaption"
+        <app-profile-overview-profile-information [data]="profileInfo" [caption]="profileInfoCaption"
             (clickEditEven)="onClickEditEventHandler()" />
         }
 
         @if (conversationItems && conversationInputCaption) {
-        <app-conversation [data]="conversationItems" [caption]="conversationInputCaption"
+        <app-profile-overview-conversation [data]="conversationItems" [caption]="conversationInputCaption"
             (clickReplyEvent)="onClickReplyEventHandler($event)" />
         }
     </div>
