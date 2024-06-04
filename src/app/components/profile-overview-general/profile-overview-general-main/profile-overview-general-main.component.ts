@@ -6,7 +6,7 @@ import { ProfileOverviewProfileInformationCaptionModel } from '../models/caption
 import { ProfileOverviewConversationItemModel } from '../models/profile-overview-conversation-item.model';
 import { ProfileOverviewConversationInputCaptionModel } from '../models/caption-models/profile-overview-conversation-input.caption.model';
 import { ProfileOverviewProfileInfoModel } from '../models/profile-overview-profile-info.model';
-import { AppService } from '../../../services/app.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-profile-overview-general-main',
@@ -16,7 +16,7 @@ import { AppService } from '../../../services/app.service';
 export class ProfileOverviewGeneralMainComponent implements OnInit {
   //#region Properties
   private readonly _translateService = inject(TranslateService);
-  private readonly _appService = inject(AppService);
+  private readonly _userService = inject(UserService);
 
   public profileInfo: ProfileOverviewProfileInfoModel | undefined;
   public conversationItems: ProfileOverviewConversationItemModel[] | undefined;
@@ -71,8 +71,8 @@ export class ProfileOverviewGeneralMainComponent implements OnInit {
   }
 
   private _getData(): void {
-    const profile = this._appService.getProfileInfoItem();
-    const conversationItems = this._appService.getConversationItems();
+    const profile = this._userService.getProfileInfoItem();
+    const conversationItems = this._userService.getConversationItems();
 
     forkJoin([profile, conversationItems]).subscribe(([profileData, conversationItemData]) => {
       this.profileInfo = profileData;

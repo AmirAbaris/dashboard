@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProfileMainComponent } from '../components/profile/profile-main/profile-main.component';
 import { NgOptimizedImage } from '@angular/common';
 import { ProfileIntroductionComponent } from '../components/profile/profile-introduction/profile-introduction.component';
+import { UserService } from '../services/user.service';
+import { UserRepository } from '../repositories/user.repository';
 
 const routes: Routes = [
   {
@@ -34,6 +36,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes),
     NgOptimizedImage
-  ]
+  ],
+  providers: [UserService, UserRepository]
 })
 export class ProfileModule { }

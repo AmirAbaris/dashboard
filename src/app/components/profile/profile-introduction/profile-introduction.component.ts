@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { AppService } from '../../../services/app.service';
 import { ProfileModel } from '../models/profile.model';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-profile-introduction',
@@ -9,7 +9,7 @@ import { ProfileModel } from '../models/profile.model';
 })
 export class ProfileIntroductionComponent implements OnInit {
   //#region Properties
-  private readonly _appService = inject(AppService);
+  private readonly _userService = inject(UserService);
 
   public profileData: ProfileModel | undefined;
   //#endregion
@@ -22,7 +22,7 @@ export class ProfileIntroductionComponent implements OnInit {
 
   //#region Main logic methods
   private _getProfile(): void {
-    this._appService.getProfileItem().subscribe({
+    this._userService.getProfileItem().subscribe({
       next: (data) => {
         this.profileData = data;
       },

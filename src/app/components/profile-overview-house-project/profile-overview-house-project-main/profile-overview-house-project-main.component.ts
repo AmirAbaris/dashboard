@@ -3,7 +3,7 @@ import { HouseProjectInputCaptionModel } from '../models/caption-models/house-pr
 import { TranslateService } from '@ngx-translate/core';
 import { forkJoin } from 'rxjs';
 import { HouseProjectModel } from '../models/house-project.model';
-import { AppService } from '../../../services/app.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-profile-overview-house-project-main',
@@ -13,7 +13,7 @@ import { AppService } from '../../../services/app.service';
 export class ProfileOverviewHouseProjectMainComponent implements OnInit {
   //#region Properties
   private readonly _translateService = inject(TranslateService);
-  private readonly _appService = inject(AppService);
+  private readonly _userService = inject(UserService);
 
   public houseProject: HouseProjectModel[] | undefined;
 
@@ -59,7 +59,7 @@ export class ProfileOverviewHouseProjectMainComponent implements OnInit {
   }
 
   private _getData(): void {
-    this._appService.getHouseProjectItems().subscribe((data) => {
+    this._userService.getHouseProjectItems().subscribe((data) => {
       this.houseProject = data;
     });
   }
