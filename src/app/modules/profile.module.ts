@@ -7,6 +7,11 @@ import { ProfileIntroductionComponent } from '../components/profile/profile-intr
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'overview',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     component: ProfileMainComponent,
     children: [
       {

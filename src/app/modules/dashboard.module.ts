@@ -15,6 +15,11 @@ import { AppRepository } from '../repositories/app-repository';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'profile',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     component: DashboardMainComponent,
     children: [
       {
