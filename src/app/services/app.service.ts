@@ -15,13 +15,5 @@ export class AppService {
   public getSidebarData(): Observable<SideBarSectionModel[]> {
     return this._appRepository.getSidebarItems();
   }
-
-  public getProfileItem(): Observable<ProfileModel> {
-    return this._appRepository.getProfileItem();
-  }
-
-  public getMenuItemData(): Observable<AccountMenuItemModel[]> {
-    return this._appRepository.getAccountMenuItems();
-  }
   //#endregion
 }

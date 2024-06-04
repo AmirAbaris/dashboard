@@ -6,8 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { AccountProfileComponent } from '../components/account-menu/account-profile/account-profile.component';
 import { NgOptimizedImage } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { AppRepository } from '../repositories/app-repository';
-import { AppService } from '../services/app.service';
+import { UserRepository } from '../repositories/user.repository';
+import { UserService } from '../services/user.service';
 
 
 const routes: Routes = [
@@ -39,6 +39,6 @@ const routes: Routes = [
     NgOptimizedImage,
     MatSlideToggleModule
   ],
-  providers: [AppRepository, AppService]
+  providers: [UserRepository, UserService]
 })
 export class AccountMenuModule { }

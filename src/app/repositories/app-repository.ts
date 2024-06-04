@@ -12,24 +12,13 @@ export class AppRepository {
   private readonly _http = inject(HttpClient);
 
   private readonly _dataFilePath = {
-    sidebarItems: 'side-bar-items.json',
-    profileItem: 'profile-item.json',
-    accountMenuItems: 'account-menu-items.json'
+    sidebarItems: 'side-bar-items.json'
   }
   //#endregion
 
   //#region Main logic methods
   public getSidebarItems(): Observable<SideBarSectionModel[]> {
     return this._http.get<SideBarSectionModel[]>(`${environment.fileUrl}${this._dataFilePath.sidebarItems}`);
-  }
-
-  public getProfileItem(): Observable<ProfileModel> {
-    return this._http.get<ProfileModel>(`${environment.fileUrl}${this._dataFilePath.profileItem}`);
-  }
-
-  public getAccountMenuItems(): Observable<AccountMenuItemModel[]> {
-    return this._http.get<AccountMenuItemModel[]>(`${environment.fileUrl}${this._dataFilePath.accountMenuItems}`);
-
   }
   //#endregion
 }

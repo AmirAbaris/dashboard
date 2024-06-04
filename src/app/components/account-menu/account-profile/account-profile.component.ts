@@ -3,6 +3,7 @@ import { ProfileModel } from '../models/profile.model';
 import { TranslateService } from '@ngx-translate/core';
 import { AccountProfileCaptionModel } from '../models/caption-models/account-profile.caption.model';
 import { AppService } from '../../../services/app.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-account-profile',
@@ -11,7 +12,7 @@ import { AppService } from '../../../services/app.service';
 })
 export class AccountProfileComponent implements OnInit {
   //#region Properties
-  private readonly _appService = inject(AppService);
+  private readonly _userService = inject(UserService);
   private readonly _translateService = inject(TranslateService);
 
   public profileData: ProfileModel | undefined;
@@ -30,7 +31,7 @@ export class AccountProfileComponent implements OnInit {
 
   //#region Main logic methods
   private _getProfile(): void {
-    this._appService.getProfileItem().subscribe({
+    this._userService.getProfileItem().subscribe({
       next: (data) => {
         this.profileData = data;
       },
