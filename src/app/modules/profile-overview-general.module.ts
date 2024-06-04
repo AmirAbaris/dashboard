@@ -12,29 +12,33 @@ import { ProfileOverviewConversationItemComponent } from '../components/profile-
 import { ProfileOverviewConversationComponent } from '../components/profile-overview-general/profile-overview-conversation/profile-overview-conversation.component';
 import { ProfileOverviewPlatformSettingComponent } from '../components/profile-overview-general/profile-overview-platform-setting/profile-overview-platform-setting.component';
 import { ProfileOverviewProfileInformationComponent } from '../components/profile-overview-general/profile-overview-profile-information/profile-overview-profile-information.component';
+import { ProfileOverviewHouseProjectMainComponent } from '../components/profile-overview-house-project/profile-overview-house-project-main/profile-overview-house-project-main.component';
+import { HouseProjectItemComponent } from '../components/profile-overview-house-project/house-project-item/house-project-item.component';
+import { HouseProjectComponent } from '../components/profile-overview-house-project/house-project/house-project.component';
+import { NewHouseProjectComponent } from '../components/profile-overview-house-project/new-house-project/new-house-project.component';
+import { MatButtonModule } from '@angular/material/button';
 
 const routes: Routes = [
-  { path: '', redirectTo: '', pathMatch: 'full' },
   {
-    path: '', component: ProfileOverviewGeneralMainComponent, children: [
-      {
-        path: '',
-        loadChildren: () => import('./profile-overview-house-project.module').then(m => m.ProfileOverviewHouseProjectModule)
-      }
-    ]
+    path: '', component: ProfileOverviewGeneralMainComponent
   }
 ];
 
-
 @NgModule({
-  declarations: [ProfileOverviewGeneralMainComponent, ProfileOverviewPlatformSettingComponent,
-    ProfileOverviewProfileInformationComponent, ProfileOverviewConversationItemComponent, ProfileOverviewConversationComponent],
+  declarations: [
+    ProfileOverviewGeneralMainComponent, ProfileOverviewPlatformSettingComponent,
+    ProfileOverviewProfileInformationComponent, ProfileOverviewConversationItemComponent,
+    ProfileOverviewConversationComponent, ProfileOverviewHouseProjectMainComponent, HouseProjectItemComponent,
+    NewHouseProjectComponent,
+    HouseProjectComponent
+  ],
   imports: [
     MatSlideToggleModule,
     CommonModule,
     MatDividerModule,
-    MatIconModule,
+    MatButtonModule,
     MatTooltipModule,
+    MatIconModule,
     NgOptimizedImage,
     RouterModule.forChild(routes)
   ],

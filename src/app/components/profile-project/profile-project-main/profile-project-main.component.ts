@@ -4,7 +4,6 @@ import { forkJoin } from 'rxjs';
 import { AddProjectCaptionModel } from '../models/caption-models/add-project.caption.model';
 import { ProjectInputCaptionModel } from '../models/caption-models/project-input.caption.model';
 import { ProjectItemModel } from '../models/project-item.model';
-import { AppService } from '../../../services/app.service';
 import { UserService } from '../../../services/user.service';
 
 @Component({
