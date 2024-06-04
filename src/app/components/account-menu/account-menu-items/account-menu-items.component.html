@@ -1,6 +1,7 @@
 <div class="content w-full hover:bg-isabelline transform duration-300 rounded-xl">
-    <div class="flex gap-x-4 items-center cursor-pointer p-2 rounded-lg my-2" [routerLink]="data().route">
+    <a class="flex gap-x-4 items-center cursor-pointer p-2 rounded-lg my-2" [routerLink]="data().route"
+        [routerLinkActive]="'active'">
         <mat-icon class="scale-75">{{data().icon}}</mat-icon>
         <p class="text-slateBlue text-sm font-thin">{{data().title}}</p>
-    </div>
+    </a>
 </div>

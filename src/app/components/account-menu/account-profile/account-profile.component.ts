@@ -2,7 +2,6 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ProfileModel } from '../models/profile.model';
 import { TranslateService } from '@ngx-translate/core';
 import { AccountProfileCaptionModel } from '../models/caption-models/account-profile.caption.model';
-import { AppService } from '../../../services/app.service';
 import { UserService } from '../../../services/user.service';
 
 @Component({
