@@ -14,7 +14,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [AccountChangePasswordMainComponent],
   imports: [
-    // TODO: common stays?
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,

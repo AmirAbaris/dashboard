@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: () => import('./modules/account-change-password.module').then((module) => module.AccountChangePasswordModule)
+    loadChildren: () => import('./modules/dashboard.module').then((module) => module.DashboardModule)
   }
 ];
 

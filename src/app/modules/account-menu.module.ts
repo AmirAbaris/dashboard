@@ -6,6 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { AccountProfileComponent } from '../components/account-menu/account-profile/account-profile.component';
 import { NgOptimizedImage } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { AppRepository } from '../repositories/app-repository';
+import { AppService } from '../services/app.service';
 
 
 const routes: Routes = [
@@ -16,6 +18,10 @@ const routes: Routes = [
       {
         path: 'profile',
         component: AccountProfileComponent
+      },
+      {
+        path: 'change-password',
+        loadChildren: () => import('./account-change-password.module').then(m => m.AccountChangePasswordModule)
       }
     ]
   },
@@ -32,6 +38,7 @@ const routes: Routes = [
     MatIconModule,
     NgOptimizedImage,
     MatSlideToggleModule
-  ]
+  ],
+  providers: [AppRepository, AppService]
 })
 export class AccountMenuModule { }
