@@ -1,5 +1,5 @@
 import { Component, input, output } from '@angular/core';
-import { NewHouseProjectCaptionModel } from '../models/caption-models/new-house-project.caption.model';
+import { NewHouseProjectCaptionModel } from '../../profile-overview-general/models/caption-models/new-house-project.caption.model';
 
 @Component({
   selector: 'app-new-house-project',

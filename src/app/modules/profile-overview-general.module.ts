@@ -12,11 +12,10 @@ import { ProfileOverviewConversationItemComponent } from '../components/profile-
 import { ProfileOverviewConversationComponent } from '../components/profile-overview-general/profile-overview-conversation/profile-overview-conversation.component';
 import { ProfileOverviewPlatformSettingComponent } from '../components/profile-overview-general/profile-overview-platform-setting/profile-overview-platform-setting.component';
 import { ProfileOverviewProfileInformationComponent } from '../components/profile-overview-general/profile-overview-profile-information/profile-overview-profile-information.component';
-import { ProfileOverviewHouseProjectComponent } from '../components/profile-overview-house-project/profile-overview-house-project/profile-overview-house-project.component';
-import { HouseProjectItemComponent } from '../components/profile-overview-house-project/house-project-item/house-project-item.component';
-import { HouseProjectComponent } from '../components/profile-overview-house-project/house-project/house-project.component';
-import { NewHouseProjectComponent } from '../components/profile-overview-house-project/new-house-project/new-house-project.component';
+import { HouseProjectItemComponent } from '../components/profile-overview-general/house-project-item/house-project-item.component';
 import { MatButtonModule } from '@angular/material/button';
+import { ProfileOverviewHouseProjectComponent } from '../components/profile-overview-general/profile-overview-house-project/profile-overview-house-project.component';
+import { NewHouseProjectComponent } from '../components/profile-overview-general/new-house-project/new-house-project.component';
 
 const routes: Routes = [
   {
@@ -29,8 +28,7 @@ const routes: Routes = [
     ProfileOverviewGeneralMainComponent, ProfileOverviewPlatformSettingComponent,
     ProfileOverviewProfileInformationComponent, ProfileOverviewConversationItemComponent,
     ProfileOverviewConversationComponent, ProfileOverviewHouseProjectComponent, HouseProjectItemComponent,
-    NewHouseProjectComponent,
-    HouseProjectComponent
+    NewHouseProjectComponent
   ],
   imports: [
     MatSlideToggleModule,

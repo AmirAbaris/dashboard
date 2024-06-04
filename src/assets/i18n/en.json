@@ -68,10 +68,8 @@
         },
         "profile-overview-conversation-item": {
             "replyItem": "reply"
-        }
-    },
-    "profile-overview-house-project": {
-        "house-project": {
+        },
+        "profile-overview-house-project": {
             "title": "Projects",
             "intro": "Architects design houses"
         },
