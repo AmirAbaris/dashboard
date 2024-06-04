@@ -1,12 +1,12 @@
 <section class="h-full flex relative">
     <div class="hidden lg:block">
-        <div class="h-full fixed overflow-y-auto w-[18rem]">
+        <div class="h-full fixed overflow-y-auto w-[19rem]">
             <app-side-bar *ngIf="sidebarCaption && sidebarItems" [data]="sidebarItems" [caption]="sidebarCaption"
                 (clickDocButtonEvent)="$event" />
         </div>
     </div>
 
-    <div class="container mx-auto lg:ml-[18rem]">
+    <div class="container mx-auto lg:ml-[19rem]">
         <router-outlet />
     </div>
 </section>
