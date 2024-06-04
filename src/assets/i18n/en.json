@@ -30,5 +30,26 @@
         "account-profile-main": {
             "switch": "Switch to invisible"
         }
+    },
+    "account-change-password": {
+        "account-change-password-main": {
+            "changePassword": "Change Password",
+            "currentPassword": "Current Password",
+            "newPassword": "New Password",
+            "confirmPassword": "Confirm New Password",
+            "updatePassword": "Update Password",
+            "passwordRequirements": "Password requirements",
+            "strongPasswordGuide": "Please follow this guide for a strong password",
+            "specialCharacters": "One special character",
+            "minCharacters": "Min 6 characters",
+            "oneNumber": "One number (2 are recommended)",
+            "changeOften": "Change it often"
+        },
+        "password-error": {
+            "passwordRequiredError": "Password is required",
+            "passwordMinLengthError": "Password must be at least 6 characters long",
+            "passwordStrengthError": "Password must include at least one number and one special character",
+            "passwordMismatchError": "Passwords do not match"
+        }
     }
 }
