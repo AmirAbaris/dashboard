@@ -18,11 +18,11 @@ export class UserRepository {
 
   //#region Main logic methods
   public getProfileItem(): Observable<ProfileModel> {
-    return this._http.get<ProfileModel>(`${environment.fileUrl}${this._dataFilePath.profileItem}`);
+    return this._http.get<ProfileModel>(`${environment.mockDataFileUrl}${this._dataFilePath.profileItem}`);
   }
 
   public getAccountMenuItems(): Observable<AccountMenuItemModel[]> {
-    return this._http.get<AccountMenuItemModel[]>(`${environment.fileUrl}${this._dataFilePath.accountMenuItems}`);
+    return this._http.get<AccountMenuItemModel[]>(`${environment.mockDataFileUrl}${this._dataFilePath.accountMenuItems}`);
   }
   //#endregion
 }

@@ -19,13 +19,12 @@ export class AccountChangePasswordMainComponent implements OnInit {
   private readonly _fb = inject(FormBuilder);
   private readonly _translateService = inject(TranslateService);
 
-  public changedPasswordOutput = output<ChangePasswordFromModel>();
-
   public readonly formKeys = {
     currentPasswordCtrl: 'currentPasswordCtrl',
     newPasswordCtrl: 'newPasswordCtrl',
     confirmNewPasswordCtrl: 'confirmNewPasswordCtrl'
   }
+  public changedPasswordOutput = output<ChangePasswordFromModel>();
   public fg: FormGroup | undefined;
   public passwordErrorCaption: PasswordErrorCaptionModel | undefined;
   public changePasswordCaption: ChangePasswordCaptionModel | undefined;
@@ -46,10 +45,15 @@ export class AccountChangePasswordMainComponent implements OnInit {
   public onClickSubmitButtonEventHandler(): void {
     if (!this.fg) return;
 
-    const changePasswordFromModel = this._convertFormGroupValueToChangePasswordFromModel(this.fg);
-    console.log(changePasswordFromModel);
+    if (this.fg.valid) {
+      const changePasswordFromModel = this._convertFormGroupValueToChangePasswordFromModel(this.fg);
+      console.log(changePasswordFromModel);
 
-    this.changedPasswordOutput.emit(changePasswordFromModel);
+      this.changedPasswordOutput.emit(changePasswordFromModel);
+    }
+    else {
+      this.fg.markAllAsTouched();
+    }
   }
   //#endregion
 
