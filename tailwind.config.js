@@ -16,7 +16,9 @@ module.exports = {
       ghostWhite: '#f8f9fa',
       blueGray: '#9fa3b9',
       paleGreen: '#cdf59b',
-      lawnGreen: '#67b108'
+      lawnGreen: '#67b108',
+      paleRed: '#f5b7b1',
+      crimsonRed: '#b10808'
     },
   },
   plugins: [],

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-two-factor-action',
@@ -6,7 +6,17 @@ import { Component } from '@angular/core';
   styleUrl: './two-factor-action.component.scss'
 })
 export class TwoFactorActionComponent {
-//#region Properties
-// public data = 
-//#endregion
+  //#region Properties
+  public data = input.required<string>();
+  public title = input.required<string>();
+  public buttonCaption = input.required<string>();
+
+  public buttonClickEvent = output<void>();
+  //#endregion
+
+  //#region Handler methods
+  public onButtonClickEventHandler(): void {
+    this.buttonClickEvent.emit();
+  }
+  //#endregion
 }

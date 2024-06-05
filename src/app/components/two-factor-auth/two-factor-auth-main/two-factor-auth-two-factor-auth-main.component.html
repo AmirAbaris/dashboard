@@ -1,43 +1,31 @@
-@if (caption && twoFactorAuthItem) {
+@if (twoFactorMainCaption && twoFactorActionCaption && twoFactorAuthItem) {
 <section class="content flex flex-col gap-y-6 bg-white rounded-2xl p-6 drop-shadow-md">
     <div class="flex justify-between items-center">
-        <h1 class="text-charcoalBlue text-xl font-semibold">{{caption.title}}</h1>
-        @if (twoFactorAuthItem.statusEnabled) {
+        <h1 class="text-charcoalBlue text-xl font-semibold">{{twoFactorMainCaption.title}}</h1>
+        @if (twoFactorAuthItem.twoFactorAuthEnabled) {
         <p class="py-1 px-3 bg-paleGreen text-lawnGreen font-bold text-xs rounded-lg">
-            {{caption.statusEnabled |
+            {{twoFactorMainCaption.statusEnabled |
+            uppercase}}</p>
+        }
+        @else {
+        <p class="py-1 px-3 bg-paleRed text-crimsonRed font-bold text-xs rounded-lg">
+            {{twoFactorMainCaption.statusDisabled |
             uppercase}}</p>
         }
     </div>
-    <div class="flex items-center">
-        <h2 class="flex-1 text-slateBlue text-base">{{ caption.SecurityKeyLabel }}</h2>
-        <div class="flex items-center gap-x-4">
-            <p class="text-slateBlue text-sm">{{ twoFactorAuthItem.securityKeysStatus }}</p>
-            <button mat-stroked-button (click)="onAddButtonClickEventHandler()">{{caption.addButton | uppercase
-                }}</button>
-        </div>
-    </div>
+    <app-two-factor-action [title]="twoFactorActionCaption.SecurityKeyLabel"
+        [data]="twoFactorAuthItem.securityKey || twoFactorActionCaption.noKeys"
+        [buttonCaption]="twoFactorAuthItem.securityKey ? twoFactorActionCaption.editButton : twoFactorActionCaption.addButton"
+        (buttonClickEvent)="onButtonClickEventHandler()" />
     <mat-divider />
-    <div class="flex items-center">
-        <h2 class="flex-1 text-slateBlue text-base">{{ caption.smsLabel }}</h2>
-        <div class="flex items-center gap-x-4">
-            @if (twoFactorAuthItem.smsNumberStatus.status === 'Configured') {
-            <p class="text-slateBlue text-sm">{{ twoFactorAuthItem.smsNumberStatus.number }}</p>
-            }
-            @else {
-            <p class="text-slateBlue text-sm">{{ twoFactorAuthItem.smsNumberStatus.status }}</p>
-            }
-            <button mat-stroked-button (click)="onEditButtonClickEventHandler()">{{caption.editButton | uppercase
-                }}</button>
-        </div>
-    </div>
+    <app-two-factor-action [title]=" twoFactorActionCaption.smsLabel"
+        [data]="twoFactorAuthItem.smsNumber || twoFactorActionCaption.notConfided"
+        [buttonCaption]="twoFactorAuthItem.smsNumber ? twoFactorActionCaption.editButton : twoFactorActionCaption.addButton"
+        (buttonClickEvent)="onButtonClickEventHandler()" />
     <mat-divider />
-    <div class="flex items-center">
-        <h2 class="flex-1 text-slateBlue text-base">{{ caption.authLabel }}</h2>
-        <div class="flex items-center gap-x-4">
-            <p class="text-slateBlue text-sm">{{ twoFactorAuthItem.authenticatorStatus }}</p>
-            <button mat-stroked-button (click)="onSetUpButtonClickEventHandler()">{{caption.setupButton | uppercase
-                }}</button>
-        </div>
-    </div>
+    <app-two-factor-action [title]="twoFactorActionCaption.authLabel"
+        [data]="twoFactorAuthItem.authenticator || twoFactorActionCaption.notConfided"
+        [buttonCaption]="twoFactorAuthItem.authenticator ? twoFactorActionCaption.editButton : twoFactorActionCaption.setupButton"
+        (buttonClickEvent)="onButtonClickEventHandler()" />
 </section>
 }

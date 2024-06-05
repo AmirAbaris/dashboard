@@ -1,8 +1,10 @@
+import { TwoFactorAuthActionCaptionModel } from './../models/caption-models/two-factor-auth-action.caption.model';
 import { Component, OnInit, inject, output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { TwoFactorAuthModel } from '../models/two-factor-auth.model';
 import { TwoFactorAuthMainCaptionModel } from '../models/caption-models/two-factor-auth-main.caption.model';
 import { UserService } from '../../../services/user.service';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-two-factor-auth-two-factor-auth-main',
@@ -14,14 +16,14 @@ export class TwoFactorAuthTwoFactorAuthMainComponent implements OnInit {
   private readonly _translateService = inject(TranslateService);
   private readonly _userService = inject(UserService);
 
-  public onAddButtonClickEvent = output<void>();
-  public onEditButtonClickEvent = output<void>();
-  public onSetUpButtonClickEvent = output<void>();
+  public onButtonClickEvent = output<void>();
 
   public twoFactorAuthItem: TwoFactorAuthModel | undefined;
-  public caption: TwoFactorAuthMainCaptionModel | undefined;
+  public twoFactorMainCaption: TwoFactorAuthMainCaptionModel | undefined;
+  public twoFactorActionCaption: TwoFactorAuthActionCaptionModel | undefined;
   private readonly _captionPath = {
-    twoFactorMainCaption: 'two-factor-auth.two-factor-auth-main'
+    twoFactorMainCaption: 'two-factor-auth.two-factor-auth-main',
+    twoFactorActionCaption: 'two-factor-auth.two-factor-auth-action'
   }
   //#endregion
 
@@ -33,26 +35,20 @@ export class TwoFactorAuthTwoFactorAuthMainComponent implements OnInit {
   //#endregion
 
   //#region Handler methods
-  public onAddButtonClickEventHandler(): void {
-    console.log('Add button clicked');
-    this.onAddButtonClickEvent.emit();
-  }
-
-  public onEditButtonClickEventHandler(): void {
-    console.log('Edit button clicked');
-    this.onEditButtonClickEvent.emit();
-  }
-
-  public onSetUpButtonClickEventHandler(): void {
-    console.log('Set up button clicked');
-    this.onSetUpButtonClickEvent.emit();
+  public onButtonClickEventHandler(): void {
+    console.log('button clicked');
+    this.onButtonClickEvent.emit();
   }
   //#endregion
 
   //#region Main logic methods
   private _getCaptions(): void {
-    this._translateService.get(this._captionPath.twoFactorMainCaption).subscribe((caption) => {
-      this.caption = caption;
+    const twoFactorMainCaption = this._translateService.get(this._captionPath.twoFactorMainCaption);
+    const twoFactorActionCaption = this._translateService.get(this._captionPath.twoFactorActionCaption);
+
+    forkJoin([twoFactorMainCaption, twoFactorActionCaption]).subscribe(([twoFactorMainCaptionData, twoFactorActionCaptionData]) => {
+      this.twoFactorMainCaption = twoFactorMainCaptionData;
+      this.twoFactorActionCaption = twoFactorActionCaptionData;
     });
   }
 

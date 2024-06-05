@@ -1,1 +1,0 @@
-export type SecurityKeysStatusType = "No Security Keys" | "Enabled" | "Disabled";
