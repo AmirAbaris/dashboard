@@ -45,15 +45,10 @@ export class AccountChangePasswordMainComponent implements OnInit {
   public onClickSubmitButtonEventHandler(): void {
     if (!this.fg) return;
 
-    if (this.fg.valid) {
-      const changePasswordFromModel = this._convertFormGroupValueToChangePasswordFromModel(this.fg);
-      console.log(changePasswordFromModel);
+    const changePasswordFromModel = this._convertFormGroupValueToChangePasswordFromModel(this.fg);
+    console.log(changePasswordFromModel);
 
-      this.changedPasswordOutput.emit(changePasswordFromModel);
-    }
-    else {
-      this.fg.markAllAsTouched();
-    }
+    this.changedPasswordOutput.emit(changePasswordFromModel);
   }
   //#endregion
 
