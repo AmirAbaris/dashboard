@@ -16,17 +16,5 @@ export class AppService {
   public getSidebarItems(): Observable<SideBarSectionModel[]> {
     return this._appRepository.getSidebarItems();
   }
-
-  public getProjectItems(): Observable<ProjectItemModel[]> {
-    return this._appRepository.getProjectItems();
-  }
-
-  public getProfileItem(): Observable<ProfileModel> {
-    return this._appRepository.getProfileItem();
-  }
-
-  public getTwoFactorAuthItem(): Observable<TwoFactorAuthModel> {
-    return this._appRepository.getTwoFactorAuthItem();
-  }
   //#endregion
 }

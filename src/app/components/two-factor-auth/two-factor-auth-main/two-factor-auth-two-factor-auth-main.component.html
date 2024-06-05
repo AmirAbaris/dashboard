@@ -1,18 +1,43 @@
-@if (mainCaption && twoFactorAuthItem && actionItemData) {
-<section class="flex flex-col gap-y-8 bg-white rounded-2xl p-6 drop-shadow-md">
+@if (caption && twoFactorAuthItem) {
+<section class="content flex flex-col gap-y-6 bg-white rounded-2xl p-6 drop-shadow-md">
     <div class="flex justify-between items-center">
-        <h1 class="text-charcoalBlue text-xl font-semibold">{{mainCaption.title}}</h1>
+        <h1 class="text-charcoalBlue text-xl font-semibold">{{caption.title}}</h1>
         @if (twoFactorAuthItem.statusEnabled) {
         <p class="py-1 px-3 bg-paleGreen text-lawnGreen font-bold text-xs rounded-lg">
-            {{mainCaption.statusEnabled |
+            {{caption.statusEnabled |
             uppercase}}</p>
         }
     </div>
-    @for (item of actionItemData; track $index) {
-    <app-two-factor-action [data]="item" />
-    @if (!$last) {
+    <div class="flex items-center">
+        <h2 class="flex-1 text-slateBlue text-base">{{ caption.SecurityKeyLabel }}</h2>
+        <div class="flex items-center gap-x-4">
+            <p class="text-slateBlue text-sm">{{ twoFactorAuthItem.securityKeysStatus }}</p>
+            <button mat-stroked-button (click)="onAddButtonClickEventHandler()">{{caption.addButton | uppercase
+                }}</button>
+        </div>
+    </div>
     <mat-divider />
-    }
-    }
+    <div class="flex items-center">
+        <h2 class="flex-1 text-slateBlue text-base">{{ caption.smsLabel }}</h2>
+        <div class="flex items-center gap-x-4">
+            @if (twoFactorAuthItem.smsNumberStatus.status === 'Configured') {
+            <p class="text-slateBlue text-sm">{{ twoFactorAuthItem.smsNumberStatus.number }}</p>
+            }
+            @else {
+            <p class="text-slateBlue text-sm">{{ twoFactorAuthItem.smsNumberStatus.status }}</p>
+            }
+            <button mat-stroked-button (click)="onEditButtonClickEventHandler()">{{caption.editButton | uppercase
+                }}</button>
+        </div>
+    </div>
+    <mat-divider />
+    <div class="flex items-center">
+        <h2 class="flex-1 text-slateBlue text-base">{{ caption.authLabel }}</h2>
+        <div class="flex items-center gap-x-4">
+            <p class="text-slateBlue text-sm">{{ twoFactorAuthItem.authenticatorStatus }}</p>
+            <button mat-stroked-button (click)="onSetUpButtonClickEventHandler()">{{caption.setupButton | uppercase
+                }}</button>
+        </div>
+    </div>
 </section>
 }

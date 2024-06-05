@@ -4,6 +4,12 @@ import { SmsNumberStatusModel } from "./sms-number-status.model";
 
 export interface TwoFactorAuthModel {
     statusEnabled: boolean;
+    // twofactoauthEnabeld
+
+
+    // sec key?: string;
+    // TODO: fix all like above
+    
     securityKeysStatus: SecurityKeysStatusType;
     smsNumberStatus: SmsNumberStatusModel;
     authenticatorStatus: AuthenticatorStatusType;

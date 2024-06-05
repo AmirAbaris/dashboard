@@ -45,9 +45,7 @@
     "two-factor-auth": {
         "two-factor-auth-main": {
             "title": "Two-factor authentication",
-            "statusEnabled": "Enabled"
-        },
-        "two-factor-action": {
+            "statusEnabled": "Enabled",
             "SecurityKeyLabel": "Security keys",
             "noKeys": "No Security Keys",
             "smsLabel": "SMS number",
