@@ -11,12 +11,12 @@ export class TwoFactorActionComponent {
   public title = input.required<string>();
   public buttonCaption = input.required<string>();
 
-  public buttonClickEvent = output<void>();
+  public clickButtonEvent = output<void>();
   //#endregion
 
   //#region Handler methods
   public onButtonClickEventHandler(): void {
-    this.buttonClickEvent.emit();
+    this.clickButtonEvent.emit();
   }
   //#endregion
 }

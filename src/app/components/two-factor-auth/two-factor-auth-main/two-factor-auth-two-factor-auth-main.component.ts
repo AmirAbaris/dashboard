@@ -16,7 +16,9 @@ export class TwoFactorAuthTwoFactorAuthMainComponent implements OnInit {
   private readonly _translateService = inject(TranslateService);
   private readonly _userService = inject(UserService);
 
-  public onButtonClickEvent = output<void>();
+  public clickChangeSecurityKeyEvent = output<void>();
+  public clickChangePhoneNumberEvent = output<void>();
+  public clickAuthenticatorEvent = output<void>();
 
   public twoFactorAuthItem: TwoFactorAuthModel | undefined;
   public twoFactorMainCaption: TwoFactorAuthMainCaptionModel | undefined;
@@ -35,9 +37,19 @@ export class TwoFactorAuthTwoFactorAuthMainComponent implements OnInit {
   //#endregion
 
   //#region Handler methods
-  public onButtonClickEventHandler(): void {
-    console.log('button clicked');
-    this.onButtonClickEvent.emit();
+  public onClickChangeSecurityKeyEventHandler(): void {
+    console.log('change security button clicked');
+    this.clickChangeSecurityKeyEvent.emit();
+  }
+
+  public onClickChangePhoneNumberEventHandler(): void {
+    console.log('phone number change button clicked');
+    this.clickChangePhoneNumberEvent.emit();
+  }
+
+  public onClickAuthenticatorEventHandler(): void {
+    console.log('authenticator button clicked');
+    this.clickAuthenticatorEvent.emit();
   }
   //#endregion
 

@@ -16,16 +16,16 @@
     <app-two-factor-action [title]="twoFactorActionCaption.SecurityKeyLabel"
         [data]="twoFactorAuthItem.securityKey || twoFactorActionCaption.noKeys"
         [buttonCaption]="twoFactorAuthItem.securityKey ? twoFactorActionCaption.editButton : twoFactorActionCaption.addButton"
-        (buttonClickEvent)="onButtonClickEventHandler()" />
+        (clickButtonEvent)="onClickChangeSecurityKeyEventHandler()" />
     <mat-divider />
     <app-two-factor-action [title]=" twoFactorActionCaption.smsLabel"
         [data]="twoFactorAuthItem.smsNumber || twoFactorActionCaption.notConfided"
         [buttonCaption]="twoFactorAuthItem.smsNumber ? twoFactorActionCaption.editButton : twoFactorActionCaption.addButton"
-        (buttonClickEvent)="onButtonClickEventHandler()" />
+        (clickButtonEvent)="onClickChangePhoneNumberEventHandler()" />
     <mat-divider />
     <app-two-factor-action [title]="twoFactorActionCaption.authLabel"
         [data]="twoFactorAuthItem.authenticator || twoFactorActionCaption.notConfided"
         [buttonCaption]="twoFactorAuthItem.authenticator ? twoFactorActionCaption.editButton : twoFactorActionCaption.setupButton"
-        (buttonClickEvent)="onButtonClickEventHandler()" />
+        (clickButtonEvent)="onClickAuthenticatorEventHandler()" />
 </section>
 }
