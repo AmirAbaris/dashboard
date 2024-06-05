@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment.development';
-import { AccountMenuItemModel } from '../components/account-menu/models/account-menu-item.model';
-import { ProfileModel } from '../components/account-menu/models/profile.model';
+import { AccountMenuItemModel } from '../components/account-setting/models/account-menu-item.model';
+import { ProfileModel } from '../components/account-setting/models/profile.model';
 
 @Injectable()
 export class UserRepository {

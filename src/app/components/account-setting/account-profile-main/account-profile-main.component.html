@@ -11,8 +11,8 @@
         </div>
     </div>
 
-    <mat-slide-toggle class="mr-4" labelPosition="before">
-        <p class="text-charcoalBlue text-sm">{{profileCaption.switch}}</p>
+    <mat-slide-toggle class="mr-4" labelPosition="before" (change)="onClickToggleSliderEventHandler($event)">
+        <p class=" text-charcoalBlue text-sm">{{profileCaption.switch}}</p>
     </mat-slide-toggle>
 </div>
 }

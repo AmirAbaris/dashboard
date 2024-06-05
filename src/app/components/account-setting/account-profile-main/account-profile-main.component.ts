@@ -1,18 +1,21 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, output } from '@angular/core';
 import { ProfileModel } from '../models/profile.model';
 import { TranslateService } from '@ngx-translate/core';
 import { AccountProfileCaptionModel } from '../models/caption-models/account-profile.caption.model';
 import { UserService } from '../../../services/user.service';
+import { MatSlideToggle, MatSlideToggleChange } from '@angular/material/slide-toggle';
 
 @Component({
-  selector: 'app-account-profile',
-  templateUrl: './account-profile.component.html',
-  styleUrl: './account-profile.component.scss'
+  selector: 'app-account-profile-main',
+  templateUrl: './account-profile-main.component.html',
+  styleUrl: './account-profile-main.component.scss'
 })
-export class AccountProfileComponent implements OnInit {
+export class AccountProfileMainComponent implements OnInit {
   //#region Properties
   private readonly _userService = inject(UserService);
   private readonly _translateService = inject(TranslateService);
+
+  public clickToggleSliderEvent = output<boolean>();
 
   public profileData: ProfileModel | undefined;
   public profileCaption: AccountProfileCaptionModel | undefined;
@@ -25,6 +28,13 @@ export class AccountProfileComponent implements OnInit {
   public ngOnInit(): void {
     this._getProfile();
     this._getCaption();
+  }
+  //#endregion
+
+  //#region Handler methods
+  public onClickToggleSliderEventHandler(event: MatSlideToggleChange): void {
+    console.log(event.checked);
+    this.clickToggleSliderEvent.emit(event.checked);
   }
   //#endregion
 

@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AccountMenuItemModel } from '../components/account-menu/models/account-menu-item.model';
-import { ProfileModel } from '../components/account-menu/models/profile.model';
+import { AccountMenuItemModel } from '../components/account-setting/models/account-menu-item.model';
+import { ProfileModel } from '../components/account-setting/models/profile.model';
 import { UserRepository } from '../repositories/user.repository';
 
 @Injectable()

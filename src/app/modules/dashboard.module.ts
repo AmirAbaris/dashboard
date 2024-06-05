@@ -19,7 +19,7 @@ const routes: Routes = [
     children: [
       {
         path: 'account/settings',
-        loadChildren: () => import('../modules/account-menu.module').then((m) => m.AccountMenuModule)
+        loadChildren: () => import('./account-setting.module').then((m) => m.AccountSettingModule)
       }
     ]
   },

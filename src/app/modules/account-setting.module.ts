@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { AccountMenuItemsComponent } from '../components/account-menu/account-menu-items/account-menu-items.component';
-import { AccountMenuMainComponent } from '../components/account-menu/account-menu-main/account-menu-main.component';
+import { AccountMenuItemsComponent } from '../components/account-setting/account-menu-items/account-menu-items.component';
+import { AccountMenuMainComponent } from '../components/account-setting/account-menu-main/account-menu-main.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { AccountProfileComponent } from '../components/account-menu/account-profile/account-profile.component';
+import { AccountProfileMainComponent } from '../components/account-setting/account-profile-main/account-profile-main.component';
 import { NgOptimizedImage } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { UserRepository } from '../repositories/user.repository';
@@ -17,7 +17,7 @@ const routes: Routes = [
     children: [
       {
         path: 'profile',
-        component: AccountProfileComponent
+        component: AccountProfileMainComponent
       },
       {
         path: 'change-password',
@@ -31,7 +31,7 @@ const routes: Routes = [
   declarations: [
     AccountMenuMainComponent,
     AccountMenuItemsComponent,
-    AccountProfileComponent
+    AccountProfileMainComponent
   ],
   imports: [
     RouterModule.forChild(routes),
@@ -41,4 +41,4 @@ const routes: Routes = [
   ],
   providers: [UserRepository, UserService]
 })
-export class AccountMenuModule { }
+export class AccountSettingModule { }
