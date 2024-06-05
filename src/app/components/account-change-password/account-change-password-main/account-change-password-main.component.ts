@@ -1,7 +1,6 @@
-import { Component, OnInit, inject, output } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from '../../../../environments/environment.development';
-import { passwordMatchValidator } from '../helpers/password-match-validator';
 import { passwordStrengthValidator } from '../helpers/password-strength-validator';
 import { TranslateService } from '@ngx-translate/core';
 import { PasswordErrorCaptionModel } from '../models/caption-models/password-error.caption.model';
@@ -24,7 +23,6 @@ export class AccountChangePasswordMainComponent implements OnInit {
     newPasswordCtrl: 'newPasswordCtrl',
     confirmNewPasswordCtrl: 'confirmNewPasswordCtrl'
   }
-  public changedPasswordOutput = output<ChangePasswordFromModel>();
   public fg: FormGroup | undefined;
   public passwordErrorCaption: PasswordErrorCaptionModel | undefined;
   public changePasswordCaption: ChangePasswordCaptionModel | undefined;
@@ -47,8 +45,6 @@ export class AccountChangePasswordMainComponent implements OnInit {
 
     const changePasswordFromModel = this._convertFormGroupValueToChangePasswordFromModel(this.fg);
     console.log(changePasswordFromModel);
-
-    this.changedPasswordOutput.emit(changePasswordFromModel);
   }
   //#endregion
 
@@ -63,8 +59,7 @@ export class AccountChangePasswordMainComponent implements OnInit {
           passwordStrengthValidator
         ]],
         [this.formKeys.confirmNewPasswordCtrl]: [null, [Validators.required]]
-      },
-      { validators: passwordMatchValidator }
+      }
     );
   }
 

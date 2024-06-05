@@ -3,7 +3,7 @@ import { AccountMenuItemsComponent } from '../components/account-setting/account
 import { AccountMenuMainComponent } from '../components/account-setting/account-menu-main/account-menu-main.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { AccountProfileMainComponent } from '../components/account-setting/account-profile-main/account-profile-main.component';
+import { AccountProfileMainComponent } from '../components/account-profile-main/account-profile-main.component';
 import { NgOptimizedImage } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { UserRepository } from '../repositories/user.repository';
