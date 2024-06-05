@@ -24,23 +24,23 @@ export class UserRepository {
 
   //#region Main logic methods
   public getProjectItems(): Observable<ProjectItemModel[]> {
-    return this._http.get<ProjectItemModel[]>(`${environment.fileUrl}${this._dataFilePaths.projectItems}`);
+    return this._http.get<ProjectItemModel[]>(`${environment.mockDataFileUrl}${this._dataFilePaths.projectItems}`);
   }
 
   public getProfileItem(): Observable<ProfileModel> {
-    return this._http.get<ProfileModel>(`${environment.fileUrl}${this._dataFilePaths.profileItem}`);
+    return this._http.get<ProfileModel>(`${environment.mockDataFileUrl}${this._dataFilePaths.profileItem}`);
   }
 
   public getProfileInfoItem(): Observable<ProfileOverviewProfileInfoModel> {
-    return this._http.get<ProfileOverviewProfileInfoModel>(`${environment.fileUrl}${this._dataFilePaths.profileInfoItem}`);
+    return this._http.get<ProfileOverviewProfileInfoModel>(`${environment.mockDataFileUrl}${this._dataFilePaths.profileInfoItem}`);
   }
 
   public getHouseProjectItems(): Observable<HouseProjectItemModel[]> {
-    return this._http.get<HouseProjectItemModel[]>(`${environment.fileUrl}${this._dataFilePaths.houseProjectItems}`);
+    return this._http.get<HouseProjectItemModel[]>(`${environment.mockDataFileUrl}${this._dataFilePaths.houseProjectItems}`);
   }
 
   public getConversationItems(): Observable<ProfileOverviewConversationItemModel[]> {
-    return this._http.get<ProfileOverviewConversationItemModel[]>(`${environment.fileUrl}${this._dataFilePaths.conversationItems}`);
+    return this._http.get<ProfileOverviewConversationItemModel[]>(`${environment.mockDataFileUrl}${this._dataFilePaths.conversationItems}`);
   }
   //#endregion
 }

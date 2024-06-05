@@ -12,12 +12,12 @@ export class HouseProjectItemComponent {
   public data = input.required<HouseProjectItemModel>();
   public caption = input.required<HouseProjectItemCaptionModel>();
   public houseProjectCount = input.required<number>();
-  public clickItemEvent = output<string>();
+  public clickHouseProjectButtonEvent = output<string>();
   //#endregion
 
   //#region Handler methods
-  public onClickItemEventHandler(id: string): void {
-    this.clickItemEvent.emit(id);
+  public onClickHouseProjectButtonEventHandler(id: string): void {
+    this.clickHouseProjectButtonEvent.emit(id);
   }
   //#endregion
 }

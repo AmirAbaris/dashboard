@@ -11,12 +11,12 @@ export class ProfileOverviewConversationComponent {
   //#region Properties
   public data = input.required<ProfileOverviewConversationItemModel[]>();
   public caption = input.required<ProfileOverviewConversationInputCaptionModel>();
-  public clickReplyEvent = output<string>();
+  public clickReplyButtonEvent = output<string>();
   //#endregion
 
   //#region Method handler
-  public onClickReplyEventHandler(id: string): void {
-    this.clickReplyEvent.emit(id);
+  public onClickReplyButtonEventHandler(id: string): void {
+    this.clickReplyButtonEvent.emit(id);
   }
   //#endregion
 }

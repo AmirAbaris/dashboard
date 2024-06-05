@@ -9,12 +9,12 @@ import { NewHouseProjectCaptionModel } from '../../profile-overview-general/mode
 export class NewHouseProjectComponent {
   //#region Properties
   public caption = input.required<NewHouseProjectCaptionModel>();
-  public clickAddCardEvent = output<void>();
+  public clickNewProjectButtonEvent = output<void>();
   //#endregion
 
   //#region Handler methods
-  public onClickAddCardEventHandler(): void {
-    this.clickAddCardEvent.emit();
+  public onClickNewProjectButtonEventHandler(): void {
+    this.clickNewProjectButtonEvent.emit();
   }
   //#endregion
 }

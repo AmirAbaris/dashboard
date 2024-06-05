@@ -3,7 +3,7 @@
     <div class="flex flex-col gap-y-6 h-full mt-4">
         @for (item of data(); track $index) {
         <app-profile-overview-conversation-item [data]="item" [caption]="caption().conversationItemCaption"
-            (clickReplyEvent)="onClickReplyEventHandler($event)" />
+            (clickReplyEvent)="onClickReplyButtonEventHandler($event)" />
         }
     </div>
 </section>

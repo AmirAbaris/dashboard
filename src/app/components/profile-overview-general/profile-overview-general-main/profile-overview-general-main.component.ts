@@ -46,19 +46,19 @@ export class ProfileOverviewGeneralMainComponent implements OnInit {
   //#endregion
 
   //#region Handler methods
-  public onClickReplyEventHandler(id: string): void {
+  public onClickReplyButtonEventHandler(id: string): void {
     console.log('reply item clicked with id of:', id);
   }
 
-  public onClickEditEventHandler(): void {
+  public onClickEditProfileButtonEventHandler(): void {
     console.log('profile edit clicked');
   }
 
-  public onClickAddCardEventHandler(): void {
+  public onClickNewProjectButtonEventHandler(): void {
     console.log('add button clicked');
   }
 
-  public onClickItemEventHandler(id: string): void {
+  public onClickHouseProjectButtonEventHandler(id: string): void {
     console.log('item id:', id);
   }
   //#endregion

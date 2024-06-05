@@ -11,13 +11,12 @@ export class ProfileOverviewProfileInformationComponent {
   //#region Properties
   public data = input.required<ProfileOverviewProfileInfoModel>();
   public caption = input.required<ProfileOverviewProfileInformationCaptionModel>();
-  public clickEditEven = output<void>();
+  public clickEditProfileButtonEvent = output<void>();
   //#endregion
 
-
   //#region Method handler
-  public onClickEditEventHandler(): void {
-    this.clickEditEven.emit();
+  public onClickEditProfileButtonEventHandler(): void {
+    this.clickEditProfileButtonEvent.emit();
   }
   //#endregion
 }

@@ -9,10 +9,11 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 h-full">
         @for (houseProjectItem of data().item; track $index) {
         <app-house-project-item [data]="houseProjectItem" [caption]="caption().houseProjectItemCaption"
-            [houseProjectCount]="$index + 1" (clickItemEvent)="onClickItemEventHandler($event)" />
+            [houseProjectCount]="$index + 1"
+            (clickHouseProjectButtonEvent)="onClickHouseProjectButtonEventHandler($event)" />
         }
         <app-new-house-project [caption]="caption().newHouseProjectCaption"
-            (clickAddCardEvent)="onClickAddCardEventHandler()" />
+            (clickNewProjectButtonEvent)="onClickNewProjectButtonEventHandler()" />
     </div>
 </div>
 }

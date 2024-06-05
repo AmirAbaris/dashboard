@@ -1,4 +1,4 @@
-import { ProfileSocialModel } from "./profile-social.model";
+import { ProfileSocialLinkModel } from "./profile-social-link.model";
 
 export interface ProfileOverviewProfileInfoModel {
     firstName: string;
@@ -7,5 +7,5 @@ export interface ProfileOverviewProfileInfoModel {
     email: string;
     mobile: string;
     location: string;
-    social: ProfileSocialModel;
+    socialLinks: ProfileSocialLinkModel;
 }

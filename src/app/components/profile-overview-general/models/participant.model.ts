@@ -1,4 +1,4 @@
-export interface ParticipantModel {
+export interface HouseProjectParticipantModel {
     name: string;
     cover: string;
 }

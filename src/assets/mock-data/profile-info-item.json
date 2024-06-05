@@ -5,7 +5,7 @@
     "email": "alecthompson@mail.com",
     "mobile": "(44) 123 1234 123",
     "location": "USA",
-    "social": {
+    "socialLinks": {
         "facebookLink": "https://facebook.com/alec.thompson",
         "xLink": "https://twitter.com/alec_thompson",
         "instagramLink": "https://instagram.com/alec.thompson"

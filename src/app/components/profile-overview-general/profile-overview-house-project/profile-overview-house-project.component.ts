@@ -12,17 +12,17 @@ export class ProfileOverviewHouseProjectComponent {
   public caption = input.required<HouseProjectInputCaptionModel>();
   public data = input.required<HouseProjectModel>();
 
-  public clickAddCardEvent = output<void>();
-  public clickItemEvent = output<string>();
+  public clickNewProjectButtonEvent = output<void>();
+  public clickHouseProjectButtonEvent = output<string>();
   //#endregion
 
   //#region Handler methods
-  public onClickAddCardEventHandler(): void {
-    this.clickAddCardEvent.emit();
+  public onClickNewProjectButtonEventHandler(): void {
+    this.clickNewProjectButtonEvent.emit();
   }
 
-  public onClickItemEventHandler(id: string): void {
-    this.clickItemEvent.emit(id);
+  public onClickHouseProjectButtonEventHandler(id: string): void {
+    this.clickHouseProjectButtonEvent.emit(id);
   }
   //#endregion
 }

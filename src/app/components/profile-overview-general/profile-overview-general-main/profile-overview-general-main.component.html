@@ -7,15 +7,16 @@
 
         @if (profileInfo && profileInfoCaption) {
         <app-profile-overview-profile-information [data]="profileInfo" [caption]="profileInfoCaption"
-            (clickEditEven)="onClickEditEventHandler()" />
+            (clickEditProfileButtonEvent)="onClickEditProfileButtonEventHandler()" />
         }
 
         @if (conversationItems && conversationInputCaption) {
         <app-profile-overview-conversation [data]="conversationItems" [caption]="conversationInputCaption"
-            (clickReplyEvent)="onClickReplyEventHandler($event)" />
+            (clickReplyButtonEvent)="onClickReplyButtonEventHandler($event)" />
         }
     </div>
     <app-profile-overview-house-project [data]="houseProject" [caption]="houseProjectInputCaption"
-        (clickAddCardEvent)="onClickAddCardEventHandler()" (clickItemEvent)="onClickItemEventHandler($event)" />
+        (clickNewProjectButtonEvent)="onClickNewProjectButtonEventHandler()"
+        (clickHouseProjectButtonEvent)="onClickHouseProjectButtonEventHandler($event)" />
 </section>
 }
