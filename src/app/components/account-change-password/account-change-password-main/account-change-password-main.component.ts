@@ -45,8 +45,11 @@ export class AccountChangePasswordMainComponent implements OnInit {
   //#region Handler methods
   public onClickSubmitButtonEventHandler(): void {
     if (!this.fg) return;
-    
-    this.changedPasswordOutput.emit(this.fg.value as ChangePasswordFromModel);
+
+    const changePasswordFromModel = this._convertFormGroupValueToChangePasswordFromModel(this.fg);
+    console.log(changePasswordFromModel);
+
+    this.changedPasswordOutput.emit(changePasswordFromModel);
   }
   //#endregion
 
@@ -81,6 +84,18 @@ export class AccountChangePasswordMainComponent implements OnInit {
         console.error('Error fetching translations:', err);
       }
     });
+  }
+  //#endregion
+
+  //#region Helper methods
+  private _convertFormGroupValueToChangePasswordFromModel(formGroup: FormGroup): ChangePasswordFromModel {
+    const changePasswordFromData: ChangePasswordFromModel = {
+      currentPassword: formGroup.get(this.formKeys.currentPasswordCtrl)?.value,
+      newPassword: formGroup.get(this.formKeys.newPasswordCtrl)?.value,
+      confirmPassword: formGroup.get(this.formKeys.confirmNewPasswordCtrl)?.value
+    }
+
+    return changePasswordFromData;
   }
   //#endregion
 }
