@@ -20,15 +20,15 @@ export class UserRepository {
 
   //#region Main logic methods
   public getProjectItems(): Observable<ProjectItemModel[]> {
-    return this._http.get<ProjectItemModel[]>(`${environment.fileUrl}${this._dataFilePaths.projectItems}`);
+    return this._http.get<ProjectItemModel[]>(`${environment.mockDataFileUrl}${this._dataFilePaths.projectItems}`);
   }
 
   public getProfileItem(): Observable<ProfileModel> {
-    return this._http.get<ProfileModel>(`${environment.fileUrl}${this._dataFilePaths.profileItem}`);
+    return this._http.get<ProfileModel>(`${environment.mockDataFileUrl}${this._dataFilePaths.profileItem}`);
   }
 
   public getTwoFactorAuthItem(): Observable<TwoFactorAuthModel> {
-    return this._http.get<TwoFactorAuthModel>(`${environment.fileUrl}${this._dataFilePaths.twoFactorAuthItem}`);
+    return this._http.get<TwoFactorAuthModel>(`${environment.mockDataFileUrl}${this._dataFilePaths.twoFactorAuthItem}`);
   }
   //#endregion
 }
