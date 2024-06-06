@@ -6,10 +6,11 @@
     </div>
     <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         @for (item of projectItems; track $index) {
-        <app-profile-project-item class="w-full" [data]="item" [caption]="caption.projectItemCaption" />
+        <app-profile-project-item class="w-full" [data]="item" [caption]="caption.projectItemCaption"
+            (actionMenuButtonEvent)="onClickActionMenuButtonEventHandler()" />
         }
-        @if (addProjectCaption) {
-        <app-profile-project-new [caption]="addProjectCaption" />
+        @if (newProjectCaption) {
+        <app-profile-project-new [caption]="newProjectCaption" />
         }
     </div>
 </div>

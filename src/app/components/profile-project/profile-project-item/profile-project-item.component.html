@@ -18,15 +18,14 @@
             <button mat-icon-button [matMenuTriggerFor]="menu">
                 <mat-icon>more_vert</mat-icon>
             </button>
-            <!-- has no handler because of no functionality in origin website as well -->
             <mat-menu #menu="matMenu">
-                <button mat-menu-item>
+                <button mat-menu-item (click)="onClickFirstActionButtonMenuEventHandler()">
                     <span>{{caption().actionTitle}}</span>
                 </button>
-                <button mat-menu-item>
+                <button mat-menu-item (click)="onClickSecondActionButtonMenuEventHandler()">
                     <span>{{caption().anotherCationTitle}}</span>
                 </button>
-                <button mat-menu-item>
+                <button mat-menu-item (click)="onClickThirdActionButtonMenuEventHandler()">
                     <span>{{caption().otherTitle}}</span>
                 </button>
             </mat-menu>

@@ -19,11 +19,11 @@ export class ProfileProjectMainComponent implements OnInit {
     public projectItems: ProjectItemModel[] | undefined;
 
     public caption: ProjectInputCaptionModel | undefined;
-    public addProjectCaption: AddProjectCaptionModel | undefined;
+    public newProjectCaption: AddProjectCaptionModel | undefined;
     private readonly _projectCaptionPath = {
         project: 'profile-project.project',
-        projectItem: 'profile-project.project-item',
-        addProject: 'profile-project.add-project-card'
+        projectItem: 'profile-project.profile-project-item',
+        newProject: 'profile-project.profile-project-new'
     }
     //#endregion
 
@@ -34,18 +34,24 @@ export class ProfileProjectMainComponent implements OnInit {
     }
     //#endregion
 
+    //#region Handler methods
+    public onClickActionMenuButtonEventHandler(): void {
+        console.log('clicked');
+    }
+    //#endregion
+
     //#region Main logic methods
     private _getCaptions(): void {
         const projectCaption = this._translateService.get(this._projectCaptionPath.project);
         const projectItemCaption = this._translateService.get(this._projectCaptionPath.projectItem);
-        const addProjectCaption = this._translateService.get(this._projectCaptionPath.addProject);
+        const newProjectCaption = this._translateService.get(this._projectCaptionPath.newProject);
 
-        forkJoin([projectCaption, projectItemCaption, addProjectCaption]).subscribe(([projectCaptionData, projectItemCaptionData, addProjectCaptionData]) => {
+        forkJoin([projectCaption, projectItemCaption, newProjectCaption]).subscribe(([projectCaptionData, projectItemCaptionData, addProjectCaptionData]) => {
             this.caption = {
                 projectCaption: projectCaptionData,
                 projectItemCaption: projectItemCaptionData
             }
-            this.addProjectCaption = addProjectCaptionData;
+            this.newProjectCaption = addProjectCaptionData;
         });
     }
 
