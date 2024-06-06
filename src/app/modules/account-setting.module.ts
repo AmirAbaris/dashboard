@@ -13,6 +13,11 @@ import { AccountSettingMainComponent } from '../components/account-setting-main/
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'profile',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     component: AccountSettingMainComponent,
     children: [
       {
