@@ -1,12 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { AppService } from '../../../services/app.service';
 import { AccountMenuItemModel } from '../models/account-menu-item.model';
 import { UserService } from '../../../services/user.service';
 
 @Component({
-  selector: 'app-account-menu-main',
-  templateUrl: './account-menu-main.component.html',
-  styleUrl: './account-menu-main.component.scss'
+  selector: 'app-account-setting-main',
+  templateUrl: './account-setting-main.component.html',
+  styleUrl: './account-setting-main.component.scss'
 })
 export class AccountMenuMainComponent implements OnInit {
   //#region Properties

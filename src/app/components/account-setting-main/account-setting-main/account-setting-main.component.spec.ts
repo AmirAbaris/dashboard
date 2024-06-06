@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AccountMenuMainComponent } from './account-menu-main.component';
+import { AccountMenuMainComponent } from './account-setting-main.component';
 
 describe('AccountMenuMainComponent', () => {
   let component: AccountMenuMainComponent;
@@ -10,8 +10,8 @@ describe('AccountMenuMainComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [AccountMenuMainComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(AccountMenuMainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

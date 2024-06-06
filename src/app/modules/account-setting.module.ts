@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { AccountMenuItemsComponent } from '../components/account-setting/account-menu-items/account-menu-items.component';
-import { AccountMenuMainComponent } from '../components/account-setting/account-menu-main/account-menu-main.component';
+import { AccountMenuItemsComponent } from '../components/account-setting-main/account-setting-menu-items/account-setting-menu-items.component';
+import { AccountMenuMainComponent } from '../components/account-setting-main/account-setting-main/account-setting-main.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { AccountProfileMainComponent } from '../components/account-profile/account-profile-main/account-profile-main.component';

@@ -7,7 +7,7 @@ import { ProjectItemModel } from '../components/profile-project/models/project-i
 import { ProfileModel } from '../components/profile/models/profile.model';
 import { HouseProjectItemModel } from '../components/profile-overview-general/models/house-project-item.model';
 import { TwoFactorAuthModel } from '../components/two-factor-auth/models/two-factor-auth.model';
-import { AccountMenuItemModel } from '../components/account-setting/models/account-menu-item.model';
+import { AccountMenuItemModel } from '../components/account-setting-main/models/account-menu-item.model';
 
 @Injectable()
 export class UserService {
