@@ -6,7 +6,7 @@ import { AccountMenuItemModel } from '../models/account-menu-item.model';
   templateUrl: './account-setting-menu-items.component.html',
   styleUrl: './account-setting-menu-items.component.scss'
 })
-export class AccountMenuItemsComponent {
+export class AccountSettingMenuItemsComponent {
   //#region Properties
   public data = input.required<AccountMenuItemModel>();
   //#endregion

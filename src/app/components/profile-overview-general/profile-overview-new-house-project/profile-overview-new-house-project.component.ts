@@ -1,12 +1,12 @@
 import { Component, input, output } from '@angular/core';
-import { NewHouseProjectCaptionModel } from '../../profile-overview-general/models/caption-models/new-house-project.caption.model';
+import { NewHouseProjectCaptionModel } from '../models/caption-models/new-house-project.caption.model';
 
 @Component({
-  selector: 'app-new-house-project',
-  templateUrl: './new-house-project.component.html',
-  styleUrl: './new-house-project.component.scss'
+  selector: 'app-profile-overview-new-house-project',
+  templateUrl: './profile-overview-new-house-project.component.html',
+  styleUrl: './profile-overview-new-house-project.component.scss'
 })
-export class NewHouseProjectComponent {
+export class ProfileOverviewNewHouseProjectComponent {
   //#region Properties
   public caption = input.required<NewHouseProjectCaptionModel>();
   public clickNewProjectButtonEvent = output<void>();

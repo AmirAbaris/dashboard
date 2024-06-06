@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { AccountMenuItemsComponent } from '../components/account-setting-main/account-setting-menu-items/account-setting-menu-items.component';
-import { AccountMenuMainComponent } from '../components/account-setting-main/account-setting-main/account-setting-main.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { AccountProfileMainComponent } from '../components/account-profile/account-profile-main/account-profile-main.component';
@@ -8,12 +6,14 @@ import { NgOptimizedImage } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { UserRepository } from '../repositories/user.repository';
 import { UserService } from '../services/user.service';
+import { AccountSettingMenuItemsComponent } from '../components/account-setting-main/account-setting-menu-items/account-setting-menu-items.component';
+import { AccountSettingMainComponent } from '../components/account-setting-main/account-setting-main/account-setting-main.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: AccountMenuMainComponent,
+    component: AccountSettingMainComponent,
     children: [
       {
         path: 'profile',
@@ -33,8 +33,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AccountMenuMainComponent,
-    AccountMenuItemsComponent,
+    AccountSettingMainComponent,
+    AccountSettingMenuItemsComponent,
     AccountProfileMainComponent
   ],
   imports: [

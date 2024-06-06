@@ -7,7 +7,7 @@ import { UserService } from '../../../services/user.service';
   templateUrl: './account-setting-main.component.html',
   styleUrl: './account-setting-main.component.scss'
 })
-export class AccountMenuMainComponent implements OnInit {
+export class AccountSettingMainComponent implements OnInit {
   //#region Properties
   private readonly _userService = inject(UserService);
 

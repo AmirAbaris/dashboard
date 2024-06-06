@@ -1,13 +1,13 @@
 import { Component, input, output } from '@angular/core';
-import { HouseProjectInputCaptionModel } from '../../profile-overview-general/models/caption-models/house-project-input.caption.model';
-import { HouseProjectModel } from '../../profile-overview-general/models/house-project.model';
+import { HouseProjectInputCaptionModel } from '../models/caption-models/house-project-input.caption.model';
+import { HouseProjectModel } from '../models/house-project.model';
 
 @Component({
-  selector: 'app-profile-overview-house-project',
-  templateUrl: './profile-overview-house-project.component.html',
-  styleUrl: './profile-overview-house-project.component.scss'
+  selector: 'app-profile-overview-house-project-item',
+  templateUrl: './profile-overview-house-project-item.component.html',
+  styleUrl: './profile-overview-house-project-item.component.scss'
 })
-export class ProfileOverviewHouseProjectComponent {
+export class ProfileOverviewHouseProjectItemComponent {
   //#region Properties
   public caption = input.required<HouseProjectInputCaptionModel>();
   public data = input.required<HouseProjectModel>();
