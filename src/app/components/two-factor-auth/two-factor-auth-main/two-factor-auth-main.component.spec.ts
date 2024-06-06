@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TwoFactorAuthTwoFactorAuthMainComponent } from './two-factor-auth-two-factor-auth-main.component';
+import { TwoFactorAuthTwoFactorAuthMainComponent } from './two-factor-auth-main.component';
 
 describe('TwoFactorAuthTwoFactorAuthMainComponent', () => {
   let component: TwoFactorAuthTwoFactorAuthMainComponent;
@@ -10,8 +10,8 @@ describe('TwoFactorAuthTwoFactorAuthMainComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [TwoFactorAuthTwoFactorAuthMainComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(TwoFactorAuthTwoFactorAuthMainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

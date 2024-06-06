@@ -1,4 +1,4 @@
-import { TwoFactorAuthActionCaptionModel } from './../models/caption-models/two-factor-auth-action.caption.model';
+import { TwoFactorAuthActionCaptionModel } from '../models/caption-models/two-factor-auth-action.caption.model';
 import { Component, OnInit, inject, output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { TwoFactorAuthModel } from '../models/two-factor-auth.model';
@@ -7,9 +7,9 @@ import { UserService } from '../../../services/user.service';
 import { forkJoin } from 'rxjs';
 
 @Component({
-  selector: 'app-two-factor-auth-two-factor-auth-main',
-  templateUrl: './two-factor-auth-two-factor-auth-main.component.html',
-  styleUrl: './two-factor-auth-two-factor-auth-main.component.scss'
+  selector: 'app-two-factor-auth-main',
+  templateUrl: './two-factor-auth-main.component.html',
+  styleUrl: './two-factor-auth-main.component.scss'
 })
 export class TwoFactorAuthTwoFactorAuthMainComponent implements OnInit {
   //#region Properties
