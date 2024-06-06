@@ -1,7 +1,7 @@
 import { Component, OnInit, inject, output } from '@angular/core';
 import { ProfileModel } from '../../account-setting/models/profile.model';
 import { TranslateService } from '@ngx-translate/core';
-import { AccountProfileCaptionModel } from '../../account-setting/models/caption-models/account-profile.caption.model';
+import { AccountProfileCaptionModel } from '../models/caption-models/account-profile.caption.model';
 import { UserService } from '../../../services/user.service';
 import { MatSlideToggle, MatSlideToggleChange } from '@angular/material/slide-toggle';
 
