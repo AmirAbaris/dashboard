@@ -1,0 +1,7 @@
+<div class="content flex items-center">
+    <h1 class="flex-1 text-slateBlue text-base">{{ title() }}</h1>
+    <div class="flex items-center gap-x-4">
+        <p class="text-slateBlue text-sm">{{ data() }}</p>
+        <button (click)="onButtonClickEventHandler()" mat-stroked-button>{{ buttonCaption() }}</button>
+    </div>
+</div>

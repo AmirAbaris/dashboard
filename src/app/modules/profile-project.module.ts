@@ -9,18 +9,18 @@ import { MatDividerModule } from '@angular/material/divider';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: ProfileProjectMainComponent }
+    { path: '', component: ProfileProjectMainComponent }
 ];
 
 @NgModule({
-  declarations: [ProfileProjectMainComponent, ProjectItemComponent, AddProjectCardComponent],
-  imports: [
-    MatMenuModule,
-    NgOptimizedImage,
-    MatIconModule,
-    MatDividerModule,
-    CommonModule,
-    RouterModule.forChild(routes)
-  ]
+    declarations: [ProfileProjectMainComponent, ProjectItemComponent, AddProjectCardComponent],
+    imports: [
+        MatMenuModule,
+        NgOptimizedImage,
+        MatIconModule,
+        MatDividerModule,
+        CommonModule,
+        RouterModule.forChild(routes)
+    ]
 })
 export class ProfileProjectModule { }

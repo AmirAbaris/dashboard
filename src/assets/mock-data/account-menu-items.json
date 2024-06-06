@@ -1,0 +1,42 @@
+[
+    {
+        "icon": "rocket",
+        "title": "Profile",
+        "route": "/account/settings/profile"
+    },
+    {
+        "icon": "description",
+        "title": "Basic Info",
+        "route": "/account/settings/basic-info"
+    },
+    {
+        "icon": "lock",
+        "title": "Change Password",
+        "route": "/account/settings/change-password"
+    },
+    {
+        "icon": "toggle_on",
+        "title": "2FA",
+        "route": "/account/settings/2fa"
+    },
+    {
+        "icon": "alarm",
+        "title": "Accounts",
+        "route": "/account/settings/accounts"
+    },
+    {
+        "icon": "notifications",
+        "title": "Notifications",
+        "route": "/account/settings/notifications"
+    },
+    {
+        "icon": "build",
+        "title": "Sessions",
+        "route": "/account/settings/sessions"
+    },
+    {
+        "icon": "store",
+        "title": "Delete Account",
+        "route": "/account/settings/delete-account"
+    }
+]

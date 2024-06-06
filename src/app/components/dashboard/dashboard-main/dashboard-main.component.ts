@@ -36,7 +36,7 @@ export class DashboardMainComponent implements OnInit {
   }
 
   private _getSidebarItems(): void {
-    this._appService.getSidebarItems().subscribe({
+    this._appService.getSidebarData().subscribe({
       next: (items) => {
         this.sidebarItems = items;
       },
