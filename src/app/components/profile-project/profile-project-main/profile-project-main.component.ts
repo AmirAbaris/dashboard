@@ -38,6 +38,10 @@ export class ProfileProjectMainComponent implements OnInit {
     public onClickActionMenuButtonEventHandler(): void {
         console.log('clicked');
     }
+
+    public onClickProfileProjectNewButtonEventHandler(): void {
+        console.log('new project clicked');
+    }
     //#endregion
 
     //#region Main logic methods

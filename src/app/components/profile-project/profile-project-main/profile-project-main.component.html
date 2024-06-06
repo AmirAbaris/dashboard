@@ -10,7 +10,8 @@
             (actionMenuButtonEvent)="onClickActionMenuButtonEventHandler()" />
         }
         @if (newProjectCaption) {
-        <app-profile-project-new [caption]="newProjectCaption" />
+        <app-profile-project-new [caption]="newProjectCaption"
+            (clickCardEvent)="onClickProfileProjectNewButtonEventHandler()" />
         }
     </div>
 </div>
