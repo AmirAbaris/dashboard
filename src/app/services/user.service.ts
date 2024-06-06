@@ -3,9 +3,6 @@ import { Observable } from 'rxjs';
 import { AccountMenuItemModel } from '../components/account-setting/models/account-menu-item.model';
 import { ProfileModel } from '../components/account-setting/models/profile.model';
 import { UserRepository } from '../repositories/user.repository';
-import { Observable } from 'rxjs';
-import { ProfileModel } from '../components/profile-introduction/models/profile.model';
-import { ProjectItemModel } from '../components/profile-project/models/project-item.model';
 import { TwoFactorAuthModel } from '../components/two-factor-auth/models/two-factor-auth.model';
 
 @Injectable()

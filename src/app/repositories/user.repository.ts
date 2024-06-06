@@ -3,10 +3,8 @@ import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment.development';
 import { AccountMenuItemModel } from '../components/account-setting/models/account-menu-item.model';
-import { ProfileModel } from '../components/account-setting/models/profile.model';
-import { ProfileModel } from '../components/profile-introduction/models/profile.model';
-import { ProjectItemModel } from '../components/profile-project/models/project-item.model';
 import { TwoFactorAuthModel } from '../components/two-factor-auth/models/two-factor-auth.model';
+import {ProfileModel} from "../components/account-setting/models/profile.model";
 
 @Injectable()
 export class UserRepository {
@@ -31,11 +29,12 @@ export class UserRepository {
   }
 
   public getProjectItems(): Observable<ProjectItemModel[]> {
-    return this._http.get<ProjectItemModel[]>(`${environment.mockDataFileUrl}${this._dataFilePaths.projectItems}`);
+    return this._http.get<ProjectItemModel[]>(`${environment.mockDataFileUrl}${this._dataFilePath.projectItems}`);
   }
 
   public getTwoFactorAuthItem(): Observable<TwoFactorAuthModel> {
-    return this._http.get<TwoFactorAuthModel>(`${environment.mockDataFileUrl}${this._dataFilePaths.twoFactorAuthItem}`);
+    return this._http.get<TwoFactorAuthModel>(`${environment.mockDataFileUrl}${this._dataFilePath.twoFactorAuthItem}`);
   }
   //#endregion
+
 }
