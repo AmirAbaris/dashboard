@@ -9,14 +9,14 @@ export class AppRepository {
   //#region Properties
   private readonly _http = inject(HttpClient);
 
-  private readonly _dataFilePath = {
+  private readonly _dataFilePaths = {
     sidebarItems: 'side-bar-items.json'
   }
   //#endregion
 
   //#region Main logic methods
   public getSidebarItems(): Observable<SideBarSectionModel[]> {
-    return this._http.get<SideBarSectionModel[]>(`${environment.fileUrl}${this._dataFilePath.sidebarItems}`);
+    return this._http.get<SideBarSectionModel[]>(`${environment.configUrl}${this._dataFilePaths.sidebarItems}`);
   }
   //#endregion
 }

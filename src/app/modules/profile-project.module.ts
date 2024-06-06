@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ProfileProjectMainComponent } from '../components/profile-project/profile-project-main/profile-project-main.component';
-import { ProjectItemComponent } from '../components/profile-project/project-item/project-item.component';
-import { AddProjectCardComponent } from '../components/profile-project/add-project-card/add-project-card.component';
+import { ProfileProjectItemComponent } from '../components/profile-project/profile-project-item/profile-project-item.component';
+import { ProfileProjectNewComponent } from '../components/profile-project/profile-project-new/profile-project-new.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
@@ -13,7 +13,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [ProfileProjectMainComponent, ProjectItemComponent, AddProjectCardComponent],
+    declarations: [ProfileProjectMainComponent, ProfileProjectItemComponent, ProfileProjectNewComponent],
     imports: [
         MatMenuModule,
         NgOptimizedImage,

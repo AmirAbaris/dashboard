@@ -1,19 +1,24 @@
 import { NgModule } from '@angular/core';
-import { AccountMenuItemsComponent } from '../components/account-setting/account-menu-items/account-menu-items.component';
-import { AccountMenuMainComponent } from '../components/account-setting/account-menu-main/account-menu-main.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { AccountProfileMainComponent } from '../components/account-profile-main/account-profile-main.component';
+import { AccountProfileMainComponent } from '../components/account-profile/account-profile-main/account-profile-main.component';
 import { NgOptimizedImage } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { UserRepository } from '../repositories/user.repository';
 import { UserService } from '../services/user.service';
+import { AccountSettingMenuItemsComponent } from '../components/account-setting-main/account-setting-menu-items/account-setting-menu-items.component';
+import { AccountSettingMainComponent } from '../components/account-setting-main/account-setting-main/account-setting-main.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: AccountMenuMainComponent,
+    redirectTo: 'profile',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
+    component: AccountSettingMainComponent,
     children: [
       {
         path: 'profile',
@@ -22,6 +27,10 @@ const routes: Routes = [
       {
         path: 'change-password',
         loadChildren: () => import('./account-change-password.module').then(m => m.AccountChangePasswordModule)
+      },
+      {
+        path: '2fa',
+        loadChildren: () => import('./two-factor-auth.module').then(m => m.TwoFactorAuthModule)
       }
     ]
   },
@@ -29,8 +38,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AccountMenuMainComponent,
-    AccountMenuItemsComponent,
+    AccountSettingMainComponent,
+    AccountSettingMenuItemsComponent,
     AccountProfileMainComponent
   ],
   imports: [

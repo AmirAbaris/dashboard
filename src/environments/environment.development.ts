@@ -1,5 +1,7 @@
-export const environment = {
+import { EnvironmentModel } from "../app/models/environment.model";
+
+export const environment: EnvironmentModel = {
     passwordMinLength: 6,
-    fileUrl: 'assets/config/',
-    mockDataFileUrl: 'assets/mock-data/'
+    configUrl: 'assets/config/',
+    dataUrl: 'assets/mock-data/'
 };

@@ -7,12 +7,12 @@
         "dueDate": "2022-03-02T00:00:00.000Z",
         "participants": [
             {
-                "cover": "assets/images/participants-covers/par1.jpg",
+                "cover": "assets/images/participants/par1.jpg",
                 "name": "Participant 1",
                 "id": "1"
             },
             {
-                "cover": "assets/images/participants-covers/par2.jpg",
+                "cover": "assets/images/participants/par2.jpg",
                 "name": "Participant 2",
                 "id": "2"
             }
@@ -26,17 +26,17 @@
         "dueDate": "2021-11-22T00:00:00.000Z",
         "participants": [
             {
-                "cover": "assets/images/participants-covers/par2.jpg",
+                "cover": "assets/images/participants/par2.jpg",
                 "name": "Participant 2",
                 "id": "2"
             },
             {
-                "cover": "assets/images/participants-covers/par3.jpg",
+                "cover": "assets/images/participants/par3.jpg",
                 "name": "Participant 3",
                 "id": "3"
             },
             {
-                "cover": "assets/images/participants-covers/par1.jpg",
+                "cover": "assets/images/participants/par1.jpg",
                 "name": "Participant 1",
                 "id": "1"
             }
@@ -50,12 +50,12 @@
         "dueDate": "2020-03-06T00:00:00.000Z",
         "participants": [
             {
-                "cover": "assets/images/participants-covers/par3.jpg",
+                "cover": "assets/images/participants/par3.jpg",
                 "name": "Participant 3",
                 "id": "3"
             },
             {
-                "cover": "assets/images/participants-covers/par1.jpg",
+                "cover": "assets/images/participants/par1.jpg",
                 "name": "Participant 1",
                 "id": "1"
             }
@@ -69,12 +69,12 @@
         "dueDate": "2024-03-14T00:00:00.000Z",
         "participants": [
             {
-                "cover": "assets/images/participants-covers/par1.jpg",
+                "cover": "assets/images/participants/par1.jpg",
                 "name": "Participant 1",
                 "id": "1"
             },
             {
-                "cover": "assets/images/participants-covers/par3.jpg",
+                "cover": "assets/images/participants/par3.jpg",
                 "name": "Participant 3",
                 "id": "3"
             }
@@ -88,12 +88,12 @@
         "dueDate": "2022-01-16T00:00:00.000Z",
         "participants": [
             {
-                "cover": "assets/images/participants-covers/par2.jpg",
+                "cover": "assets/images/participants/par2.jpg",
                 "name": "Participant 2",
                 "id": "2"
             },
             {
-                "cover": "assets/images/participants-covers/par3.jpg",
+                "cover": "assets/images/participants/par3.jpg",
                 "name": "Participant 3",
                 "id": "3"
             }

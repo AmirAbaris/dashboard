@@ -1,0 +1,25 @@
+<div class="content flex flex-col h-full">
+    <div class="flex flex-col flex-1">
+        <img class="rounded-2xl object-cover" [src]="data().cover" alt="project-cover">
+        <div class="flex gap-x-1 items-center text-sm text-charcoalBlue my-3">
+            <h1 (click)="onClickHouseProjectButtonEventHandler(data().id)">{{caption().title}}</h1>
+            <h2>#{{houseProjectCount()}}</h2>
+        </div>
+        <h3 class="font-semibold text-charcoalBlue text-base mb-2 cursor-pointer"
+            (click)="onClickHouseProjectButtonEventHandler(data().id)">{{data().title}}</h3>
+        <h4 class="text-slateBlue text-sm">{{data().description}}</h4>
+    </div>
+
+    <div class="flex justify-between items-center mt-4">
+        <button mat-stroked-button (click)="onClickHouseProjectButtonEventHandler(data().id)">
+            <p class="tracking-tight text-xs font-semibold">{{caption().view | uppercase}}</p>
+        </button>
+        <div class="flex -space-x-2 overflow-hidden cursor-pointer">
+            @for (participant of data().participants; track $index) {
+            <img class="profile rounded-full ring-white ring-2" [matTooltip]="participant.name"
+                [matTooltipPosition]="'above'" [ngSrc]="participant.cover" width="20" height="20"
+                alt="participant-cover">
+            }
+        </div>
+    </div>
+</div>

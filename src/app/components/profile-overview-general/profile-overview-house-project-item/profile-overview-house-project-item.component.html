@@ -1,0 +1,19 @@
+@if (caption()) {
+<div class="w-full bg-white shadow-md rounded-2xl flex flex-col p-4">
+    <div class="flex flex-col gap-y-2">
+        <h1 class="text-base text-charcoalBlue font-semibold">{{caption().houseProjectCaption.title}}
+        </h1>
+        <h2 class="text-sm text-slateBlue mb-8">{{caption().houseProjectCaption.intro}}</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 h-full">
+        @for (houseProjectItem of data().item; track $index) {
+        <app-house-project-item [data]="houseProjectItem" [caption]="caption().houseProjectItemCaption"
+            [houseProjectCount]="$index + 1"
+            (clickHouseProjectButtonEvent)="onClickHouseProjectButtonEventHandler($event)" />
+        }
+        <app-profile-overview-new-house-project [caption]="caption().newHouseProjectCaption"
+            (clickNewProjectButtonEvent)="onClickNewProjectButtonEventHandler()" />
+    </div>
+</div>
+}

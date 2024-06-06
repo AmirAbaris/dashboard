@@ -68,5 +68,60 @@
             "editButton": "Edit",
             "setupButton": "Set Up"
         }
+    },
+    "profile-project": {
+        "project": {
+            "header": "Some of Our Awesome Projects",
+            "description": "This is the paragraph where you can write more details about your projects. Keep your user engaged by providing meaningful information."
+        },
+        "profile-project-item": {
+            "participant": "Participants",
+            "date": "Due date",
+            "actionTitle": "Action",
+            "anotherCationTitle": "Another action",
+            "otherTitle": "Something else here"
+        },
+        "profile-project-new": {
+            "newProject": "New Project"
+        }
+    },
+    "profile-overview-general": {
+        "profile-overview-platform-setting": {
+            "mainHeading": "Platform Settings",
+            "accountHeading": "Account",
+            "emailWhenFollows": "Email me when someone follows me",
+            "emailWhenAnswers": "Email me when someone answers on my post",
+            "emailWhenMentions": "Email me when someone mentions me",
+            "applicationHeading": "Application",
+            "newLaunchesAndProjects": "New launches and projects",
+            "monthlyProductUpdates": "Monthly product updates",
+            "subscribeToNewsletter": "Subscribe to newsletter"
+        },
+        "profile-overview-profile-information": {
+            "profileInformation": "Profile Information",
+            "fullName": "Full Name",
+            "mobile": "Mobile",
+            "email": "Email",
+            "location": "Location",
+            "social": "Social",
+            "editProfile": "Edit Profile"
+        },
+        "profile-overview-conversation": {
+            "conversationTitle": "Conversations"
+        },
+        "profile-overview-conversation-item": {
+            "replyItem": "reply"
+        },
+        "profile-overview-house-project": {
+            "title": "Projects",
+            "intro": "Architects design houses"
+        },
+        "profile-overview-house-project-item": {
+            "title": "Project",
+            "view": "View Projects"
+        },
+        "profile-overview-new-house-project": {
+            "title": "New project"
+        }
     }
 }

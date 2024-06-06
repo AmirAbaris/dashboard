@@ -15,14 +15,23 @@ import { AppRepository } from '../repositories/app-repository';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'profile',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     component: DashboardMainComponent,
     children: [
       {
+        path: 'profile',
+        loadChildren: () => import('../modules/profile.module').then(m => m.ProfileModule)
+      },
+      {
         path: 'account/settings',
-        loadChildren: () => import('./account-setting.module').then((m) => m.AccountSettingModule)
+        loadChildren: () => import('./account-setting.module').then(m => m.AccountSettingModule)
       }
     ]
-  },
+  }
 ];
 
 @NgModule({

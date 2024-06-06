@@ -1,0 +1,24 @@
+.content {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #344767;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.5rem;
+    }
+
+    p {
+        color: #67748E;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+
+    mat-divider {
+        margin-bottom: 1rem;
+    }
+}

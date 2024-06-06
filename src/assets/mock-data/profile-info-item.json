@@ -1,0 +1,13 @@
+{
+    "firstName": "Alec",
+    "lastName": "Thompson",
+    "description": "Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).",
+    "email": "alecthompson@mail.com",
+    "mobile": "(44) 123 1234 123",
+    "location": "USA",
+    "socialLinks": {
+        "facebookLink": "https://facebook.com/alec.thompson",
+        "xLink": "https://twitter.com/alec_thompson",
+        "instagramLink": "https://instagram.com/alec.thompson"
+    }
+}

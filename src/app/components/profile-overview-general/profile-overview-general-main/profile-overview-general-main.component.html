@@ -1,0 +1,22 @@
+@if (houseProject && houseProjectInputCaption) {
+<section class="w-full h-dvh bg-ghostWhite">
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
+        @if (platformSettingCaption) {
+        <app-profile-overview-platform-setting [caption]="platformSettingCaption" />
+        }
+
+        @if (profileInfo && profileInfoCaption) {
+        <app-profile-overview-profile-information [data]="profileInfo" [caption]="profileInfoCaption"
+            (clickEditProfileButtonEvent)="onClickEditProfileButtonEventHandler()" />
+        }
+
+        @if (conversationItems && conversationInputCaption) {
+        <app-profile-overview-conversation [data]="conversationItems" [caption]="conversationInputCaption"
+            (clickReplyButtonEvent)="onClickReplyButtonEventHandler($event)" />
+        }
+    </div>
+    <app-profile-overview-house-project-item [data]="houseProject" [caption]="houseProjectInputCaption"
+        (clickNewProjectButtonEvent)="onClickNewProjectButtonEventHandler()"
+        (clickHouseProjectButtonEvent)="onClickHouseProjectButtonEventHandler($event)" />
+</section>
+}
