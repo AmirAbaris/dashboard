@@ -4,6 +4,7 @@ import { AccountMenuItemModel } from '../components/account-setting/models/accou
 import { ProfileModel } from '../components/account-setting/models/profile.model';
 import { UserRepository } from '../repositories/user.repository';
 import { TwoFactorAuthModel } from '../components/two-factor-auth/models/two-factor-auth.model';
+import { ProjectItemModel } from '../components/profile-project/models/project-item.model';
 
 @Injectable()
 export class UserService {

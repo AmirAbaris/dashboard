@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment.development';
 import { AccountMenuItemModel } from '../components/account-setting/models/account-menu-item.model';
 import { TwoFactorAuthModel } from '../components/two-factor-auth/models/two-factor-auth.model';
-import {ProfileModel} from "../components/account-setting/models/profile.model";
+import { ProfileModel } from "../components/account-setting/models/profile.model";
+import { ProjectItemModel } from '../components/profile-project/models/project-item.model';
 
 @Injectable()
 export class UserRepository {

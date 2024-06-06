@@ -1,0 +1,16 @@
+@if (caption) {
+<div class="flex flex-col gap-y-11">
+    <div class="flex flex-col gap-y-2">
+        <h1 class="text-xl text-charcoalBlue font-semibold">{{caption.projectCaption.header}}</h1>
+        <h2 class="text-base text-slateBlue">{{caption.projectCaption.description}}</h2>
+    </div>
+    <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        @for (item of projectItems; track $index) {
+        <app-project-item class="w-full" [data]="item" [caption]="caption.projectItemCaption" />
+        }
+        @if (addProjectCaption) {
+        <app-add-project-card [caption]="addProjectCaption" />
+        }
+    </div>
+</div>
+}
