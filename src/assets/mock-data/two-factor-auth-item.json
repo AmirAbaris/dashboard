@@ -1,0 +1,6 @@
+{
+    "twoFactorAuthEnabled": false,
+    "securityKey": null,
+    "smsNumber": "+4012374423",
+    "authenticator": null
+}

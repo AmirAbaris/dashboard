@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment.development';
 import { AccountMenuItemModel } from '../components/account-setting/models/account-menu-item.model';
 import { ProfileModel } from '../components/account-setting/models/profile.model';
+import { ProfileModel } from '../components/profile-introduction/models/profile.model';
+import { ProjectItemModel } from '../components/profile-project/models/project-item.model';
+import { TwoFactorAuthModel } from '../components/two-factor-auth/models/two-factor-auth.model';
 
 @Injectable()
 export class UserRepository {
@@ -12,7 +15,9 @@ export class UserRepository {
 
   private readonly _dataFilePath = {
     profileItem: 'profile-item.json',
-    accountMenuItems: 'account-menu-items.json'
+    accountMenuItems: 'account-menu-items.json',
+    projectItems: 'project-items.json',
+    twoFactorAuthItem: 'two-factor-auth-item.json'
   }
   //#endregion
 
@@ -23,6 +28,14 @@ export class UserRepository {
 
   public getAccountMenuItems(): Observable<AccountMenuItemModel[]> {
     return this._http.get<AccountMenuItemModel[]>(`${environment.mockDataFileUrl}${this._dataFilePath.accountMenuItems}`);
+  }
+
+  public getProjectItems(): Observable<ProjectItemModel[]> {
+    return this._http.get<ProjectItemModel[]>(`${environment.mockDataFileUrl}${this._dataFilePaths.projectItems}`);
+  }
+
+  public getTwoFactorAuthItem(): Observable<TwoFactorAuthModel> {
+    return this._http.get<TwoFactorAuthModel>(`${environment.mockDataFileUrl}${this._dataFilePaths.twoFactorAuthItem}`);
   }
   //#endregion
 }

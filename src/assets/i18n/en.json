@@ -51,5 +51,22 @@
             "passwordStrengthError": "Password must include at least one number and one special character",
             "passwordMismatchError": "Passwords do not match"
         }
+    },
+    "two-factor-auth": {
+        "two-factor-auth-main": {
+            "title": "Two-factor authentication",
+            "statusEnabled": "Enabled",
+            "statusDisabled": "Disabled"
+        },
+        "two-factor-auth-action": {
+            "SecurityKeyLabel": "Security keys",
+            "noKeys": "No Security Keys",
+            "smsLabel": "SMS number",
+            "authLabel": "Authenticator app",
+            "notConfided": "Not Configured",
+            "addButton": "Add",
+            "editButton": "Edit",
+            "setupButton": "Set Up"
+        }
     }
 }
