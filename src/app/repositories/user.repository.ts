@@ -7,6 +7,8 @@ import { ProfileOverviewProfileInfoModel } from '../components/profile-overview-
 import { ProjectItemModel } from '../components/profile-project/models/project-item.model';
 import { ProfileModel } from '../components/profile/models/profile.model';
 import { HouseProjectItemModel } from '../components/profile-overview-general/models/house-project-item.model';
+import { AccountMenuItemModel } from '../components/account-setting/models/account-menu-item.model';
+import { TwoFactorAuthModel } from '../components/two-factor-auth/models/two-factor-auth.model';
 
 @Injectable()
 export class UserRepository {
@@ -15,10 +17,12 @@ export class UserRepository {
 
   private readonly _dataFilePaths = {
     profileItem: 'profile-item.json',
-    projectItems: 'project-items.json',
     profileInfoItem: 'profile-info-item.json',
     houseProjectItems: 'house-project-items.json',
-    conversationItems: 'conversation-items.json'
+    conversationItems: 'conversation-items.json',
+    accountMenuItems: 'account-menu-items.json',
+    projectItems: 'project-items.json',
+    twoFactorAuthItem: 'two-factor-auth-item.json'
   }
   //#endregion
 
@@ -41,6 +45,14 @@ export class UserRepository {
 
   public getConversationItems(): Observable<ProfileOverviewConversationItemModel[]> {
     return this._http.get<ProfileOverviewConversationItemModel[]>(`${environment.mockDataFileUrl}${this._dataFilePaths.conversationItems}`);
+  }
+
+  public getAccountMenuItems(): Observable<AccountMenuItemModel[]> {
+    return this._http.get<AccountMenuItemModel[]>(`${environment.mockDataFileUrl}${this._dataFilePaths.accountMenuItems}`);
+  }
+
+  public getTwoFactorAuthItem(): Observable<TwoFactorAuthModel> {
+    return this._http.get<TwoFactorAuthModel>(`${environment.mockDataFileUrl}${this._dataFilePaths.twoFactorAuthItem}`);
   }
   //#endregion
 }

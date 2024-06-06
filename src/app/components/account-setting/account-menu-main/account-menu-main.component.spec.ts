@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProjectItemComponent } from './project-item.component';
+import { AccountMenuMainComponent } from './account-menu-main.component';
 
-describe('ProjectItemComponent', () => {
-  let component: ProjectItemComponent;
-  let fixture: ComponentFixture<ProjectItemComponent>;
+describe('AccountMenuMainComponent', () => {
+  let component: AccountMenuMainComponent;
+  let fixture: ComponentFixture<AccountMenuMainComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProjectItemComponent]
+      declarations: [AccountMenuMainComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ProjectItemComponent);
+    fixture = TestBed.createComponent(AccountMenuMainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -26,20 +26,47 @@
             "docs": "Documentation"
         }
     },
-    "profile-project": {
-        "project": {
-            "header": "Some of Our Awesome Projects",
-            "description": "This is the paragraph where you can write more details about your projects. Keep your user engaged by providing meaningful information."
+    "account-profile": {
+        "account-profile-main": {
+            "switch": "Switch to invisible"
+        }
+    },
+    "account-change-password": {
+        "account-change-password-main": {
+            "changePassword": "Change Password",
+            "currentPassword": "Current Password",
+            "newPassword": "New Password",
+            "confirmPassword": "Confirm New Password",
+            "updatePassword": "Update Password",
+            "passwordRequirements": "Password requirements",
+            "strongPasswordGuide": "Please follow this guide for a strong password",
+            "specialCharacters": "One special character",
+            "minCharacters": "Min 6 characters",
+            "oneNumber": "One number (2 are recommended)",
+            "changeOften": "Change it often"
         },
-        "project-item": {
-            "participant": "Participants",
-            "date": "Due date",
-            "actionTitle": "Action",
-            "anotherCationTitle": "Another action",
-            "otherTitle": "Something else here"
+        "password-error": {
+            "passwordRequiredError": "Password is required",
+            "passwordMinLengthError": "Password must be at least 6 characters long",
+            "passwordStrengthError": "Password must include at least one number and one special character",
+            "passwordMismatchError": "Passwords do not match"
+        }
+    },
+    "two-factor-auth": {
+        "two-factor-auth-main": {
+            "title": "Two-factor authentication",
+            "statusEnabled": "Enabled",
+            "statusDisabled": "Disabled"
         },
-        "add-project-card": {
-            "newProject": "New Project"
+        "two-factor-auth-action": {
+            "SecurityKeyLabel": "Security keys",
+            "noKeys": "No Security Keys",
+            "smsLabel": "SMS number",
+            "authLabel": "Authenticator app",
+            "notConfided": "Not Configured",
+            "addButton": "Add",
+            "editButton": "Edit",
+            "setupButton": "Set Up"
         }
     },
     "profile-overview-general": {

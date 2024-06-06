@@ -10,7 +10,7 @@ export class AppService {
   //#endregion
 
   //#region Main logic methods
-  public getSidebarItems(): Observable<SideBarSectionModel[]> {
+  public getSidebarData(): Observable<SideBarSectionModel[]> {
     return this._appRepository.getSidebarItems();
   }
   //#endregion

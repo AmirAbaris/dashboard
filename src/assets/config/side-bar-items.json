@@ -58,7 +58,7 @@
                             },
                             {
                                 "title": "All Projects",
-                                "link": "/profile/all-projects"
+                                "link": "//profile/all-projects"
                             }
                         ]
                     },
@@ -135,7 +135,7 @@
                     },
                     {
                         "title": "RTL",
-                        "link": "/rtl"
+                        "link": "//rtl"
                     },
                     {
                         "title": "Notifications",

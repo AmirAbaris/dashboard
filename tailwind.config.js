@@ -15,7 +15,12 @@ module.exports = {
       mutedPurple: '#999db5',
       ghostWhite: '#f8f9fa',
       blueGray: '#9fa3b9',
-      gray: '#dee2e6'
+      gray: '#dee2e6',
+      isabelline: '#f0ecec',
+      paleGreen: '#cdf59b',
+      lawnGreen: '#67b108',
+      paleRed: '#f5b7b1',
+      crimsonRed: '#b10808'
     },
   },
   plugins: [],

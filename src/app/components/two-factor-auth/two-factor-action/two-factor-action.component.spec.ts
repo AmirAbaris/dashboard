@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddProjectCardComponent } from './add-project-card.component';
+import { TwoFactorActionComponent } from './two-factor-action.component';
 
-describe('AddProjectCardComponent', () => {
-  let component: AddProjectCardComponent;
-  let fixture: ComponentFixture<AddProjectCardComponent>;
+describe('TwoFactorActionComponent', () => {
+  let component: TwoFactorActionComponent;
+  let fixture: ComponentFixture<TwoFactorActionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AddProjectCardComponent]
+      declarations: [TwoFactorActionComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(AddProjectCardComponent);
+    fixture = TestBed.createComponent(TwoFactorActionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
