@@ -13,17 +13,17 @@
             uppercase}}</p>
         }
     </div>
-    <app-two-factor-action [title]="twoFactorActionCaption.SecurityKeyLabel"
+    <app-two-factor-auth-action [title]="twoFactorActionCaption.SecurityKeyLabel"
         [data]="twoFactorAuthItem.securityKey || twoFactorActionCaption.noKeys"
         [buttonCaption]="twoFactorAuthItem.securityKey ? twoFactorActionCaption.editButton : twoFactorActionCaption.addButton"
         (clickButtonEvent)="onClickChangeSecurityKeyEventHandler()" />
     <mat-divider />
-    <app-two-factor-action [title]=" twoFactorActionCaption.smsLabel"
+    <app-two-factor-auth-action [title]=" twoFactorActionCaption.smsLabel"
         [data]="twoFactorAuthItem.smsNumber || twoFactorActionCaption.notConfided"
         [buttonCaption]="twoFactorAuthItem.smsNumber ? twoFactorActionCaption.editButton : twoFactorActionCaption.addButton"
         (clickButtonEvent)="onClickChangePhoneNumberEventHandler()" />
     <mat-divider />
-    <app-two-factor-action [title]="twoFactorActionCaption.authLabel"
+    <app-two-factor-auth-action [title]="twoFactorActionCaption.authLabel"
         [data]="twoFactorAuthItem.authenticator || twoFactorActionCaption.notConfided"
         [buttonCaption]="twoFactorAuthItem.authenticator ? twoFactorActionCaption.editButton : twoFactorActionCaption.setupButton"
         (clickButtonEvent)="onClickAuthenticatorEventHandler()" />

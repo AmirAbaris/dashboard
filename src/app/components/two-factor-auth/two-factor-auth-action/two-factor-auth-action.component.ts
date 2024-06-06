@@ -1,9 +1,9 @@
 import { Component, input, output } from '@angular/core';
 
 @Component({
-  selector: 'app-two-factor-action',
-  templateUrl: './two-factor-action.component.html',
-  styleUrl: './two-factor-action.component.scss'
+  selector: 'app-two-factor-auth-action',
+  templateUrl: './two-factor-auth-action.component.html',
+  styleUrl: './two-factor-auth-action.component.scss'
 })
 export class TwoFactorActionComponent {
   //#region Properties

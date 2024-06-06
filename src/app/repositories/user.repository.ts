@@ -28,31 +28,31 @@ export class UserRepository {
 
   //#region Main logic methods
   public getProjectItems(): Observable<ProjectItemModel[]> {
-    return this._http.get<ProjectItemModel[]>(`${environment.mockDataFileUrl}${this._dataFilePaths.projectItems}`);
+    return this._http.get<ProjectItemModel[]>(`${environment.dataUrl}${this._dataFilePaths.projectItems}`);
   }
 
   public getProfileItem(): Observable<ProfileModel> {
-    return this._http.get<ProfileModel>(`${environment.mockDataFileUrl}${this._dataFilePaths.profileItem}`);
+    return this._http.get<ProfileModel>(`${environment.dataUrl}${this._dataFilePaths.profileItem}`);
   }
 
   public getProfileInfoItem(): Observable<ProfileOverviewProfileInfoModel> {
-    return this._http.get<ProfileOverviewProfileInfoModel>(`${environment.mockDataFileUrl}${this._dataFilePaths.profileInfoItem}`);
+    return this._http.get<ProfileOverviewProfileInfoModel>(`${environment.dataUrl}${this._dataFilePaths.profileInfoItem}`);
   }
 
   public getHouseProjectItems(): Observable<HouseProjectItemModel[]> {
-    return this._http.get<HouseProjectItemModel[]>(`${environment.mockDataFileUrl}${this._dataFilePaths.houseProjectItems}`);
+    return this._http.get<HouseProjectItemModel[]>(`${environment.dataUrl}${this._dataFilePaths.houseProjectItems}`);
   }
 
   public getConversationItems(): Observable<ProfileOverviewConversationItemModel[]> {
-    return this._http.get<ProfileOverviewConversationItemModel[]>(`${environment.mockDataFileUrl}${this._dataFilePaths.conversationItems}`);
+    return this._http.get<ProfileOverviewConversationItemModel[]>(`${environment.dataUrl}${this._dataFilePaths.conversationItems}`);
   }
 
   public getAccountMenuItems(): Observable<AccountMenuItemModel[]> {
-    return this._http.get<AccountMenuItemModel[]>(`${environment.mockDataFileUrl}${this._dataFilePaths.accountMenuItems}`);
+    return this._http.get<AccountMenuItemModel[]>(`${environment.dataUrl}${this._dataFilePaths.accountMenuItems}`);
   }
 
   public getTwoFactorAuthItem(): Observable<TwoFactorAuthModel> {
-    return this._http.get<TwoFactorAuthModel>(`${environment.mockDataFileUrl}${this._dataFilePaths.twoFactorAuthItem}`);
+    return this._http.get<TwoFactorAuthModel>(`${environment.dataUrl}${this._dataFilePaths.twoFactorAuthItem}`);
   }
   //#endregion
 }
