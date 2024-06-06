@@ -74,14 +74,14 @@
             "header": "Some of Our Awesome Projects",
             "description": "This is the paragraph where you can write more details about your projects. Keep your user engaged by providing meaningful information."
         },
-        "project-item": {
+        "profile-project-item": {
             "participant": "Participants",
             "date": "Due date",
             "actionTitle": "Action",
             "anotherCationTitle": "Another action",
             "otherTitle": "Something else here"
         },
-        "add-project-card": {
+        "profile-project-new": {
             "newProject": "New Project"
         }
     },
@@ -116,11 +116,11 @@
             "title": "Projects",
             "intro": "Architects design houses"
         },
-        "house-project-item": {
+        "profile-overview-house-project-item": {
             "title": "Project",
             "view": "View Projects"
         },
-        "new-house-project": {
+        "profile-overview-new-house-project": {
             "title": "New project"
         }
     }

@@ -33,8 +33,8 @@ export class ProfileOverviewGeneralMainComponent implements OnInit {
     conversationCaption: 'profile-overview-general.profile-overview-conversation',
     conversationItemCaption: 'profile-overview-general.profile-overview-conversation-item',
     houseProjectCaption: 'profile-overview-general.profile-overview-house-project',
-    houseProjectItemCaption: 'profile-overview-general.house-project-item',
-    newHouseProjectCaption: 'profile-overview-general.new-house-project'
+    houseProjectItemCaption: 'profile-overview-general.profile-overview-house-project-item',
+    newHouseProjectCaption: 'profile-overview-general.profile-overview-new-house-project'
   }
   //#endregion
 
