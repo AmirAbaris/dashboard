@@ -16,7 +16,7 @@ export class AppRepository {
 
   //#region Main logic methods
   public getSidebarItems(): Observable<SideBarSectionModel[]> {
-    return this._http.get<SideBarSectionModel[]>(`${environment.mockDataFileUrl}${this._dataFilePaths.sidebarItems}`);
+    return this._http.get<SideBarSectionModel[]>(`${environment.fileUrl}${this._dataFilePaths.sidebarItems}`);
   }
   //#endregion
 }
