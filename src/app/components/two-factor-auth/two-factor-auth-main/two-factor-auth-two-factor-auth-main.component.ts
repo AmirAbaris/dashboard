@@ -14,11 +14,7 @@ import { forkJoin } from 'rxjs';
 export class TwoFactorAuthTwoFactorAuthMainComponent implements OnInit {
   //#region Properties
   private readonly _translateService = inject(TranslateService);
-  private readonly _userService = inject(UserService);
-
-  public clickChangeSecurityKeyEvent = output<void>();
-  public clickChangePhoneNumberEvent = output<void>();
-  public clickAuthenticatorEvent = output<void>();
+  private readonly _userService = inject(UserService);;
 
   public twoFactorAuthItem: TwoFactorAuthModel | undefined;
   public twoFactorMainCaption: TwoFactorAuthMainCaptionModel | undefined;
@@ -39,17 +35,14 @@ export class TwoFactorAuthTwoFactorAuthMainComponent implements OnInit {
   //#region Handler methods
   public onClickChangeSecurityKeyEventHandler(): void {
     console.log('change security button clicked');
-    this.clickChangeSecurityKeyEvent.emit();
   }
 
   public onClickChangePhoneNumberEventHandler(): void {
     console.log('phone number change button clicked');
-    this.clickChangePhoneNumberEvent.emit();
   }
 
   public onClickAuthenticatorEventHandler(): void {
     console.log('authenticator button clicked');
-    this.clickAuthenticatorEvent.emit();
   }
   //#endregion
 
