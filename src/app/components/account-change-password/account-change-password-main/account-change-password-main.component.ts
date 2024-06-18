@@ -7,6 +7,7 @@ import { PasswordErrorCaptionModel } from '../models/caption-models/password-err
 import { ChangePasswordCaptionModel } from '../models/caption-models/change-password.caption.model';
 import { forkJoin } from 'rxjs';
 import { ChangePasswordFromModel } from '../models/change-password-form.model';
+import { passwordMatchValidator } from '../helpers/password-match-validator';
 
 @Component({
   selector: 'app-account-change-password-main',
@@ -50,17 +51,17 @@ export class AccountChangePasswordMainComponent implements OnInit {
 
   //#region Main logic methods
   private _initializeChangePasswordForm(): void {
-    this.fg = this._fb.group(
-      {
-        [this.formKeys.currentPasswordCtrl]: [null, [Validators.required, Validators.minLength(this._passwordMinLength)]],
-        [this.formKeys.newPasswordCtrl]: [null, [
-          Validators.required,
-          Validators.minLength(this._passwordMinLength),
-          passwordStrengthValidator
-        ]],
-        [this.formKeys.confirmNewPasswordCtrl]: [null, [Validators.required]]
-      }
-    );
+    this.fg = this._fb.group({
+      [this.formKeys.currentPasswordCtrl]: [null, [Validators.required, Validators.minLength(this._passwordMinLength)]],
+      [this.formKeys.newPasswordCtrl]: [null, [
+        Validators.required,
+        Validators.minLength(this._passwordMinLength),
+        passwordStrengthValidator
+      ]],
+      [this.formKeys.confirmNewPasswordCtrl]: [null, [
+        Validators.required
+      ]]
+    }, { validators: passwordMatchValidator });
   }
 
   private _getCaptions(): void {
