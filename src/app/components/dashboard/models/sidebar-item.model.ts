@@ -9,4 +9,5 @@ export interface SidebarItemModel {
     icon?: string;
     children?: SidebarItemModel[];
     isExpanded?: boolean;
+    isEnabled: boolean;
 }

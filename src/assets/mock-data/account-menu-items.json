@@ -2,32 +2,38 @@
     {
         "icon": "rocket",
         "title": "Profile",
-        "route": "/account/settings/profile"
+        "route": "/account/settings/profile",
+        "isEnabled": true
     },
     {
         "icon": "description",
         "title": "Basic Info",
-        "route": "/account/settings/basic-info"
+        "route": "/account/settings/basic-info",
+        "isEnabled": false
     },
     {
         "icon": "lock",
         "title": "Change Password",
-        "route": "/account/settings/change-password"
+        "route": "/account/settings/change-password",
+        "isEnabled": true
     },
     {
         "icon": "toggle_on",
         "title": "2FA",
-        "route": "/account/settings/2fa"
+        "route": "/account/settings/2fa",
+        "isEnabled": true
     },
     {
         "icon": "alarm",
         "title": "Accounts",
-        "route": "/account/settings/accounts"
+        "route": "/account/settings/accounts",
+        "isEnabled": false
     },
     {
         "icon": "notifications",
         "title": "Notifications",
-        "route": "/account/settings/notifications"
+        "route": "/account/settings/notifications",
+        "isEnabled": false
     },
     {
         "icon": "build",

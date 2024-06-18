@@ -23,5 +23,9 @@
         &.active {
             color: #344767;
         }
+
+        &.disabled {
+            color: rgb(219, 219, 219);
+        }
     }
 }

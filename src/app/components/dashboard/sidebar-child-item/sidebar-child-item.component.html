@@ -5,7 +5,7 @@
                 <div activateMenuChildDir [itemMenu]="child()" [url]="urlPath()"
                     [ngClass]="{ 'flex items-center gap-x-2': level() === 0, 'ml-8': level() !== 0 }">
                     <mat-icon *ngIf="level() === 0" class="circle-icon">circle</mat-icon>
-                    <a class="child-title">{{ child().title }}</a>
+                    <a class="child-title" [class.disabled]="!child().isEnabled">{{ child().title }}</a>
                 </div>
             </li>
             <mat-icon class="arrow-icon" *ngIf="child().children"
