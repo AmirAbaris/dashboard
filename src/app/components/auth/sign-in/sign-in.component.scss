@@ -20,8 +20,12 @@
         color: #495057;
         transition: margin-bottom 0.3s ease;
 
-        &.has-error {
+        &.has-password-error {
             margin-bottom: 3rem;
+        }
+
+        &.has-email-error {
+            margin-bottom: 1rem;
         }
     }
 

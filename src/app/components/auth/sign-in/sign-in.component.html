@@ -6,31 +6,32 @@
 
         <form class="form flex flex-col w-full" [formGroup]="signInForm" (ngSubmit)="onClickSubmitButtonEventHandler()">
             <!-- Email Input -->
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline"
+                [class.has-email-error]="signInForm.get(formKeys.emailCtrl)?.invalid && signInForm.get(formKeys.emailCtrl)?.touched">
                 <input matInput type="email" [formControlName]="formKeys.emailCtrl" placeholder="{{ captions.email }}">
 
                 <mat-error *ngIf="signInForm.get(formKeys.emailCtrl)?.hasError('required')">
-                    {{ errorCaption.emailRequiredError }}
+                    {{ errorCaption.emailRequiredError }}.
                 </mat-error>
                 <mat-error *ngIf="signInForm.get(formKeys.emailCtrl)?.hasError('email')">
-                    {{ errorCaption.emailInvalidError }}
+                    {{ errorCaption.emailInvalidError }}.
                 </mat-error>
             </mat-form-field>
 
             <!-- Password Input -->
             <mat-form-field appearance="outline"
-                [class.has-error]="signInForm.get(formKeys.passwordCtrl)?.invalid && signInForm.get(formKeys.passwordCtrl)?.touched">
+                [class.has-password-error]="signInForm.get(formKeys.passwordCtrl)?.invalid && signInForm.get(formKeys.passwordCtrl)?.touched">
                 <input matInput type="password" [formControlName]="formKeys.passwordCtrl"
-                    placeholder="{{ captions.password }}">
+                    [placeholder]="captions.password">
 
                 <mat-error *ngIf="signInForm.get(formKeys.passwordCtrl)?.hasError('required')">
-                    {{ errorCaption.passwordRequiredError }}
+                    {{ errorCaption.passwordRequiredError }}.
                 </mat-error>
                 <mat-error *ngIf="signInForm.get(formKeys.passwordCtrl)?.hasError('minlength')">
-                    {{ errorCaption.passwordMinLengthError }}
+                    {{ errorCaption.passwordMinLengthError }}.
                 </mat-error>
                 <mat-error *ngIf="signInForm.get(formKeys.passwordCtrl)?.hasError('passwordStrength')">
-                    {{ errorCaption.passwordStrengthError }}
+                    {{ errorCaption.passwordStrengthError }}.
                 </mat-error>
             </mat-form-field>
 
