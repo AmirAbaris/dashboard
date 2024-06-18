@@ -3,13 +3,15 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
 
 ## Project Structure
+
 This project follows a structured approach for organizing Angular components, modules, and services. It features a dashboard layout with sidebars and distinct modules for various routes. Each module encapsulates related functionality, ensuring maintainability and scalability.
 
 ## Style Guide for naming
-	1.	Project Structure: Describe the overall structure of your Angular project. Highlight key folders such as src/, app/, and any additional modules or feature folders (components/, services/, models/, etc.).
+
+1. Project Structure: Describe the overall structure of your Angular project. Highlight key folders such as src/, app/, and any additional modules or feature folders (components/, services/, models/, etc.).
 Example:
 	•	Project Structure: The project follows a modular structure with the main application files located in src/app/. Key modules like components/, services/, and models/ are organized within app/.
-	2.	File Naming: Use descriptive names for files that reflect their content and purpose. Follow conventions like PascalCase for Angular components, camelCase for services and helpers, and kebab-case for stylesheets.
+	2. File Naming: Use descriptive names for files that reflect their content and purpose. Follow conventions like PascalCase for Angular components, camelCase for services and helpers, and kebab-case for stylesheets.
 Example:
 	•	account-change-password-main.component.ts: Angular component for the main account change password functionality.
 	•	password-strength-validator.ts: Helper function for validating password strength.
@@ -52,4 +54,5 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## Node 
+
 version -> v20.9.0
