@@ -4,9 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment.development';
 import { ProfileOverviewConversationItemModel } from '../components/profile-overview-general/models/profile-overview-conversation-item.model';
 import { ProfileOverviewProfileInfoModel } from '../components/profile-overview-general/models/profile-overview-profile-info.model';
-import { ProjectItemModel } from '../components/profile-project/models/project-item.model';
 import { ProfileModel } from '../components/profile/models/profile.model';
-import { HouseProjectItemModel } from '../components/profile-overview-general/models/house-project-item.model';
 import { AccountMenuItemModel } from '../components/account-setting-main/models/account-menu-item.model';
 import { TwoFactorAuthModel } from '../components/two-factor-auth/models/two-factor-auth.model';
 
