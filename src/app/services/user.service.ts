@@ -16,20 +16,12 @@ export class UserService {
   //#endregion
 
   //#region Main logic methods
-  public getProjectItems(): Observable<ProjectItemModel[]> {
-    return this._userRepository.getProjectItems();
-  }
-
   public getProfileItem(): Observable<ProfileModel> {
     return this._userRepository.getProfileItem();
   }
 
   public getProfileInfoItem(): Observable<ProfileOverviewProfileInfoModel> {
     return this._userRepository.getProfileInfoItem();
-  }
-
-  public getHouseProjectItems(): Observable<HouseProjectItemModel[]> {
-    return this._userRepository.getHouseProjectItems();
   }
 
   public getConversationItems(): Observable<ProfileOverviewConversationItemModel[]> {

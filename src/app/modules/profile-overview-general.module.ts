@@ -16,6 +16,8 @@ import { HouseProjectItemComponent } from '../components/profile-overview-genera
 import { MatButtonModule } from '@angular/material/button';
 import { ProfileOverviewHouseProjectItemComponent } from '../components/profile-overview-general/profile-overview-house-project-item/profile-overview-house-project-item.component';
 import { ProfileOverviewNewHouseProjectComponent } from '../components/profile-overview-general/profile-overview-new-house-project/profile-overview-new-house-project.component';
+import { ProjectService } from '../services/project.service';
+import { ProjectRepository } from '../repositories/project.repository';
 
 const routes: Routes = [
   {
@@ -40,6 +42,6 @@ const routes: Routes = [
     NgOptimizedImage,
     RouterModule.forChild(routes)
   ],
-  providers: [AppService, AppRepository]
+  providers: [AppService, AppRepository, ProjectService, ProjectRepository]
 })
 export class ProfileOverviewGeneralModule { }

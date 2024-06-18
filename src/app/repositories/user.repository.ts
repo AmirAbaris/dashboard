@@ -18,29 +18,19 @@ export class UserRepository {
   private readonly _dataFilePaths = {
     profileItem: 'profile-item.json',
     profileInfoItem: 'profile-info-item.json',
-    houseProjectItems: 'house-project-items.json',
     conversationItems: 'conversation-items.json',
     accountMenuItems: 'account-menu-items.json',
-    projectItems: 'project-items.json',
     twoFactorAuthItem: 'two-factor-auth-item.json'
   }
   //#endregion
 
   //#region Main logic methods
-  public getProjectItems(): Observable<ProjectItemModel[]> {
-    return this._http.get<ProjectItemModel[]>(`${environment.dataUrl}${this._dataFilePaths.projectItems}`);
-  }
-
   public getProfileItem(): Observable<ProfileModel> {
     return this._http.get<ProfileModel>(`${environment.dataUrl}${this._dataFilePaths.profileItem}`);
   }
 
   public getProfileInfoItem(): Observable<ProfileOverviewProfileInfoModel> {
     return this._http.get<ProfileOverviewProfileInfoModel>(`${environment.dataUrl}${this._dataFilePaths.profileInfoItem}`);
-  }
-
-  public getHouseProjectItems(): Observable<HouseProjectItemModel[]> {
-    return this._http.get<HouseProjectItemModel[]>(`${environment.dataUrl}${this._dataFilePaths.houseProjectItems}`);
   }
 
   public getConversationItems(): Observable<ProfileOverviewConversationItemModel[]> {
