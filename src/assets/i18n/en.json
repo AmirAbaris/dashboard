@@ -4,7 +4,8 @@
             "emailRequiredError": "Email is required",
             "emailInvalidError": "Please enter a valid email address",
             "passwordRequiredError": "Password is required",
-            "passwordMinLengthError": "Password must be at least 6 characters long"
+            "passwordMinLengthError": "Password must be at least 6 characters long",
+            "passwordStrengthError": "Password must include at least one number and one special character"
         },
         "sign-in": {
             "signIn": "Sign In",

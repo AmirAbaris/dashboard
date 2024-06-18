@@ -18,7 +18,8 @@
             </mat-form-field>
 
             <!-- Password Input -->
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline"
+                [class.has-error]="signInForm.get(formKeys.passwordCtrl)?.invalid && signInForm.get(formKeys.passwordCtrl)?.touched">
                 <input matInput type="password" [formControlName]="formKeys.passwordCtrl"
                     placeholder="{{ captions.password }}">
 
@@ -27,6 +28,9 @@
                 </mat-error>
                 <mat-error *ngIf="signInForm.get(formKeys.passwordCtrl)?.hasError('minlength')">
                     {{ errorCaption.passwordMinLengthError }}
+                </mat-error>
+                <mat-error *ngIf="signInForm.get(formKeys.passwordCtrl)?.hasError('passwordStrength')">
+                    {{ errorCaption.passwordStrengthError }}
                 </mat-error>
             </mat-form-field>
 
@@ -40,7 +44,7 @@
                 uppercase
                 }}</button>
         </form>
-        <div class="sign-up justify-center flex gap-x-1 items-center font-normal text-sm">
+        <div class="sign-in justify-center flex gap-x-1 items-center font-normal text-sm">
             <h3 class="text-slateBlue">{{captions.noAccount}}</h3>
             <a class="text-center cursor-pointer" (click)="onClickSignUpEventHandler()">{{
                 captions.signUp }}</a>

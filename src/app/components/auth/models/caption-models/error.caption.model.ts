@@ -3,4 +3,5 @@ export interface ErrorCaptionModel {
     emailInvalidError: string;
     passwordRequiredError: string;
     passwordMinLengthError: string;
+    passwordStrengthError: string;
 }

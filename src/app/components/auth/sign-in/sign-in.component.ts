@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ErrorCaptionModel } from '../models/caption-models/error.caption.model';
 import { environment } from '../../../../environments/environment.development';
 import { forkJoin } from 'rxjs';
+import { passwordStrengthValidator } from '../../account-change-password/helpers/password-strength-validator';
 
 @Component({
   selector: 'app-sign-in',
@@ -54,7 +55,7 @@ export class SignInComponent implements OnInit {
   private _initializeSignInForm(): void {
     this.signInForm = this._fb.group({
       [this.formKeys.emailCtrl]: [null, [Validators.required, Validators.email]],
-      [this.formKeys.passwordCtrl]: [null, [Validators.required, Validators.minLength(this._passwordMinLength)]],
+      [this.formKeys.passwordCtrl]: [null, [Validators.required, Validators.minLength(this._passwordMinLength), passwordStrengthValidator]],
       [this.formKeys.rememberCtrl]: [false]
     });
   }
