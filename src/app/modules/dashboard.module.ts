@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardMainComponent } from '../components/dashboard/dashboard-main/dashboard-main.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgClass, NgIf, NgOptimizedImage, UpperCasePipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { SideBarComponent } from '../components/dashboard/side-bar/side-bar.component';
 import { SidebarChildItemComponent } from '../components/dashboard/sidebar-child-item/sidebar-child-item.component';
@@ -46,7 +46,9 @@ const routes: Routes = [
     MatDividerModule,
     MatIconModule,
     MatButtonModule,
-    CommonModule
+    NgIf,
+    UpperCasePipe,
+    NgClass
   ],
   providers: [AppService, AppRepository]
 })

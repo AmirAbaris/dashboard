@@ -7,35 +7,43 @@
                 "children": [
                     {
                         "title": "Default",
-                        "link": "/dashboards/default"
+                        "link": "/dashboards/default",
+                        "isEnabled": false
                     },
                     {
                         "title": "Automotive",
-                        "link": "/dashboards/automotive"
+                        "link": "/dashboards/automotive",
+                        "isEnabled": false
                     },
                     {
                         "title": "Smart Home",
-                        "link": "/dashboards/smart-home"
+                        "link": "/dashboards/smart-home",
+                        "isEnabled": false
                     },
                     {
                         "title": "Virtual Reality",
                         "children": [
                             {
                                 "title": "VR Default",
-                                "link": "/dashboards/virtual-reality/vr-default"
+                                "link": "/dashboards/virtual-reality/vr-default",
+                                "isEnabled": false
                             },
                             {
                                 "title": "VR Info",
-                                "link": "/dashboards/virtual-reality/vr-info"
+                                "link": "/dashboards/virtual-reality/vr-info",
+                                "isEnabled": false
                             }
-                        ]
+                        ],
+                        "isEnabled": false
                     },
                     {
                         "title": "CRM",
-                        "link": "/dashboards/crm"
+                        "link": "/dashboards/crm",
+                        "isEnabled": false
                     }
                 ],
-                "isExpanded": false
+                "isExpanded": false,
+                "isEnabled": false
             }
         ]
     },
@@ -50,99 +58,123 @@
                         "children": [
                             {
                                 "title": "Profile Overview",
-                                "link": "/profile/overview"
+                                "link": "/profile/overview",
+                                "isEnabled": true
                             },
                             {
                                 "title": "Teams",
-                                "link": "/profile/teams"
+                                "link": "/profile/teams",
+                                "isEnabled": false
                             },
                             {
                                 "title": "All Projects",
-                                "link": "/profile/all-projects"
+                                "link": "/profile/all-projects",
+                                "isEnabled": true
                             }
-                        ]
+                        ],
+                        "isEnabled": true
                     },
                     {
                         "title": "Users",
                         "children": [
                             {
                                 "title": "Reports",
-                                "link": "/users/reports"
+                                "link": "/users/reports",
+                                "isEnabled": false
                             },
                             {
                                 "title": "New User",
-                                "link": "/users/new-user"
+                                "link": "/users/new-user",
+                                "isEnabled": false
                             }
-                        ]
+                        ],
+                        "isEnabled": false
                     },
                     {
                         "title": "Account",
                         "children": [
                             {
                                 "title": "Settings",
-                                "link": "/account/settings"
+                                "link": "/account/settings",
+                                "isEnabled": true
                             },
                             {
                                 "title": "Billing",
-                                "link": "/account/billing"
+                                "link": "/account/billing",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Invoice",
-                                "link": "/account/invoice"
+                                "link": "/account/invoice",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Security",
-                                "link": "/account/security"
+                                "link": "/account/security",
+                                "isEnabled": false
                             }
-                        ]
+                        ],
+                        "isEnabled": true
                     },
                     {
                         "title": "Project",
                         "children": [
                             {
                                 "title": "General",
-                                "link": "/project/general"
+                                "link": "/project/general",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Timeline",
-                                "link": "/project/timeline"
+                                "link": "/project/timeline",
+                                "isEnabled": false
                             },
                             {
                                 "title": "New Project",
-                                "link": "/project/new-project"
+                                "link": "/project/new-project",
+                                "isEnabled": false
                             }
-                        ]
+                        ],
+                        "isEnabled": false
                     },
                     {
                         "title": "Pricing Page",
-                        "link": "/pricing-page"
+                        "link": "/pricing-page",
+                        "isEnabled": false
                     },
                     {
                         "title": "Messages",
-                        "link": "/message"
+                        "link": "/message",
+                        "isEnabled": false
                     },
                     {
                         "title": "Widgets",
-                        "link": "/widgets"
+                        "link": "/widgets",
+                        "isEnabled": false
                     },
                     {
                         "title": "Charts",
-                        "link": "/charts"
+                        "link": "/charts",
+                        "isEnabled": false
                     },
                     {
                         "title": "Sweet Alerts",
-                        "link": "/sweet-alerts"
+                        "link": "/sweet-alerts",
+                        "isEnabled": false
                     },
                     {
                         "title": "RTL",
-                        "link": "//rtl"
+                        "link": "//rtl",
+                        "isEnabled": false
                     },
                     {
                         "title": "Notifications",
-                        "link": "/notifications"
+                        "link": "/notifications",
+                        "isEnabled": false
                     }
                 ],
-                "isExpanded": false
+                "isExpanded": false,
+                "isEnabled": false
             }
         ]
     },
@@ -154,25 +186,31 @@
                 "children": [
                     {
                         "title": "Kanban",
-                        "link": "/applications/kanban"
+                        "link": "/applications/kanban",
+                        "isEnabled": false
                     },
                     {
                         "title": "Wizard",
-                        "link": "/applications/wizard"
+                        "link": "/applications/wizard",
+                        "isEnabled": false
                     },
                     {
                         "title": "DataTables",
-                        "link": "/applications/data-tables"
+                        "link": "/applications/data-tables",
+                        "isEnabled": false
                     },
                     {
                         "title": "Calendar",
-                        "link": "/applications/calendar"
+                        "link": "/applications/calendar",
+                        "isEnabled": false
                     },
                     {
                         "title": "Analytics",
-                        "link": "/applications/analytics"
+                        "link": "/applications/analytics",
+                        "isEnabled": false
                     }
-                ]
+                ],
+                "isEnabled": false
             }
         ]
     },
@@ -184,48 +222,59 @@
                 "children": [
                     {
                         "title": "Overview",
-                        "link": "/ecommerce/overview"
+                        "link": "/ecommerce/overview",
+                        "isEnabled": false
                     },
                     {
                         "title": "Products",
                         "children": [
                             {
                                 "title": "New Product",
-                                "link": "/ecommerce/products/new"
+                                "link": "/ecommerce/products/new",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Edit Product",
-                                "link": "/ecommerce/products/edit"
+                                "link": "/ecommerce/products/edit",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Product Page",
-                                "link": "/ecommerce/products/page"
+                                "link": "/ecommerce/products/page",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Products List",
-                                "link": "/ecommerce/products/list"
+                                "link": "/ecommerce/products/list",
+                                "isEnabled": false
                             }
-                        ]
+                        ],
+                        "isEnabled": false
                     },
                     {
                         "title": "Orders",
                         "children": [
                             {
                                 "title": "Order List",
-                                "link": "/ecommerce/orders/list"
+                                "link": "/ecommerce/orders/list",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Order Details",
-                                "link": "/ecommerce/orders/details"
+                                "link": "/ecommerce/orders/details",
+                                "isEnabled": false
                             }
-                        ]
+                        ],
+                        "isEnabled": false
                     },
                     {
                         "title": "Referral",
-                        "link": "/ecommerce/referral"
+                        "link": "/ecommerce/referral",
+                        "isEnabled": false
                     }
                 ],
-                "isExpanded": false
+                "isExpanded": false,
+                "isEnabled": false
             }
         ]
     },
@@ -240,101 +289,125 @@
                         "children": [
                             {
                                 "title": "Basic",
-                                "link": "/authentication/sign-in/basic"
+                                "link": "/authentication/sign-in/basic",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Cover",
-                                "link": "/authentication/sign-in/cover"
+                                "link": "/authentication/sign-in/cover",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Illustration",
-                                "link": "/authentication/sign-in/illustration"
+                                "link": "/authentication/sign-in/illustration",
+                                "isEnabled": false
                             }
-                        ]
+                        ],
+                        "isEnabled": false
                     },
                     {
                         "title": "Sign Up",
                         "children": [
                             {
                                 "title": "Basic",
-                                "link": "/authentication/sign-up/basic"
+                                "link": "/authentication/sign-up/basic",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Cover",
-                                "link": "/authentication/sign-up/cover"
+                                "link": "/authentication/sign-up/cover",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Illustration",
-                                "link": "/authentication/sign-up/illustration"
+                                "link": "/authentication/sign-up/illustration",
+                                "isEnabled": false
                             }
-                        ]
+                        ],
+                        "isEnabled": false
                     },
                     {
                         "title": "Reset Password",
                         "children": [
                             {
                                 "title": "Basic",
-                                "link": "/authentication/reset-password/basic"
+                                "link": "/authentication/reset-password/basic",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Cover",
-                                "link": "/authentication/reset-password/cover"
+                                "link": "/authentication/reset-password/cover",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Illustration",
-                                "link": "/authentication/reset-password/illustration"
+                                "link": "/authentication/reset-password/illustration",
+                                "isEnabled": false
                             }
-                        ]
+                        ],
+                        "isEnabled": false
                     },
                     {
                         "title": "Lock",
                         "children": [
                             {
                                 "title": "Basic",
-                                "link": "/authentication/lock/basic"
+                                "link": "/authentication/lock/basic",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Cover",
-                                "link": "/authentication/lock/cover"
+                                "link": "/authentication/lock/cover",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Illustration",
-                                "link": "/authentication/lock/illustration"
+                                "link": "/authentication/lock/illustration",
+                                "isEnabled": false
                             }
-                        ]
+                        ],
+                        "isEnabled": false
                     },
                     {
                         "title": "2-Step Verification",
                         "children": [
                             {
                                 "title": "Basic",
-                                "link": "/authentication/2-step-verification/basic"
+                                "link": "/authentication/2-step-verification/basic",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Cover",
-                                "link": "/authentication/2-step-verification/cover"
+                                "link": "/authentication/2-step-verification/cover",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Illustration",
-                                "link": "/authentication/2-step-verification/illustration"
+                                "link": "/authentication/2-step-verification/illustration",
+                                "isEnabled": false
                             }
-                        ]
+                        ],
+                        "isEnabled": false
                     },
                     {
                         "title": "Error",
                         "children": [
                             {
                                 "title": "Error 404",
-                                "link": "/authentication/error/404"
+                                "link": "/authentication/error/404",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Error 500",
-                                "link": "/authentication/error/500"
+                                "link": "/authentication/error/500",
+                                "isEnabled": false
                             }
-                        ]
+                        ],
+                        "isEnabled": false
                     }
                 ],
-                "isExpanded": false
+                "isExpanded": false,
+                "isEnabled": false
             }
         ]
     },
@@ -350,45 +423,56 @@
                         "children": [
                             {
                                 "title": "Quick Start",
-                                "link": "/basic/getting-started/quick-start"
+                                "link": "/basic/getting-started/quick-start",
+                                "isEnabled": false
                             },
                             {
                                 "title": "License",
-                                "link": "/basic/getting-started/license"
+                                "link": "/basic/getting-started/license",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Contents",
-                                "link": "/basic/getting-started/contents"
+                                "link": "/basic/getting-started/contents",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Build Tools",
-                                "link": "/basic/getting-started/build-tools"
+                                "link": "/basic/getting-started/build-tools",
+                                "isEnabled": false
                             }
-                        ]
+                        ],
+                        "isEnabled": false
                     },
                     {
                         "title": "Foundation",
                         "children": [
                             {
                                 "title": "Colors",
-                                "link": "/basic/foundation/colors"
+                                "link": "/basic/foundation/colors",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Grid",
-                                "link": "/basic/foundation/grid"
+                                "link": "/basic/foundation/grid",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Typography",
-                                "link": "/basic/foundation/typography"
+                                "link": "/basic/foundation/typography",
+                                "isEnabled": false
                             },
                             {
                                 "title": "Icons",
-                                "link": "/basic/foundation/icons"
+                                "link": "/basic/foundation/icons",
+                                "isEnabled": false
                             }
-                        ]
+                        ],
+                        "isEnabled": false
                     }
                 ],
-                "isExpanded": false
+                "isExpanded": false,
+                "isEnabled": false
             }
         ]
     },
@@ -400,74 +484,92 @@
                 "children": [
                     {
                         "title": "Alerts",
-                        "link": "/components/alerts"
+                        "link": "/components/alerts",
+                        "isEnabled": false
                     },
                     {
                         "title": "Badge",
-                        "link": "/components/badge"
+                        "link": "/components/badge",
+                        "isEnabled": false
                     },
                     {
                         "title": "Buttons",
-                        "link": "/components/buttons"
+                        "link": "/components/buttons",
+                        "isEnabled": false
                     },
                     {
                         "title": "Card",
-                        "link": "/components/card"
+                        "link": "/components/card",
+                        "isEnabled": false
                     },
                     {
                         "title": "Carousel",
-                        "link": "/components/carousel"
+                        "link": "/components/carousel",
+                        "isEnabled": false
                     },
                     {
                         "title": "Collapse",
-                        "link": "/components/collapse"
+                        "link": "/components/collapse",
+                        "isEnabled": false
                     },
                     {
                         "title": "Dropdowns",
-                        "link": "/components/dropdowns"
+                        "link": "/components/dropdowns",
+                        "isEnabled": false
                     },
                     {
                         "title": "Forms",
-                        "link": "/components/forms"
+                        "link": "/components/forms",
+                        "isEnabled": false
                     },
                     {
                         "title": "Modal",
-                        "link": "/components/modal"
+                        "link": "/components/modal",
+                        "isEnabled": false
                     },
                     {
                         "title": "Navs",
-                        "link": "/components/navs"
+                        "link": "/components/navs",
+                        "isEnabled": false
                     },
                     {
                         "title": "Navbar",
-                        "link": "/components/navbar"
+                        "link": "/components/navbar",
+                        "isEnabled": false
                     },
                     {
                         "title": "Pagination",
-                        "link": "/components/pagination"
+                        "link": "/components/pagination",
+                        "isEnabled": false
                     },
                     {
                         "title": "Popovers",
-                        "link": "/components/popovers"
+                        "link": "/components/popovers",
+                        "isEnabled": false
                     },
                     {
                         "title": "Progress",
-                        "link": "/components/progress"
+                        "link": "/components/progress",
+                        "isEnabled": false
                     },
                     {
                         "title": "Spinners",
-                        "link": "/components/spinners"
+                        "link": "/components/spinners",
+                        "isEnabled": false
                     },
                     {
                         "title": "Tables",
-                        "link": "/components/tables"
+                        "link": "/components/tables",
+                        "isEnabled": false
                     },
                     {
                         "title": "Tooltips",
-                        "link": "/components/tooltips"
+                        "link": "/components/tooltips",
+                        "isEnabled": false
                     }
                 ],
-                "isExpanded": false
+                "isExpanded": false,
+                "isEnabled": false
             }
         ]
     },
@@ -476,7 +578,8 @@
             {
                 "title": "Changelog",
                 "icon": "credit_card",
-                "link": "changelog"
+                "link": "changelog",
+                "isEnabled": false
             }
         ]
     }

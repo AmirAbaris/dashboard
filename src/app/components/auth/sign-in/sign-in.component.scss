@@ -11,9 +11,23 @@
             transform: scaleX(1.02);
         }
     }
+
+    mat-form-field {
+        font-family: 'Open Sans', sans-serif;
+        font-size: .875rem;
+        font-weight: 400;
+        line-height: 1.4rem;
+        color: #495057;
+        transition: margin-bottom 0.3s ease;
+
+        &.has-email-error {
+            margin-bottom: 1rem;
+        }
+    }
+
 }
 
-.sign-up {
+.sign-in {
     a {
         background: linear-gradient(to right, #F10988, #9E24B6);
         -webkit-background-clip: text;

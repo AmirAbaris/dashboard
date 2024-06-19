@@ -6,29 +6,22 @@
 
         <form class="form flex flex-col w-full" [formGroup]="signInForm" (ngSubmit)="onClickSubmitButtonEventHandler()">
             <!-- Email Input -->
-            <mat-form-field appearance="outline">
-                <input matInput type="email" [formControlName]="formKeys.emailCtrl" placeholder="{{ captions.email }}">
+            <mat-form-field appearance="outline"
+                [class.has-email-error]="signInForm.get(formKeys.emailCtrl)?.invalid && signInForm.get(formKeys.emailCtrl)?.touched">
+                <input matInput type="email" [formControlName]="formKeys.emailCtrl" [placeholder]=" captions.email">
 
                 <mat-error *ngIf="signInForm.get(formKeys.emailCtrl)?.hasError('required')">
-                    {{ errorCaption.emailRequiredError }}
+                    {{ errorCaption.emailRequiredError }}.
                 </mat-error>
                 <mat-error *ngIf="signInForm.get(formKeys.emailCtrl)?.hasError('email')">
-                    {{ errorCaption.emailInvalidError }}
+                    {{ errorCaption.emailInvalidError }}.
                 </mat-error>
             </mat-form-field>
 
             <!-- Password Input -->
-            <mat-form-field appearance="outline">
-                <input matInput type="password" [formControlName]="formKeys.passwordCtrl"
-                    placeholder="{{ captions.password }}">
-
-                <mat-error *ngIf="signInForm.get(formKeys.passwordCtrl)?.hasError('required')">
-                    {{ errorCaption.passwordRequiredError }}
-                </mat-error>
-                <mat-error *ngIf="signInForm.get(formKeys.passwordCtrl)?.hasError('minlength')">
-                    {{ errorCaption.passwordMinLengthError }}
-                </mat-error>
-            </mat-form-field>
+            <app-password-input [controlName]="formKeys.passwordCtrl" [form]="signInForm"
+                [marginHeight]="passwordInputMarginHeightItems.passwordHeight"
+                [passwordPlaceHolderCaption]="captions.password" />
 
             <!-- Remember me slide toggle -->
             <mat-slide-toggle class="text-charcoalBlue text-base" [formControlName]="formKeys.rememberCtrl">{{
@@ -40,7 +33,7 @@
                 uppercase
                 }}</button>
         </form>
-        <div class="sign-up justify-center flex gap-x-1 items-center font-normal text-sm">
+        <div class="sign-in justify-center flex gap-x-1 items-center font-normal text-sm">
             <h3 class="text-slateBlue">{{captions.noAccount}}</h3>
             <a class="text-center cursor-pointer" (click)="onClickSignUpEventHandler()">{{
                 captions.signUp }}</a>

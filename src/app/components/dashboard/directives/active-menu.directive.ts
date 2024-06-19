@@ -40,7 +40,7 @@ export class ActiveMenuDirective implements AfterViewInit, OnChanges {
 
     if (iconContainer && titleIcon) {
       this._toggleClass(iconContainer, 'bg-magenta', isActive);
-      this._toggleClass(iconContainer, 'active', isActive);
+      this._toggleClass(titleIcon, 'active', isActive);
     }
   }
 

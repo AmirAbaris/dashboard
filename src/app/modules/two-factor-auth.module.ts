@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { UpperCasePipe } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { TwoFactorAuthTwoFactorAuthMainComponent } from '../components/two-factor-auth/two-factor-auth-main/two-factor-auth-main.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -16,7 +16,7 @@ const routes: Routes = [
   declarations: [TwoFactorAuthTwoFactorAuthMainComponent, TwoFactorActionComponent],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule,
+    UpperCasePipe,
     MatButtonModule,
     MatDividerModule
   ],

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileOverviewGeneralMainComponent } from '../components/profile-overview-general/profile-overview-general-main/profile-overview-general-main.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage, UpperCasePipe } from '@angular/common';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -16,6 +16,8 @@ import { HouseProjectItemComponent } from '../components/profile-overview-genera
 import { MatButtonModule } from '@angular/material/button';
 import { ProfileOverviewHouseProjectItemComponent } from '../components/profile-overview-general/profile-overview-house-project-item/profile-overview-house-project-item.component';
 import { ProfileOverviewNewHouseProjectComponent } from '../components/profile-overview-general/profile-overview-new-house-project/profile-overview-new-house-project.component';
+import { ProfileRepository } from '../repositories/profile.repository';
+import { ProfileService } from '../services/profile.service';
 
 const routes: Routes = [
   {
@@ -32,7 +34,8 @@ const routes: Routes = [
   ],
   imports: [
     MatSlideToggleModule,
-    CommonModule,
+    UpperCasePipe,
+
     MatDividerModule,
     MatButtonModule,
     MatTooltipModule,
@@ -40,6 +43,6 @@ const routes: Routes = [
     NgOptimizedImage,
     RouterModule.forChild(routes)
   ],
-  providers: [AppService, AppRepository]
+  providers: [AppService, AppRepository, ProfileService, ProfileRepository]
 })
 export class ProfileOverviewGeneralModule { }

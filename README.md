@@ -1,6 +1,36 @@
-# Dashboard
+# Dashboard Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+
+## Project Structure
+
+This project follows a structured approach for organizing Angular components, modules, and services. It features a dashboard layout with sidebars and distinct modules for various routes. Each module encapsulates related functionality, ensuring maintainability and scalability.
+
+### File Naming
+
+- **Components**: Named in PascalCase.
+  - Example: `AccountChangePasswordMainComponent`
+
+- **Services and Helpers**: Named in camelCase.
+  - Example: `passwordStrengthValidator`
+
+- **Environment Configuration**: Named with environment-specific suffixes.
+  - Example: `environment.development.ts`
+
+- **Variable and Property Naming**: Follow camelCase for variables and properties.
+  - Example: `passwordErrorCaption`, `changePasswordCaption`
+
+- **Constant Naming**: Use uppercase letters and underscores for constants.
+  - Example: `PASSWORD_MIN_LENGTH`, `CONFIG_URL`
+
+- **Method Naming**: Use verbs or action words in camelCase.
+  - Example: `_initializeChangePasswordForm()`, `_getCaptions()`
+
+- **Template and CSS Class Naming**: Use kebab-case for CSS classes and template variables.
+  - Example: `<mat-form-field appearance="outline">`, `.text-charcoal-blue`
+
+- **Angular Decorator Naming**: Use PascalCase for component selectors, camelCase for services.
+  - Example: `@Component({ selector: 'app-account-change-password-main', ... })`, `@Injectable()`
 
 ## Development server
 
@@ -14,13 +44,9 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Node Version
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+This project requires Node version v20.9.0.
 
 ## Further help
 

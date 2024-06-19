@@ -6,7 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgIf, NgOptimizedImage, UpperCasePipe } from '@angular/common';
+import { PasswordInputComponent } from '../components/shared/password-input/password-input.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
@@ -19,12 +20,14 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forChild(routes),
+    PasswordInputComponent,
     MatInputModule,
     MatFormFieldModule,
     MatSlideToggleModule,
     MatButtonModule,
     ReactiveFormsModule,
-    CommonModule,
+    UpperCasePipe,
+    NgIf,
     NgOptimizedImage
   ]
 })

@@ -5,5 +5,13 @@
         &.active {
             background-color: #f0ecec;
         }
+
+        &.disabled {
+            color: rgb(219, 219, 219);
+
+            p {
+                color: inherit;
+            }
+        }
     }
 }

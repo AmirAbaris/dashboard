@@ -1,4 +1,4 @@
-export interface PasswordErrorCaptionModel {
+export interface PasswordInputCaptionModel {
     passwordRequiredError: string;
     passwordMinLengthError: string;
     passwordStrengthError: string;
