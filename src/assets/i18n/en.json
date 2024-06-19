@@ -45,12 +45,6 @@
             "minCharacters": "Min 6 characters",
             "oneNumber": "One number (2 are recommended)",
             "changeOften": "Change it often"
-        },
-        "password-error": {
-            "passwordRequiredError": "Password is required",
-            "passwordMinLengthError": "Password must be at least 6 characters long",
-            "passwordStrengthError": "Password must include at least one number and one special character",
-            "passwordMismatchError": "Passwords do not match"
         }
     },
     "two-factor-auth": {
@@ -124,5 +118,11 @@
         "profile-overview-new-house-project": {
             "title": "New project"
         }
+    },
+    "password-input": {
+        "passwordRequiredError": "Password is required",
+        "passwordMinLengthError": "Password must be at least 6 characters long",
+        "passwordStrengthError": "Password must include at least one number and one special character",
+        "passwordMismatchError": "Passwords do not match"
     }
 }

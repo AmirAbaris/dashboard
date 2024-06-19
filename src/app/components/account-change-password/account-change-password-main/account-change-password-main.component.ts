@@ -2,7 +2,6 @@ import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { passwordStrengthValidator } from '../helpers/password-strength-validator';
 import { TranslateService } from '@ngx-translate/core';
-import { PasswordErrorCaptionModel } from '../models/caption-models/password-error.caption.model';
 import { ChangePasswordCaptionModel } from '../models/caption-models/change-password.caption.model';
 import { forkJoin } from 'rxjs';
 import { ChangePasswordFromModel } from '../models/change-password-form.model';
@@ -30,7 +29,6 @@ export class AccountChangePasswordMainComponent implements OnInit {
     newPasswordHeight: '2.8rem'
   }
   public fg: FormGroup | undefined;
-  public passwordErrorCaption: PasswordErrorCaptionModel | undefined;
   public changePasswordCaption: ChangePasswordCaptionModel | undefined;
   private readonly _passwordMinLength = this._environmentService.environmentConfig.passwordMinLength;
   private readonly _captionPath = {
@@ -70,14 +68,8 @@ export class AccountChangePasswordMainComponent implements OnInit {
   }
 
   private _getCaptions(): void {
-    const passwordErrorCaption = this._translateService.get(this._captionPath.passwordErrorPath);
-    const changePasswordCaption = this._translateService.get(this._captionPath.changePasswordPath);
-    forkJoin({
-      passwordErrorCaption,
-      changePasswordCaption
-    }).subscribe({
-      next: ({ passwordErrorCaption, changePasswordCaption }) => {
-        this.passwordErrorCaption = passwordErrorCaption;
+    this._translateService.get(this._captionPath.changePasswordPath).subscribe({
+      next: (changePasswordCaption) => {
         this.changePasswordCaption = changePasswordCaption;
       },
       error: (err) => {
