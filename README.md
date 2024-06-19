@@ -17,11 +17,11 @@ This project follows a structured approach for organizing Angular components, mo
 - **Environment Configuration**: Named with environment-specific suffixes.
   - Example: `environment.development.ts`
 
-- **Variable and Property Naming**: Follow camelCase for variables and properties.
-  - Example: `passwordErrorCaption`, `changePasswordCaption`
-
-- **Constant Naming**: Use uppercase letters and underscores for constants.
-  - Example: `PASSWORD_MIN_LENGTH`, `CONFIG_URL`
+- **Variable and Property Naming**: 
+  - **Public Variables**: Use camelCase.
+    - Example: `passwordErrorCaption`, `changePasswordCaption`
+  - **Private Variables**: Prefix with an underscore and use camelCase.
+    - Example: `_passwordMinLength`, `_environmentService`
 
 - **Method Naming**: Use verbs or action words in camelCase.
   - Example: `_initializeChangePasswordForm()`, `_getCaptions()`
