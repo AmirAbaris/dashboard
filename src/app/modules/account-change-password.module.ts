@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { PasswordInputComponent } from '../components/password-input/password-input.component';
 
 const routes: Routes = [
   { path: '', component: AccountChangePasswordMainComponent }
@@ -14,6 +15,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [AccountChangePasswordMainComponent],
   imports: [
+    PasswordInputComponent,
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
