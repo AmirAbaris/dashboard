@@ -14,8 +14,6 @@ export const ENV_CONFIG: InjectionToken<EnvironmentModel> = new
 })
 export class EnvironmentService {
   //#region Constructor
-  constructor(@Inject(ENV_CONFIG) public environmentConfig: EnvironmentModel) {
-    console.log('Environment configuration:', this.environmentConfig.configUrl);
-  }
+  constructor(@Inject(ENV_CONFIG) public environmentConfig: EnvironmentModel) {}
   //#endregion
 }
