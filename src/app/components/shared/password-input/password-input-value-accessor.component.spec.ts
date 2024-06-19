@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PasswordInputComponent } from './password-input.component';
+import { PasswordInputComponent } from './password-input-value-accessor.component';
 
 describe('PasswordInputComponent', () => {
   let component: PasswordInputComponent;
@@ -10,8 +10,8 @@ describe('PasswordInputComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [PasswordInputComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(PasswordInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
