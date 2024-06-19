@@ -1,5 +1,5 @@
-import { NgModule, forwardRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { UpperCasePipe } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountChangePasswordMainComponent } from '../components/account-change-password/account-change-password-main/account-change-password-main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,7 +16,7 @@ const routes: Routes = [
   declarations: [AccountChangePasswordMainComponent],
   imports: [
     PasswordInputComponent,
-    CommonModule,
+    UpperCasePipe,
     RouterModule.forChild(routes),
     FormsModule,
     ReactiveFormsModule,

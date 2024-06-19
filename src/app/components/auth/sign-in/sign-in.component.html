@@ -22,21 +22,6 @@
             <app-password-input [controlName]="formKeys.passwordCtrl" [form]="signInForm"
                 [marginHeight]="passwordInputMarginHeightItems.passwordHeight"
                 [passwordPlaceHolderCaption]="captions.password" />
-            <!-- <mat-form-field appearance="outline"
-                [class.has-password-error]="signInForm.get(formKeys.passwordCtrl)?.invalid && signInForm.get(formKeys.passwordCtrl)?.touched">
-                <input matInput type="password" [formControlName]="formKeys.passwordCtrl"
-                    [placeholder]="captions.password">
-
-                <mat-error *ngIf="signInForm.get(formKeys.passwordCtrl)?.hasError('required')">
-                    {{ errorCaption.passwordRequiredError }}.
-                </mat-error>
-                <mat-error *ngIf="signInForm.get(formKeys.passwordCtrl)?.hasError('minlength')">
-                    {{ errorCaption.passwordMinLengthError }}.
-                </mat-error>
-                <mat-error *ngIf="signInForm.get(formKeys.passwordCtrl)?.hasError('passwordStrength')">
-                    {{ errorCaption.passwordStrengthError }}.
-                </mat-error>
-            </mat-form-field> -->
 
             <!-- Remember me slide toggle -->
             <mat-slide-toggle class="text-charcoalBlue text-base" [formControlName]="formKeys.rememberCtrl">{{

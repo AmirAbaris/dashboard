@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileOverviewGeneralMainComponent } from '../components/profile-overview-general/profile-overview-general-main/profile-overview-general-main.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage, UpperCasePipe } from '@angular/common';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -34,7 +34,8 @@ const routes: Routes = [
   ],
   imports: [
     MatSlideToggleModule,
-    CommonModule,
+    UpperCasePipe,
+
     MatDividerModule,
     MatButtonModule,
     MatTooltipModule,

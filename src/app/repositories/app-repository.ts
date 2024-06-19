@@ -1,5 +1,4 @@
 import { Injectable, inject } from '@angular/core';
-import { environment } from '../../environments/environment.development';
 import { Observable } from 'rxjs';
 import { SideBarSectionModel } from '../components/dashboard/models/sidebar-item.model';
 import { HttpClient } from '@angular/common/http';

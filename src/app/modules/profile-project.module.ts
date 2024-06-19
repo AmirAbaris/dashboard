@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { DatePipe, NgOptimizedImage } from '@angular/common';
 import { ProfileProjectMainComponent } from '../components/profile-project/profile-project-main/profile-project-main.component';
 import { ProfileProjectItemComponent } from '../components/profile-project/profile-project-item/profile-project-item.component';
 import { ProfileProjectNewComponent } from '../components/profile-project/profile-project-new/profile-project-new.component';
@@ -21,7 +21,8 @@ const routes: Routes = [
         NgOptimizedImage,
         MatIconModule,
         MatDividerModule,
-        CommonModule,
+        DatePipe,
+
         RouterModule.forChild(routes)
     ],
     providers: [ProfileService, ProfileRepository]
