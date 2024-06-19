@@ -24,6 +24,10 @@ export class AccountChangePasswordMainComponent implements OnInit {
     newPasswordCtrl: 'newPasswordCtrl',
     confirmNewPasswordCtrl: 'confirmNewPasswordCtrl'
   }
+  public readonly passwordInputMarginHeightItems = {
+    currentPasswordHeight: '0.5rem',
+    newPasswordHeight: '2.8rem'
+  }
   public fg: FormGroup | undefined;
   public passwordErrorCaption: PasswordErrorCaptionModel | undefined;
   public changePasswordCaption: ChangePasswordCaptionModel | undefined;

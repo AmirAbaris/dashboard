@@ -25,7 +25,7 @@ export class PasswordInputComponent {
   //#region Properties
   public form = input.required<FormGroup>();
   public controlName = input.required<string>();
-  public marginHeight = input.required<string>();
+  public marginHeight = input<string>('0rem');
 
   public readonly formKeys = {
     confirmNewPasswordCtrl: 'confirmNewPasswordCtrl'
