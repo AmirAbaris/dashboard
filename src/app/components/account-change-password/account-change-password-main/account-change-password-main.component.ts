@@ -1,6 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { environment } from '../../../../environments/environment.development';
 import { passwordStrengthValidator } from '../helpers/password-strength-validator';
 import { TranslateService } from '@ngx-translate/core';
 import { PasswordErrorCaptionModel } from '../models/caption-models/password-error.caption.model';
