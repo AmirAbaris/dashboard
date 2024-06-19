@@ -23,6 +23,9 @@ export class SignInComponent implements OnInit {
     passwordCtrl: 'passwordCtrl',
     rememberCtrl: 'rememberCtrl'
   }
+  public readonly passwordInputMarginHeightItems = {
+    passwordHeight: '3.5rem'
+  }
   public signInForm: FormGroup | undefined;
   public captions: SignInCaptionModel | undefined;
   public errorCaption: ErrorCaptionModel | undefined;

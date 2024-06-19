@@ -8,7 +8,7 @@
             <!-- Email Input -->
             <mat-form-field appearance="outline"
                 [class.has-email-error]="signInForm.get(formKeys.emailCtrl)?.invalid && signInForm.get(formKeys.emailCtrl)?.touched">
-                <input matInput type="email" [formControlName]="formKeys.emailCtrl" placeholder="{{ captions.email }}">
+                <input matInput type="email" [formControlName]="formKeys.emailCtrl" [placeholder]=" captions.email">
 
                 <mat-error *ngIf="signInForm.get(formKeys.emailCtrl)?.hasError('required')">
                     {{ errorCaption.emailRequiredError }}.
@@ -19,7 +19,10 @@
             </mat-form-field>
 
             <!-- Password Input -->
-            <mat-form-field appearance="outline"
+            <app-password-input [controlName]="formKeys.passwordCtrl" [form]="signInForm"
+                [marginHeight]="passwordInputMarginHeightItems.passwordHeight"
+                [passwordPlaceHolderCaption]="captions.password" />
+            <!-- <mat-form-field appearance="outline"
                 [class.has-password-error]="signInForm.get(formKeys.passwordCtrl)?.invalid && signInForm.get(formKeys.passwordCtrl)?.touched">
                 <input matInput type="password" [formControlName]="formKeys.passwordCtrl"
                     [placeholder]="captions.password">
@@ -33,7 +36,7 @@
                 <mat-error *ngIf="signInForm.get(formKeys.passwordCtrl)?.hasError('passwordStrength')">
                     {{ errorCaption.passwordStrengthError }}.
                 </mat-error>
-            </mat-form-field>
+            </mat-form-field> -->
 
             <!-- Remember me slide toggle -->
             <mat-slide-toggle class="text-charcoalBlue text-base" [formControlName]="formKeys.rememberCtrl">{{
