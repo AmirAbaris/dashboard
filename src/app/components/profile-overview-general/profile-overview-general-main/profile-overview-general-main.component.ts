@@ -9,7 +9,7 @@ import { ProfileOverviewProfileInfoModel } from '../models/profile-overview-prof
 import { UserService } from '../../../services/user.service';
 import { HouseProjectInputCaptionModel } from '../models/caption-models/house-project-input.caption.model';
 import { HouseProjectModel } from '../models/house-project.model';
-import { ProjectService } from '../../../services/project.service';
+import { ProfileService } from '../../../services/profile.service';
 
 @Component({
   selector: 'app-profile-overview-general-main',
@@ -20,7 +20,7 @@ export class ProfileOverviewGeneralMainComponent implements OnInit {
   //#region Properties
   private readonly _translateService = inject(TranslateService);
   private readonly _userService = inject(UserService);
-  protected readonly _projectService = inject(ProjectService);
+  protected readonly _profileService = inject(ProfileService);
 
   public profileInfo: ProfileOverviewProfileInfoModel | undefined;
   public conversationItems: ProfileOverviewConversationItemModel[] | undefined;
@@ -100,7 +100,7 @@ export class ProfileOverviewGeneralMainComponent implements OnInit {
   private _getData(): void {
     const profile = this._userService.getProfileInfoItem();
     const conversationItems = this._userService.getConversationItems();
-    const houseProjectItems = this._projectService.getHouseProjectItems();
+    const houseProjectItems = this._profileService.getHouseProjectItems();
 
     forkJoin([profile, conversationItems, houseProjectItems]).subscribe(([profileData, conversationItemData, houseProjectItemData]) => {
       this.profileInfo = profileData;

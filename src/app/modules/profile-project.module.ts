@@ -7,8 +7,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { RouterModule, Routes } from '@angular/router';
-import { ProjectRepository } from '../repositories/project.repository';
-import { ProjectService } from '../services/project.service';
+import { ProfileService } from '../services/profile.service';
+import { ProfileRepository } from '../repositories/profile.repository';
 
 const routes: Routes = [
     { path: '', component: ProfileProjectMainComponent }
@@ -24,6 +24,6 @@ const routes: Routes = [
         CommonModule,
         RouterModule.forChild(routes)
     ],
-    providers: [ProjectService, ProjectRepository]
+    providers: [ProfileService, ProfileRepository]
 })
 export class ProfileProjectModule { }

@@ -5,7 +5,7 @@ import { UserService } from '../../../services/user.service';
 import { AddProjectCaptionModel } from '../models/caption-models/add-project.caption.model';
 import { ProjectInputCaptionModel } from '../models/caption-models/project-input.caption.model';
 import { ProjectItemModel } from '../models/project-item.model';
-import { ProjectService } from '../../../services/project.service';
+import { ProfileService } from '../../../services/profile.service';
 
 @Component({
     selector: 'app-project-main',
@@ -15,7 +15,7 @@ import { ProjectService } from '../../../services/project.service';
 export class ProfileProjectMainComponent implements OnInit {
     //#region Properties
     private readonly _translateService = inject(TranslateService);
-    private readonly _projectService = inject(ProjectService);
+    private readonly _profileService = inject(ProfileService);
 
     public projectItems: ProjectItemModel[] | undefined;
 
@@ -61,7 +61,7 @@ export class ProfileProjectMainComponent implements OnInit {
     }
 
     private _getData(): void {
-        this._projectService.getProjectItems().subscribe((projectItemData) => {
+        this._profileService.getProjectItems().subscribe((projectItemData) => {
             this.projectItems = projectItemData;
         });
     }
